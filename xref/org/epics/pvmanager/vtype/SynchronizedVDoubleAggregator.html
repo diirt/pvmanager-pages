@@ -54,7 +54,7 @@
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>      }
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>  
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>      @Override
-<a class="jxr_linenumber" name="L49" href="#L49">49</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VMultiDouble.html">VMultiDouble</a> readValue() {
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>      <strong class="jxr_keyword">public</strong> VMultiDouble readValue() {
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>          Timestamp reference = electReferenceTimeStamp(collectors);
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>          <strong class="jxr_keyword">if</strong> (reference == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
@@ -67,7 +67,7 @@
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>              <strong class="jxr_keyword">if</strong> (log.isLoggable(Level.FINE)) {
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>                  buffer.append(data.size()).append(<span class="jxr_string">", "</span>);
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>              }
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>              <a href="../../../../org/epics/vtype/VDouble.html">VDouble</a> value = closestElement(data, allowedInterval, reference);
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>              VDouble value = closestElement(data, allowedInterval, reference);
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>              values.add(value);
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>          }
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>          <strong class="jxr_keyword">if</strong> (log.isLoggable(Level.FINE)) {
