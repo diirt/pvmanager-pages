@@ -40,7 +40,7 @@
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>  <em class="jxr_javadoccomment">     * @param yColumn the column for the y values</em>
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>  <em class="jxr_javadoccomment">     * @return the dataset</em>
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Point2DDataset point2DDatasetFromVTable(<a href="../../../../org/epics/vtype/VTable.html">VTable</a> vTable,
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Point2DDataset point2DDatasetFromVTable(VTable vTable,
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>              String xColumn, String yColumn) {
 <a class="jxr_linenumber" name="L37" href="#L37">37</a>          <em class="jxr_comment">// Extract x and y using column names</em>
 <a class="jxr_linenumber" name="L38" href="#L38">38</a>          ListNumber xValues = ValueUtil.numericColumnOf(vTable, xColumn);
@@ -78,7 +78,7 @@
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_javadoccomment">     * @param colorColumn the column name for the size values</em>
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_javadoccomment">     * @return the dataset</em>
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Point3DWithLabelDataset point3DDatasetFromVTable(<a href="../../../../org/epics/vtype/VTable.html">VTable</a> vTable,
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Point3DWithLabelDataset point3DDatasetFromVTable(VTable vTable,
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>              String xColumn, String yColumn, String sizeColumn, String colorColumn) {
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>          <em class="jxr_comment">// Extract x and y using column names</em>
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>          ListNumber xValues = ValueUtil.numericColumnOf(vTable, xColumn);
@@ -141,7 +141,7 @@
 <a class="jxr_linenumber" name="L133" href="#L133">133</a>         <strong class="jxr_keyword">return</strong> Point3DWithLabelDatasets.build(xValues, yValues, sizeValues, colorValues);
 <a class="jxr_linenumber" name="L134" href="#L134">134</a>     }
 <a class="jxr_linenumber" name="L135" href="#L135">135</a> 
-<a class="jxr_linenumber" name="L136" href="#L136">136</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> List&lt;Point2DDataset&gt; point2DDatasetsFromVTable(<a href="../../../../org/epics/vtype/VTable.html">VTable</a> vTable, List&lt;String&gt; xColumns, List&lt;String&gt; yColumns) {
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> List&lt;Point2DDataset&gt; point2DDatasetsFromVTable(VTable vTable, List&lt;String&gt; xColumns, List&lt;String&gt; yColumns) {
 <a class="jxr_linenumber" name="L137" href="#L137">137</a>         List&lt;ListNumber&gt; xValues = <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
 <a class="jxr_linenumber" name="L138" href="#L138">138</a>         List&lt;ListNumber&gt; yValues = <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
 <a class="jxr_linenumber" name="L139" href="#L139">139</a>         

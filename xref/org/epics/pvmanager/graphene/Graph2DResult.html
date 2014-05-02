@@ -20,13 +20,13 @@
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_javadoccomment"> * @author carcassi</em>
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/graphene/Graph2DResult.html">Graph2DResult</a> {
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/vtype/VType.html">VType</a> data;
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/vtype/VImage.html">VImage</a> image;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> VType data;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> VImage image;
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/pvmanager/graphene/GraphDataRange.html">GraphDataRange</a> xRange;
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/pvmanager/graphene/GraphDataRange.html">GraphDataRange</a> yRange;
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> focusDataIndex;
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>      <a href="../../../../org/epics/pvmanager/graphene/Graph2DResult.html">Graph2DResult</a>(<a href="../../../../org/epics/vtype/VType.html">VType</a> data, <a href="../../../../org/epics/vtype/VImage.html">VImage</a> image, <a href="../../../../org/epics/pvmanager/graphene/GraphDataRange.html">GraphDataRange</a> xRange, <a href="../../../../org/epics/pvmanager/graphene/GraphDataRange.html">GraphDataRange</a> yRange, <strong class="jxr_keyword">int</strong> focusDataIndex) {
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>      <a href="../../../../org/epics/pvmanager/graphene/Graph2DResult.html">Graph2DResult</a>(VType data, VImage image, <a href="../../../../org/epics/pvmanager/graphene/GraphDataRange.html">GraphDataRange</a> xRange, <a href="../../../../org/epics/pvmanager/graphene/GraphDataRange.html">GraphDataRange</a> yRange, <strong class="jxr_keyword">int</strong> focusDataIndex) {
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>          <strong class="jxr_keyword">this</strong>.data = data;
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>          <strong class="jxr_keyword">this</strong>.image = image;
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>          <strong class="jxr_keyword">this</strong>.xRange = xRange;
@@ -34,7 +34,7 @@
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>          <strong class="jxr_keyword">this</strong>.focusDataIndex = focusDataIndex;
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>      }
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>      
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VType.html">VType</a> getData() {
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>      <strong class="jxr_keyword">public</strong> VType getData() {
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>          <strong class="jxr_keyword">return</strong> data;
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      }
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>      
@@ -42,7 +42,7 @@
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>          <strong class="jxr_keyword">return</strong> focusDataIndex;
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>      }
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>  
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VImage.html">VImage</a> getImage() {
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>      <strong class="jxr_keyword">public</strong> VImage getImage() {
 <a class="jxr_linenumber" name="L38" href="#L38">38</a>          <strong class="jxr_keyword">return</strong> image;
 <a class="jxr_linenumber" name="L39" href="#L39">39</a>      }
 <a class="jxr_linenumber" name="L40" href="#L40">40</a>  
