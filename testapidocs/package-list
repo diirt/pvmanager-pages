@@ -1,2 +1,3 @@
-org.epics.pvmanager
-org.epics.pvmanager.test
+org.epics.vtype
+org.epics.vtype.io
+org.epics.vtype.table
