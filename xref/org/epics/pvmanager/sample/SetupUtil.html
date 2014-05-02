@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>SetupUtil xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../apidocs/org/epics/pvmanager/sample/SetupUtil.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_javadoccomment"> * Copyright (C) 2010-14 pvmanager developers. See COPYRIGHT.TXT</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_javadoccomment"> * All rights reserved. Use is subject to license terms. See LICENSE.TXT</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">package</strong> org.epics.pvmanager.sample;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.CompositeDataSource;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVManager;
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.file.FileDataSource;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.formula.ArrayFunctionSet;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.formula.FormulaRegistry;
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.formula.MathFunctionSet;
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.formula.NumberOperatorFunctionSet;
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.formula.StringFunctionSet;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.formula.TableFunctionSet;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.jca.JCADataSourceBuilder;
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.loc.LocalDataSource;
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.sim.SimulationDataSource;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.util.Executors;
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.sys.SystemDataSource;
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment"> * @author carcassi</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/sample/SetupUtil.html">SetupUtil</a> {
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> defaultCASetup() {
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>          <a href="../../../../org/epics/pvmanager/CompositeDataSource.html">CompositeDataSource</a> dataSource = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/CompositeDataSource.html">CompositeDataSource</a>();
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>          dataSource.putDataSource(<span class="jxr_string">"sim"</span>, SimulationDataSource.simulatedData());
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          dataSource.putDataSource(<span class="jxr_string">"ca"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCADataSourceBuilder.html">JCADataSourceBuilder</a>().build());
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>          dataSource.putDataSource(<span class="jxr_string">"loc"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/loc/LocalDataSource.html">LocalDataSource</a>());
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>          dataSource.putDataSource(<span class="jxr_string">"sys"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/sys/SystemDataSource.html">SystemDataSource</a>());
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          dataSource.putDataSource(<span class="jxr_string">"file"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/file/FileDataSource.html">FileDataSource</a>());
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>          dataSource.setDefaultDataSource(<span class="jxr_string">"ca"</span>);
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>          PVManager.setDefaultDataSource(dataSource);
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> ArrayFunctionSet());
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> MathFunctionSet());
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> NumberOperatorFunctionSet());
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> TableFunctionSet());
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> StringFunctionSet());
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>      }
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> defaultCASetupForSwing() {
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>          PVManager.setDefaultNotificationExecutor(Executors.swingEDT());
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>          defaultCASetup();
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      }
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>
+</body>
+</html>
