@@ -62,7 +62,7 @@
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  <em class="jxr_javadoccomment">     * @param severity the JCA severity</em>
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  <em class="jxr_javadoccomment">     * @return the VData severity</em>
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L57" href="#L57">57</a>      <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/vtype/AlarmSeverity.html">AlarmSeverity</a> fromEpics(Severity severity) {
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>      <strong class="jxr_keyword">static</strong> AlarmSeverity fromEpics(Severity severity) {
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>          <strong class="jxr_keyword">if</strong> (Severity.NO_ALARM.isEqualTo(severity)) {
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>              <strong class="jxr_keyword">return</strong> AlarmSeverity.NONE;
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>          } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (Severity.MINOR_ALARM.isEqualTo(severity)) {

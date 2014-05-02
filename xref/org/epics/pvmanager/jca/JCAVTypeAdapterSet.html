@@ -48,7 +48,7 @@
 <a class="jxr_linenumber" name="L40" href="#L40">40</a>      <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRFloatToVFloat = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VFloat.<strong class="jxr_keyword">class</strong>, DBR_TIME_Float.TYPE, DBR_CTRL_Double.TYPE, false) {
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>  
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>              @Override
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>              <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VFloat.html">VFloat</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>              <strong class="jxr_keyword">public</strong> VFloat createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VFloatFromDbr.html">VFloatFromDbr</a>((DBR_TIME_Float) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>              }
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>          };
@@ -57,7 +57,7 @@
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>      <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRDoubleToVDouble = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VDouble.<strong class="jxr_keyword">class</strong>, DBR_TIME_Double.TYPE, DBR_CTRL_Double.TYPE, false) {
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>              @Override
-<a class="jxr_linenumber" name="L52" href="#L52">52</a>              <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VDouble.html">VDouble</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>              <strong class="jxr_keyword">public</strong> VDouble createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VDoubleFromDbr.html">VDoubleFromDbr</a>((DBR_TIME_Double) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>              }
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>          };
@@ -66,7 +66,7 @@
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>      <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRByteToVByte = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VByte.<strong class="jxr_keyword">class</strong>, DBR_TIME_Byte.TYPE, DBR_CTRL_Double.TYPE, false) {
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>  
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>              @Override
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>              <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VByte.html">VByte</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>              <strong class="jxr_keyword">public</strong> VByte createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VByteFromDbr.html">VByteFromDbr</a>((DBR_TIME_Byte) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>              }
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>          };
@@ -75,7 +75,7 @@
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>      <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRShortToVShort = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VShort.<strong class="jxr_keyword">class</strong>, DBR_TIME_Short.TYPE, DBR_CTRL_Double.TYPE, false) {
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>              @Override
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>              <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VShort.html">VShort</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>              <strong class="jxr_keyword">public</strong> VShort createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VShortFromDbr.html">VShortFromDbr</a>((DBR_TIME_Short) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>              }
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>          };
@@ -84,7 +84,7 @@
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>      <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRIntToVInt = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VInt.<strong class="jxr_keyword">class</strong>, DBR_TIME_Int.TYPE, DBR_CTRL_Double.TYPE, false) {
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>              @Override
-<a class="jxr_linenumber" name="L79" href="#L79">79</a>              <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VInt.html">VInt</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>              <strong class="jxr_keyword">public</strong> VInt createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L80" href="#L80">80</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VIntFromDbr.html">VIntFromDbr</a>((DBR_TIME_Int) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L81" href="#L81">81</a>              }
 <a class="jxr_linenumber" name="L82" href="#L82">82</a>          };
@@ -93,7 +93,7 @@
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>      <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRStringToVString = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VString.<strong class="jxr_keyword">class</strong>, DBR_TIME_String.TYPE, <strong class="jxr_keyword">null</strong>, false) {
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>  
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>              @Override
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>              <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VString.html">VString</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>              <strong class="jxr_keyword">public</strong> VString createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VStringFromDbr.html">VStringFromDbr</a>((DBR_TIME_String) value, connPayload);
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>              }
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>          };
@@ -111,7 +111,7 @@
 <a class="jxr_linenumber" name="L103" href="#L103">103</a>             }
 <a class="jxr_linenumber" name="L104" href="#L104">104</a> 
 <a class="jxr_linenumber" name="L105" href="#L105">105</a>             @Override
-<a class="jxr_linenumber" name="L106" href="#L106">106</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VString.html">VString</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>             <strong class="jxr_keyword">public</strong> VString createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VStringFromDbr.html">VStringFromDbr</a>((DBR_TIME_Byte) value, connPayload);
 <a class="jxr_linenumber" name="L108" href="#L108">108</a>             }
 <a class="jxr_linenumber" name="L109" href="#L109">109</a>         };
@@ -120,7 +120,7 @@
 <a class="jxr_linenumber" name="L112" href="#L112">112</a>     <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBREnumToVEnum = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VEnum.<strong class="jxr_keyword">class</strong>, DBR_TIME_Enum.TYPE, DBR_LABELS_Enum.TYPE, false) {
 <a class="jxr_linenumber" name="L113" href="#L113">113</a> 
 <a class="jxr_linenumber" name="L114" href="#L114">114</a>             @Override
-<a class="jxr_linenumber" name="L115" href="#L115">115</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VEnum.html">VEnum</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>             <strong class="jxr_keyword">public</strong> VEnum createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L116" href="#L116">116</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VEnumFromDbr.html">VEnumFromDbr</a>((DBR_TIME_Enum) value, (DBR_LABELS_Enum) metadata, connPayload);
 <a class="jxr_linenumber" name="L117" href="#L117">117</a>             }
 <a class="jxr_linenumber" name="L118" href="#L118">118</a>         };
@@ -129,7 +129,7 @@
 <a class="jxr_linenumber" name="L121" href="#L121">121</a>     <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRFloatToVFloatArray = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VFloatArray.<strong class="jxr_keyword">class</strong>, DBR_TIME_Float.TYPE, DBR_CTRL_Double.TYPE, <strong class="jxr_keyword">true</strong>) {
 <a class="jxr_linenumber" name="L122" href="#L122">122</a> 
 <a class="jxr_linenumber" name="L123" href="#L123">123</a>             @Override
-<a class="jxr_linenumber" name="L124" href="#L124">124</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VFloatArray.html">VFloatArray</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L124" href="#L124">124</a>             <strong class="jxr_keyword">public</strong> VFloatArray createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L125" href="#L125">125</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VFloatArrayFromDbr.html">VFloatArrayFromDbr</a>((DBR_TIME_Float) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L126" href="#L126">126</a>             }
 <a class="jxr_linenumber" name="L127" href="#L127">127</a>         };
@@ -138,7 +138,7 @@
 <a class="jxr_linenumber" name="L130" href="#L130">130</a>     <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRDoubleToVDoubleArray = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VDoubleArray.<strong class="jxr_keyword">class</strong>, DBR_TIME_Double.TYPE, DBR_CTRL_Double.TYPE, <strong class="jxr_keyword">true</strong>) {
 <a class="jxr_linenumber" name="L131" href="#L131">131</a> 
 <a class="jxr_linenumber" name="L132" href="#L132">132</a>             @Override
-<a class="jxr_linenumber" name="L133" href="#L133">133</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VDoubleArray.html">VDoubleArray</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>             <strong class="jxr_keyword">public</strong> VDoubleArray createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L134" href="#L134">134</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VDoubleArrayFromDbr.html">VDoubleArrayFromDbr</a>((DBR_TIME_Double) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L135" href="#L135">135</a>             }
 <a class="jxr_linenumber" name="L136" href="#L136">136</a>         };
@@ -156,7 +156,7 @@
 <a class="jxr_linenumber" name="L148" href="#L148">148</a>             }
 <a class="jxr_linenumber" name="L149" href="#L149">149</a>         
 <a class="jxr_linenumber" name="L150" href="#L150">150</a>             @Override
-<a class="jxr_linenumber" name="L151" href="#L151">151</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VByteArray.html">VByteArray</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>             <strong class="jxr_keyword">public</strong> VByteArray createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L152" href="#L152">152</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VByteArrayFromDbr.html">VByteArrayFromDbr</a>((DBR_TIME_Byte) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L153" href="#L153">153</a>             }
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>         };
@@ -165,7 +165,7 @@
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>     <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRShortToVShortArray = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VShortArray.<strong class="jxr_keyword">class</strong>, DBR_TIME_Short.TYPE, DBR_CTRL_Double.TYPE, <strong class="jxr_keyword">true</strong>) {
 <a class="jxr_linenumber" name="L158" href="#L158">158</a> 
 <a class="jxr_linenumber" name="L159" href="#L159">159</a>             @Override
-<a class="jxr_linenumber" name="L160" href="#L160">160</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VShortArray.html">VShortArray</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>             <strong class="jxr_keyword">public</strong> VShortArray createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L161" href="#L161">161</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VShortArrayFromDbr.html">VShortArrayFromDbr</a>((DBR_TIME_Short) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>             }
 <a class="jxr_linenumber" name="L163" href="#L163">163</a>         };
@@ -174,7 +174,7 @@
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>     <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRIntToVIntArray = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VIntArray.<strong class="jxr_keyword">class</strong>, DBR_TIME_Int.TYPE, DBR_CTRL_Double.TYPE, <strong class="jxr_keyword">true</strong>) {
 <a class="jxr_linenumber" name="L167" href="#L167">167</a> 
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>             @Override
-<a class="jxr_linenumber" name="L169" href="#L169">169</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VIntArray.html">VIntArray</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>             <strong class="jxr_keyword">public</strong> VIntArray createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L170" href="#L170">170</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VIntArrayFromDbr.html">VIntArrayFromDbr</a>((DBR_TIME_Int) value, (DBR_CTRL_Double) metadata, connPayload);
 <a class="jxr_linenumber" name="L171" href="#L171">171</a>             }
 <a class="jxr_linenumber" name="L172" href="#L172">172</a>         };
@@ -183,7 +183,7 @@
 <a class="jxr_linenumber" name="L175" href="#L175">175</a>     <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a> DBRStringToVStringArray = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCATypeAdapter.html">JCATypeAdapter</a>(VStringArray.<strong class="jxr_keyword">class</strong>, DBR_TIME_String.TYPE, <strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">true</strong>) {
 <a class="jxr_linenumber" name="L176" href="#L176">176</a> 
 <a class="jxr_linenumber" name="L177" href="#L177">177</a>             @Override
-<a class="jxr_linenumber" name="L178" href="#L178">178</a>             <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VStringArray.html">VStringArray</a> createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>             <strong class="jxr_keyword">public</strong> VStringArray createValue(DBR value, DBR metadata, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L179" href="#L179">179</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/VStringArrayFromDbr.html">VStringArrayFromDbr</a>((DBR_TIME_String) value, connPayload);
 <a class="jxr_linenumber" name="L180" href="#L180">180</a>             }
 <a class="jxr_linenumber" name="L181" href="#L181">181</a>         };

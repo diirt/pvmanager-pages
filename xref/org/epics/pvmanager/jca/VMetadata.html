@@ -22,7 +22,7 @@
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_javadoccomment"> * @author carcassi</em>
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <strong class="jxr_keyword">class</strong> VMetadata&lt;TValue <strong class="jxr_keyword">extends</strong> TIME&gt; <strong class="jxr_keyword">implements</strong> Alarm, <a href="../../../../org/epics/vtype/Time.html">Time</a> {
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <strong class="jxr_keyword">class</strong> VMetadata&lt;TValue <strong class="jxr_keyword">extends</strong> TIME&gt; <strong class="jxr_keyword">implements</strong> Alarm, Time {
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">final</strong> TValue dbrValue;
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> disconnected;
@@ -39,7 +39,7 @@
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      }
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>  
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>      @Override
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/AlarmSeverity.html">AlarmSeverity</a> getAlarmSeverity() {
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>      <strong class="jxr_keyword">public</strong> AlarmSeverity getAlarmSeverity() {
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>          <strong class="jxr_keyword">if</strong> (disconnected)
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>              <strong class="jxr_keyword">return</strong> AlarmSeverity.UNDEFINED;
 <a class="jxr_linenumber" name="L37" href="#L37">37</a>          <strong class="jxr_keyword">return</strong> DataUtils.fromEpics(dbrValue.getSeverity());
