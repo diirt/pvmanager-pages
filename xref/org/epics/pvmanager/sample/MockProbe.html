@@ -55,7 +55,7 @@
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>          borders.put(AlarmSeverity.INVALID, <strong class="jxr_keyword">new</strong> LineBorder(Color.GRAY));
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>          borders.put(AlarmSeverity.UNDEFINED, <strong class="jxr_keyword">new</strong> LineBorder(Color.MAGENTA));
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>      }
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>      <a href="../../../../org/epics/vtype/ValueFormat.html">ValueFormat</a> format = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/vtype/SimpleValueFormat.html">SimpleValueFormat</a>(3);
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>      ValueFormat format = <strong class="jxr_keyword">new</strong> SimpleValueFormat(3);
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>  <em class="jxr_javadoccomment">     * This method is called from within the constructor to initialize the form.</em>
@@ -265,7 +265,7 @@
 <a class="jxr_linenumber" name="L257" href="#L257">257</a> 
 <a class="jxr_linenumber" name="L258" href="#L258">258</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> channelDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {<em class="jxr_comment">//GEN-FIRST:event_channelDetailsButtonActionPerformed</em>
 <a class="jxr_linenumber" name="L259" href="#L259">259</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L260" href="#L260">260</a>             <a href="../../../../org/epics/pvmanager/ChannelHandler.html">ChannelHandler</a> handler = PVManager.getDefaultDataSource().getChannels().get(pvName.getText());
+<a class="jxr_linenumber" name="L260" href="#L260">260</a>             ChannelHandler handler = PVManager.getDefaultDataSource().getChannels().get(pvName.getText());
 <a class="jxr_linenumber" name="L261" href="#L261">261</a>             <strong class="jxr_keyword">if</strong> (handler != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L262" href="#L262">262</a>                 Map&lt;String, Object&gt; properties = handler.getProperties();
 <a class="jxr_linenumber" name="L263" href="#L263">263</a>                 StringBuilder builder = <strong class="jxr_keyword">new</strong> StringBuilder();
@@ -299,7 +299,7 @@
 <a class="jxr_linenumber" name="L291" href="#L291">291</a>         }
 <a class="jxr_linenumber" name="L292" href="#L292">292</a>     }
 <a class="jxr_linenumber" name="L293" href="#L293">293</a> 
-<a class="jxr_linenumber" name="L294" href="#L294">294</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> setAlarm(<a href="../../../../org/epics/vtype/Alarm.html">Alarm</a> alarm) {
+<a class="jxr_linenumber" name="L294" href="#L294">294</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> setAlarm(Alarm alarm) {
 <a class="jxr_linenumber" name="L295" href="#L295">295</a>         <strong class="jxr_keyword">if</strong> (alarm != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L296" href="#L296">296</a>             pvTextValue.setBorder(borders.get(alarm.getAlarmSeverity()));
 <a class="jxr_linenumber" name="L297" href="#L297">297</a>         } <strong class="jxr_keyword">else</strong> {
@@ -307,7 +307,7 @@
 <a class="jxr_linenumber" name="L299" href="#L299">299</a>         }
 <a class="jxr_linenumber" name="L300" href="#L300">300</a>     }
 <a class="jxr_linenumber" name="L301" href="#L301">301</a> 
-<a class="jxr_linenumber" name="L302" href="#L302">302</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> setTime(<a href="../../../../org/epics/vtype/Time.html">Time</a> time) {
+<a class="jxr_linenumber" name="L302" href="#L302">302</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> setTime(Time time) {
 <a class="jxr_linenumber" name="L303" href="#L303">303</a>         <strong class="jxr_keyword">if</strong> (time == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L304" href="#L304">304</a>             pvTime.setText(<span class="jxr_string">""</span>);
 <a class="jxr_linenumber" name="L305" href="#L305">305</a>         } <strong class="jxr_keyword">else</strong> {
@@ -315,7 +315,7 @@
 <a class="jxr_linenumber" name="L307" href="#L307">307</a>         }
 <a class="jxr_linenumber" name="L308" href="#L308">308</a>     }
 <a class="jxr_linenumber" name="L309" href="#L309">309</a> 
-<a class="jxr_linenumber" name="L310" href="#L310">310</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> setMetadata(<a href="../../../../org/epics/vtype/Display.html">Display</a> display) {
+<a class="jxr_linenumber" name="L310" href="#L310">310</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> setMetadata(Display display) {
 <a class="jxr_linenumber" name="L311" href="#L311">311</a>         <strong class="jxr_keyword">if</strong> (display == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L312" href="#L312">312</a>             metadata.setText(<span class="jxr_string">""</span>);
 <a class="jxr_linenumber" name="L313" href="#L313">313</a>         } <strong class="jxr_keyword">else</strong> {

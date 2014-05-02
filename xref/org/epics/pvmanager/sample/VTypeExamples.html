@@ -51,7 +51,7 @@
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>              .readListener(<strong class="jxr_keyword">new</strong> PVReaderListener&lt;VNumber&gt;() {
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>                  @Override
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>                  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> pvChanged(PVReaderEvent&lt;VNumber&gt; event) {
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>                      <a href="../../../../org/epics/vtype/VNumber.html">VNumber</a> value = event.getPvReader().getValue();
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>                      VNumber value = event.getPvReader().getValue();
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>                      <strong class="jxr_keyword">if</strong> (value != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>                          System.out.println(value.getValue() + <span class="jxr_string">" "</span> + value.getAlarmSeverity());
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>                      }
@@ -71,20 +71,20 @@
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>              .readListener(<strong class="jxr_keyword">new</strong> PVReaderListener&lt;VType&gt;() {
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>                  @Override
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>                  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> pvChanged(PVReaderEvent&lt;VType&gt; event) {
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>                      <a href="../../../../org/epics/vtype/VType.html">VType</a> value = event.getPvReader().getValue();
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>                      VType value = event.getPvReader().getValue();
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>                      <em class="jxr_comment">// We can extract the different aspect of the read object,</em>
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>                      <em class="jxr_comment">// so that we can work on them separately</em>
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>                      <em class="jxr_comment">// This returns the interface implemented (VDouble, VInt, ...)</em>
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>                      Class&lt;?&gt; type = ValueUtil.typeOf(value);
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>                      <em class="jxr_comment">// Extracts the alarm if present</em>
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>                      <a href="../../../../org/epics/vtype/Alarm.html">Alarm</a> alarm = ValueUtil.alarmOf(value);
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>                      Alarm alarm = ValueUtil.alarmOf(value);
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>                      <em class="jxr_comment">// Extracts the time if present</em>
-<a class="jxr_linenumber" name="L75" href="#L75">75</a>                      <a href="../../../../org/epics/vtype/Time.html">Time</a> time = ValueUtil.timeOf(value);
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>                      Time time = ValueUtil.timeOf(value);
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>                      <em class="jxr_comment">// Extracts a numeric value if present</em>
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>                      Double number = ValueUtil.numericValueOf(value);
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>                      <em class="jxr_comment">// Extract display information if present</em>
-<a class="jxr_linenumber" name="L79" href="#L79">79</a>                      <a href="../../../../org/epics/vtype/Display.html">Display</a> display = ValueUtil.displayOf(value);
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>                      Display display = ValueUtil.displayOf(value);
 <a class="jxr_linenumber" name="L80" href="#L80">80</a>  
 <a class="jxr_linenumber" name="L81" href="#L81">81</a>                      <em class="jxr_comment">// setAlarm(alarm);</em>
 <a class="jxr_linenumber" name="L82" href="#L82">82</a>                      <em class="jxr_comment">// setTime(time);</em>
@@ -100,7 +100,7 @@
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>                  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> pvChanged(PVReaderEvent&lt;VType&gt; event) {
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>                      <em class="jxr_comment">// We can switch on the full type</em>
 <a class="jxr_linenumber" name="L94" href="#L94">94</a>                      <strong class="jxr_keyword">if</strong> (event.getPvReader().getValue() instanceof VDouble) {
-<a class="jxr_linenumber" name="L95" href="#L95">95</a>                          <a href="../../../../org/epics/vtype/VDouble.html">VDouble</a> vDouble = (VDouble) event.getPvReader().getValue();
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>                          VDouble vDouble = (VDouble) event.getPvReader().getValue();
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>                          <em class="jxr_comment">// Do something with a VDouble</em>
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>                      }
 <a class="jxr_linenumber" name="L98" href="#L98">98</a>                      <em class="jxr_comment">// ...</em>
@@ -118,7 +118,7 @@
 <a class="jxr_linenumber" name="L110" href="#L110">110</a>                 <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> pvChanged(PVReaderEvent&lt;VNumberArray&gt; event) {
 <a class="jxr_linenumber" name="L111" href="#L111">111</a>                     <strong class="jxr_keyword">if</strong> (event.isValueChanged()) {
 <a class="jxr_linenumber" name="L112" href="#L112">112</a>                         <em class="jxr_comment">// New value</em>
-<a class="jxr_linenumber" name="L113" href="#L113">113</a>                         <a href="../../../../org/epics/vtype/VNumberArray.html">VNumberArray</a> value = event.getPvReader().getValue();
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>                         VNumberArray value = event.getPvReader().getValue();
 <a class="jxr_linenumber" name="L114" href="#L114">114</a>                         ListNumber data = value.getData();
 <a class="jxr_linenumber" name="L115" href="#L115">115</a>                         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; data.size(); i++) {
 <a class="jxr_linenumber" name="L116" href="#L116">116</a>                             <em class="jxr_comment">// Get the double representation of the value,</em>
@@ -154,13 +154,13 @@
 <a class="jxr_linenumber" name="L146" href="#L146">146</a>         <em class="jxr_comment">// organizing them by column. You can use constant expressions for </em>
 <a class="jxr_linenumber" name="L147" href="#L147">147</a>         <em class="jxr_comment">// labels or values that do not change. </em>
 <a class="jxr_linenumber" name="L148" href="#L148">148</a>         List&lt;String&gt; names = Arrays.asList(<span class="jxr_string">"one"</span>, <span class="jxr_string">"two"</span>, <span class="jxr_string">"trhee"</span>);
-<a class="jxr_linenumber" name="L149" href="#L149">149</a>         PVReader&lt;VTable&gt; pvReader = <a href="../../../../org/epics/pvmanager/PVManager.html">PVManager</a>
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>         PVReader&lt;VTable&gt; pvReader = PVManager
 <a class="jxr_linenumber" name="L150" href="#L150">150</a>                 .read(vTable(column(<span class="jxr_string">"Names"</span>, vStringConstants(names)),
 <a class="jxr_linenumber" name="L151" href="#L151">151</a>                              column(<span class="jxr_string">"Values"</span>, latestValueOf(channels(names)))))
 <a class="jxr_linenumber" name="L152" href="#L152">152</a>                 .readListener(<strong class="jxr_keyword">new</strong> PVReaderListener&lt;VTable&gt;() {
 <a class="jxr_linenumber" name="L153" href="#L153">153</a>                     @Override
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>                     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> pvChanged(PVReaderEvent&lt;VTable&gt; pvReader) {
-<a class="jxr_linenumber" name="L155" href="#L155">155</a>                         <a href="../../../../org/epics/vtype/VTable.html">VTable</a> vTable = pvReader.getPvReader().getValue();
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>                         VTable vTable = pvReader.getPvReader().getValue();
 <a class="jxr_linenumber" name="L156" href="#L156">156</a>                         <em class="jxr_comment">// First column is the names</em>
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>                         @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
 <a class="jxr_linenumber" name="L158" href="#L158">158</a>                         List&lt;String&gt; names = (List&lt;String&gt;) vTable.getColumnData(0);

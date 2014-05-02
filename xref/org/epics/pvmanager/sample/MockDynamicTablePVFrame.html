@@ -50,13 +50,13 @@
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/sample/MockDynamicTablePVFrame.html">MockDynamicTablePVFrame</a> <strong class="jxr_keyword">extends</strong> javax.swing.JFrame {
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>      
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../org/epics/pvmanager/extra/DynamicGroup.html">DynamicGroup</a> group = group();
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      <strong class="jxr_keyword">private</strong> DynamicGroup group = group();
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>      <strong class="jxr_keyword">private</strong> PVReader&lt;List&lt;Object&gt;&gt; pv = PVManager.read(group)
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>              .notifyOn(swingEDT()).maxRate(ofHertz(2));
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>      <strong class="jxr_keyword">private</strong> List&lt;Object&gt; latestValue = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>      <strong class="jxr_keyword">private</strong> List&lt;Exception&gt; latestExceptions = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>      <strong class="jxr_keyword">private</strong> List&lt;String&gt; pvNames = <strong class="jxr_keyword">new</strong> ArrayList&lt;String&gt;();
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../org/epics/vtype/ValueFormat.html">ValueFormat</a> format = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/vtype/SimpleValueFormat.html">SimpleValueFormat</a>(3);
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>      <strong class="jxr_keyword">private</strong> ValueFormat format = <strong class="jxr_keyword">new</strong> SimpleValueFormat(3);
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>      
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>      <strong class="jxr_keyword">private</strong> AbstractTableModel model = <strong class="jxr_keyword">new</strong> AbstractTableModel() {
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>          
@@ -356,10 +356,10 @@
 <a class="jxr_linenumber" name="L348" href="#L348">348</a> <em class="jxr_javadoccomment">    */</em>
 <a class="jxr_linenumber" name="L349" href="#L349">349</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(String args[]) {
 <a class="jxr_linenumber" name="L350" href="#L350">350</a>         PVManager.setDefaultNotificationExecutor(swingEDT());
-<a class="jxr_linenumber" name="L351" href="#L351">351</a>         <a href="../../../../org/epics/pvmanager/CompositeDataSource.html">CompositeDataSource</a> dataSource = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/CompositeDataSource.html">CompositeDataSource</a>();
+<a class="jxr_linenumber" name="L351" href="#L351">351</a>         CompositeDataSource dataSource = <strong class="jxr_keyword">new</strong> CompositeDataSource();
 <a class="jxr_linenumber" name="L352" href="#L352">352</a>         dataSource.putDataSource(<span class="jxr_string">"sim"</span>, SimulationDataSource.simulatedData());
-<a class="jxr_linenumber" name="L353" href="#L353">353</a>         dataSource.putDataSource(<span class="jxr_string">"ca"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCADataSource.html">JCADataSource</a>());
-<a class="jxr_linenumber" name="L354" href="#L354">354</a>         dataSource.putDataSource(<span class="jxr_string">"loc"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/loc/LocalDataSource.html">LocalDataSource</a>());
+<a class="jxr_linenumber" name="L353" href="#L353">353</a>         dataSource.putDataSource(<span class="jxr_string">"ca"</span>, <strong class="jxr_keyword">new</strong> JCADataSource());
+<a class="jxr_linenumber" name="L354" href="#L354">354</a>         dataSource.putDataSource(<span class="jxr_string">"loc"</span>, <strong class="jxr_keyword">new</strong> LocalDataSource());
 <a class="jxr_linenumber" name="L355" href="#L355">355</a>         dataSource.setDefaultDataSource(<span class="jxr_string">"sim"</span>);
 <a class="jxr_linenumber" name="L356" href="#L356">356</a>         PVManager.setDefaultDataSource(dataSource);
 <a class="jxr_linenumber" name="L357" href="#L357">357</a>         java.awt.EventQueue.invokeLater(<strong class="jxr_keyword">new</strong> Runnable() {
