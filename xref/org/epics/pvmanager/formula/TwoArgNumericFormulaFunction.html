@@ -82,14 +82,14 @@
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>          <strong class="jxr_keyword">if</strong> (arg1 == <strong class="jxr_keyword">null</strong> || arg2 == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>          }
-<a class="jxr_linenumber" name="L77" href="#L77">77</a>          <a href="../../../../org/epics/vtype/Alarm.html">Alarm</a> alarm = ValueUtil.highestSeverityOf(args, false);
-<a class="jxr_linenumber" name="L78" href="#L78">78</a>          <a href="../../../../org/epics/vtype/Time.html">Time</a> time = ValueUtil.latestTimeOf(args);
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>          Alarm alarm = ValueUtil.highestSeverityOf(args, false);
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>          Time time = ValueUtil.latestTimeOf(args);
 <a class="jxr_linenumber" name="L79" href="#L79">79</a>          <strong class="jxr_keyword">if</strong> (time == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L80" href="#L80">80</a>              time = ValueFactory.timeNow();
 <a class="jxr_linenumber" name="L81" href="#L81">81</a>          }
 <a class="jxr_linenumber" name="L82" href="#L82">82</a>          <strong class="jxr_keyword">return</strong> ValueFactory.newVDouble(
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>                  calculate(((VNumber) args.get(0)).getValue().doubleValue(),
-<a class="jxr_linenumber" name="L84" href="#L84">84</a>                  ((<a href="../../../../org/epics/vtype/VNumber.html">VNumber</a>) args.get(1)).getValue().doubleValue())
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>                  ((VNumber) args.get(1)).getValue().doubleValue())
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>                  , alarm, time, ValueFactory.displayNone());
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>      }
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>      

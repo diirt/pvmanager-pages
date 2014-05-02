@@ -85,8 +85,8 @@
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>          }
 <a class="jxr_linenumber" name="L79" href="#L79">79</a>          
-<a class="jxr_linenumber" name="L80" href="#L80">80</a>          <a href="../../../../org/epics/vtype/VNumberArray.html">VNumberArray</a> numberArray = (VNumberArray) args.get(0);
-<a class="jxr_linenumber" name="L81" href="#L81">81</a>          <a href="../../../../org/epics/vtype/VNumber.html">VNumber</a> index = (VNumber) args.get(1);
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>          VNumberArray numberArray = (VNumberArray) args.get(0);
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>          VNumber index = (VNumber) args.get(1);
 <a class="jxr_linenumber" name="L82" href="#L82">82</a>          <strong class="jxr_keyword">int</strong> i = index.getValue().intValue();
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>          
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>          <strong class="jxr_keyword">return</strong> newVNumber(numberArray.getData().getDouble(i),

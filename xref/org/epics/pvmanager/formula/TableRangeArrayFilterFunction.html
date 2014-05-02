@@ -73,15 +73,15 @@
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>          }
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>          
-<a class="jxr_linenumber" name="L68" href="#L68">68</a>          <a href="../../../../org/epics/vtype/VTable.html">VTable</a> table = (VTable) args.get(0);
-<a class="jxr_linenumber" name="L69" href="#L69">69</a>          <a href="../../../../org/epics/vtype/VString.html">VString</a> columnName = (VString) args.get(1);
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>          <a href="../../../../org/epics/vtype/VNumberArray.html">VNumberArray</a> range = (VNumberArray) args.get(2);
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>          VTable table = (VTable) args.get(0);
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>          VString columnName = (VString) args.get(1);
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>          VNumberArray range = (VNumberArray) args.get(2);
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>          
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>          <strong class="jxr_keyword">if</strong> (range.getData().size() != 2) {
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Range array must be of 2 elements"</span>);
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>          }
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>          
-<a class="jxr_linenumber" name="L76" href="#L76">76</a>          <a href="../../../../org/epics/vtype/VTable.html">VTable</a> result = VTableFactory.tableRangeFilter(table, columnName.getValue(), ValueFactory.newVDouble(range.getData().getDouble(0)), ValueFactory.newVDouble(range.getData().getDouble(1)));
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>          VTable result = VTableFactory.tableRangeFilter(table, columnName.getValue(), ValueFactory.newVDouble(range.getData().getDouble(0)), ValueFactory.newVDouble(range.getData().getDouble(1)));
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>          
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>          <strong class="jxr_keyword">return</strong> result;
 <a class="jxr_linenumber" name="L79" href="#L79">79</a>      }

@@ -25,7 +25,7 @@
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/formula/OneArgNumericFunction.html">OneArgNumericFunction</a> <strong class="jxr_keyword">implements</strong> ExpressionLanguage.OneArgFunction&lt;VDouble, VNumber&gt;  {
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>      @Override
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/VDouble.html">VDouble</a> calculate(<a href="../../../../org/epics/vtype/VNumber.html">VNumber</a> arg) {
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">public</strong> VDouble calculate(VNumber arg) {
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>          <strong class="jxr_keyword">if</strong> (arg == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>          }

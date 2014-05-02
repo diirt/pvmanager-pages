@@ -69,14 +69,14 @@
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>          }
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>          
-<a class="jxr_linenumber" name="L64" href="#L64">64</a>          <a href="../../../../org/epics/vtype/VNumberArray.html">VNumberArray</a> array = (VNumberArray) args.get(0);
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>          VNumberArray array = (VNumberArray) args.get(0);
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>          <strong class="jxr_keyword">if</strong> (array.getSizes().size() != args.size() - 1) {
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Dimension of the array must match the number of ListNumberProvider"</span>);
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>          }
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>          List&lt;ArrayDimensionDisplay&gt; dimDisplay = <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>          <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 1; i &lt; args.size(); i++) {
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>              <a href="../../../../org/epics/vtype/table/ListNumberProvider.html">ListNumberProvider</a> numberGenerator = (ListNumberProvider) args.get(i);
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>              ListNumberProvider numberGenerator = (ListNumberProvider) args.get(i);
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>              dimDisplay.add(ValueFactory.newDisplay(numberGenerator.createListNumber(array.getSizes().getInt(i-1) + 1), <span class="jxr_string">""</span>));
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>          }
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>          
