@@ -181,7 +181,7 @@
 <a class="jxr_linenumber" name="L173" href="#L173">173</a>         }
 <a class="jxr_linenumber" name="L174" href="#L174">174</a>     }
 <a class="jxr_linenumber" name="L175" href="#L175">175</a> 
-<a class="jxr_linenumber" name="L176" href="#L176">176</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> putWithCallback(Object newValue, <strong class="jxr_keyword">final</strong> ChannelWriteCallback callback) <strong class="jxr_keyword">throws</strong> CAException {
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> putWithCallback(Object newValue, <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/pvmanager/ChannelWriteCallback.html">ChannelWriteCallback</a> callback) <strong class="jxr_keyword">throws</strong> CAException {
 <a class="jxr_linenumber" name="L177" href="#L177">177</a>         PutListener listener = <strong class="jxr_keyword">new</strong> PutListener() {
 <a class="jxr_linenumber" name="L178" href="#L178">178</a> 
 <a class="jxr_linenumber" name="L179" href="#L179">179</a>             @Override
@@ -239,7 +239,7 @@
 <a class="jxr_linenumber" name="L231" href="#L231">231</a>         jcaDataSource.getContext().flushIO();
 <a class="jxr_linenumber" name="L232" href="#L232">232</a>     }
 <a class="jxr_linenumber" name="L233" href="#L233">233</a> 
-<a class="jxr_linenumber" name="L234" href="#L234">234</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> put(Object newValue, <strong class="jxr_keyword">final</strong> ChannelWriteCallback callback) <strong class="jxr_keyword">throws</strong> CAException {
+<a class="jxr_linenumber" name="L234" href="#L234">234</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> put(Object newValue, <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/pvmanager/ChannelWriteCallback.html">ChannelWriteCallback</a> callback) <strong class="jxr_keyword">throws</strong> CAException {
 <a class="jxr_linenumber" name="L235" href="#L235">235</a>         <em class="jxr_comment">// If it's a ListNumber, extract the array</em>
 <a class="jxr_linenumber" name="L236" href="#L236">236</a>         <strong class="jxr_keyword">if</strong> (newValue instanceof ListNumber) {
 <a class="jxr_linenumber" name="L237" href="#L237">237</a>             ListNumber data = (ListNumber) newValue;
@@ -545,7 +545,7 @@
 <a class="jxr_linenumber" name="L537" href="#L537">537</a>     }
 <a class="jxr_linenumber" name="L538" href="#L538">538</a> 
 <a class="jxr_linenumber" name="L539" href="#L539">539</a>     @Override
-<a class="jxr_linenumber" name="L540" href="#L540">540</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> write(Object newValue, <strong class="jxr_keyword">final</strong> ChannelWriteCallback callback) {
+<a class="jxr_linenumber" name="L540" href="#L540">540</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> write(Object newValue, <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/pvmanager/ChannelWriteCallback.html">ChannelWriteCallback</a> callback) {
 <a class="jxr_linenumber" name="L541" href="#L541">541</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L542" href="#L542">542</a>             <strong class="jxr_keyword">if</strong> (isPutCallback())
 <a class="jxr_linenumber" name="L543" href="#L543">543</a>                 putWithCallback(newValue, callback);
@@ -567,7 +567,7 @@
 <a class="jxr_linenumber" name="L559" href="#L559">559</a>     }
 <a class="jxr_linenumber" name="L560" href="#L560">560</a> 
 <a class="jxr_linenumber" name="L561" href="#L561">561</a>     @Override
-<a class="jxr_linenumber" name="L562" href="#L562">562</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">synchronized</strong> <strong class="jxr_keyword">void</strong> addWriter(ChannelHandlerWriteSubscription subscription) {
+<a class="jxr_linenumber" name="L562" href="#L562">562</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">synchronized</strong> <strong class="jxr_keyword">void</strong> addWriter(<a href="../../../../org/epics/pvmanager/ChannelHandlerWriteSubscription.html">ChannelHandlerWriteSubscription</a> subscription) {
 <a class="jxr_linenumber" name="L563" href="#L563">563</a>         <strong class="jxr_keyword">super</strong>.addWriter(subscription);
 <a class="jxr_linenumber" name="L564" href="#L564">564</a>         <em class="jxr_comment">// If already connected and read only, we need to notify this writer</em>
 <a class="jxr_linenumber" name="L565" href="#L565">565</a>         <strong class="jxr_keyword">if</strong> (sentReadOnlyException) {

@@ -34,8 +34,8 @@
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>      }
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>  
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>      @Override
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>      <strong class="jxr_keyword">protected</strong> HistogramGraph2DExpression createExpression(String dataFormula) {
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>          HistogramGraph2DExpression plot = histogramGraphOf(formula(dataFormula));
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../org/epics/pvmanager/graphene/HistogramGraph2DExpression.html">HistogramGraph2DExpression</a> createExpression(String dataFormula) {
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          <a href="../../../../org/epics/pvmanager/graphene/HistogramGraph2DExpression.html">HistogramGraph2DExpression</a> plot = histogramGraphOf(formula(dataFormula));
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>          plot.update(plot.newUpdate().highlightFocusValue(highlightFocusValue));
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>          <strong class="jxr_keyword">return</strong> plot;
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>      }

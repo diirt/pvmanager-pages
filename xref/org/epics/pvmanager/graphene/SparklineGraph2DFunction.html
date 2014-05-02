@@ -36,7 +36,7 @@
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>      
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>      <strong class="jxr_keyword">private</strong> SparklineGraph2DRenderer renderer = <strong class="jxr_keyword">new</strong> SparklineGraph2DRenderer(300, 200);
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>      
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">private</strong> VImage previousImage;
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../org/epics/vtype/VImage.html">VImage</a> previousImage;
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> QueueCollector&lt;SparklineGraph2DRendererUpdate&gt; rendererUpdateQueue = <strong class="jxr_keyword">new</strong> QueueCollector&lt;&gt;(100);
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>  
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>      <a href="../../../../org/epics/pvmanager/graphene/SparklineGraph2DFunction.html">SparklineGraph2DFunction</a>(ReadFunction&lt;?&gt; tableData,
@@ -53,7 +53,7 @@
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>  
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>      @Override
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/pvmanager/graphene/Graph2DResult.html">Graph2DResult</a> readValue() {
-<a class="jxr_linenumber" name="L48" href="#L48">48</a>          VType vType = tableData.readValue();
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>          <a href="../../../../org/epics/vtype/VType.html">VType</a> vType = tableData.readValue();
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>          xColumnName.readNext();
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>          yColumnName.readNext();
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>          

@@ -33,7 +33,7 @@
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/sys/SystemChannelHandler.html">SystemChannelHandler</a> <strong class="jxr_keyword">extends</strong> MultiplexedChannelHandler&lt;Object, Object&gt; {
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>      
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">static</strong> Display memoryDisplay = <strong class="jxr_keyword">new</strong> DisplayBuilder().format(NumberFormats.format(3))
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/vtype/Display.html">Display</a> memoryDisplay = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/vtype/DisplayBuilder.html">DisplayBuilder</a>().format(NumberFormats.format(3))
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>              .units(<span class="jxr_string">"MiB"</span>)
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>              .lowerAlarmLimit(0.0).lowerCtrlLimit(0.0).lowerDisplayLimit(0.0).lowerWarningLimit(0.0)
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>              .upperAlarmLimit(maxMemory())
@@ -89,7 +89,7 @@
 <a class="jxr_linenumber" name="L81" href="#L81">81</a>      }
 <a class="jxr_linenumber" name="L82" href="#L82">82</a>  
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>      @Override
-<a class="jxr_linenumber" name="L84" href="#L84">84</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> write(Object newValue, ChannelWriteCallback callback) {
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> write(Object newValue, <a href="../../../../org/epics/pvmanager/ChannelWriteCallback.html">ChannelWriteCallback</a> callback) {
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>          <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> UnsupportedOperationException(<span class="jxr_string">"Can't write to system channel."</span>);
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>      }
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>  

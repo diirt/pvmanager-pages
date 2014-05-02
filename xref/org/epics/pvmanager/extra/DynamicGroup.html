@@ -32,7 +32,7 @@
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/extra/DynamicGroup.html">DynamicGroup</a> <strong class="jxr_keyword">extends</strong> DesiredRateExpressionImpl&lt;List&lt;Object&gt;&gt; {
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>  
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> DataSource dataSource = PVManager.getDefaultDataSource();
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../org/epics/pvmanager/DataSource.html">DataSource</a> dataSource = PVManager.getDefaultDataSource();
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> List&lt;ReadRecipe&gt; recipes = <strong class="jxr_keyword">new</strong> ArrayList&lt;ReadRecipe&gt;();
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>      <em class="jxr_javadoccomment">/**</em>
@@ -64,7 +64,7 @@
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> <a href="../../../../org/epics/pvmanager/extra/DynamicGroup.html">DynamicGroup</a> clear() {
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>          <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> index = recipes.size() - 1; index &gt;= 0; index--) {
-<a class="jxr_linenumber" name="L59" href="#L59">59</a>              ReadRecipe recipe = recipes.remove(index);
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>              <a href="../../../../org/epics/pvmanager/ReadRecipe.html">ReadRecipe</a> recipe = recipes.remove(index);
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>              dataSource.disconnectRead(recipe);
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>              <strong class="jxr_keyword">synchronized</strong> (getGroup()) {
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>                  getGroup().getArguments().remove(index);
@@ -110,7 +110,7 @@
 <a class="jxr_linenumber" name="L102" href="#L102">102</a> <em class="jxr_javadoccomment">     * @return this</em>
 <a class="jxr_linenumber" name="L103" href="#L103">103</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L104" href="#L104">104</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> <a href="../../../../org/epics/pvmanager/extra/DynamicGroup.html">DynamicGroup</a> remove(<strong class="jxr_keyword">int</strong> index) {
-<a class="jxr_linenumber" name="L105" href="#L105">105</a>         ReadRecipe recipe = recipes.remove(index);
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>         <a href="../../../../org/epics/pvmanager/ReadRecipe.html">ReadRecipe</a> recipe = recipes.remove(index);
 <a class="jxr_linenumber" name="L106" href="#L106">106</a>         dataSource.disconnectRead(recipe);
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>         <strong class="jxr_keyword">synchronized</strong> (getGroup()) {
 <a class="jxr_linenumber" name="L108" href="#L108">108</a>             getGroup().getArguments().remove(index);
@@ -130,7 +130,7 @@
 <a class="jxr_linenumber" name="L122" href="#L122">122</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> <a href="../../../../org/epics/pvmanager/extra/DynamicGroup.html">DynamicGroup</a> set(<strong class="jxr_keyword">int</strong> index, DesiredRateExpression&lt;?&gt; expression) {
 <a class="jxr_linenumber" name="L123" href="#L123">123</a> <em class="jxr_comment">//        DataRecipe recipe = expression.getDataRecipe();</em>
 <a class="jxr_linenumber" name="L124" href="#L124">124</a> <em class="jxr_comment">//        recipe = recipe.withExceptionHandler(handlerFor(index));</em>
-<a class="jxr_linenumber" name="L125" href="#L125">125</a>         ReadRecipe oldRecipe = recipes.get(index);
+<a class="jxr_linenumber" name="L125" href="#L125">125</a>         <a href="../../../../org/epics/pvmanager/ReadRecipe.html">ReadRecipe</a> oldRecipe = recipes.get(index);
 <a class="jxr_linenumber" name="L126" href="#L126">126</a>         dataSource.disconnectRead(oldRecipe);
 <a class="jxr_linenumber" name="L127" href="#L127">127</a> 
 <a class="jxr_linenumber" name="L128" href="#L128">128</a>         <strong class="jxr_keyword">synchronized</strong> (getGroup()) {
@@ -143,8 +143,8 @@
 <a class="jxr_linenumber" name="L135" href="#L135">135</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L136" href="#L136">136</a>     }
 <a class="jxr_linenumber" name="L137" href="#L137">137</a> 
-<a class="jxr_linenumber" name="L138" href="#L138">138</a>     <strong class="jxr_keyword">private</strong> ExceptionHandler handlerFor(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> index) {
-<a class="jxr_linenumber" name="L139" href="#L139">139</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ExceptionHandler() {
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../org/epics/pvmanager/ExceptionHandler.html">ExceptionHandler</a> handlerFor(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> index) {
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/ExceptionHandler.html">ExceptionHandler</a>() {
 <a class="jxr_linenumber" name="L140" href="#L140">140</a> 
 <a class="jxr_linenumber" name="L141" href="#L141">141</a>             @Override
 <a class="jxr_linenumber" name="L142" href="#L142">142</a>             <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> handleException(Exception ex) {

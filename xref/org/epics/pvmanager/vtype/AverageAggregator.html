@@ -32,10 +32,10 @@
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>      }
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>      @Override
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>      <strong class="jxr_keyword">protected</strong> VDouble calculate(List&lt;VDouble&gt; data) {
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../org/epics/vtype/VDouble.html">VDouble</a> calculate(List&lt;VDouble&gt; data) {
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>          <em class="jxr_comment">// TODO: this code should be consolidated with the StatisticsDoubleAggregator</em>
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>          <strong class="jxr_keyword">double</strong> totalSum = 0;
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>          AlarmSeverity statSeverity = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          <a href="../../../../org/epics/vtype/AlarmSeverity.html">AlarmSeverity</a> statSeverity = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>          <strong class="jxr_keyword">for</strong> (VDouble vDouble : data) {
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>              <strong class="jxr_keyword">switch</strong>(vDouble.getAlarmSeverity()) {
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>                  <strong class="jxr_keyword">case</strong> NONE:

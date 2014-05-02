@@ -37,7 +37,7 @@
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>      
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>      <strong class="jxr_keyword">private</strong> IntensityGraph2DRenderer renderer = <strong class="jxr_keyword">new</strong> IntensityGraph2DRenderer(300, 200);
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>      <strong class="jxr_keyword">private</strong> VNumberArray oldData;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../org/epics/vtype/VNumberArray.html">VNumberArray</a> oldData;
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../org/epics/pvmanager/graphene/Graph2DResult.html">Graph2DResult</a> previousResult;
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> QueueCollector&lt;IntensityGraph2DRendererUpdate&gt; rendererUpdateQueue = <strong class="jxr_keyword">new</strong> QueueCollector&lt;&gt;(100);
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>  
@@ -51,7 +51,7 @@
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>      @Override
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/pvmanager/graphene/Graph2DResult.html">Graph2DResult</a> readValue() {
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>          VNumberArray data = arrayData.readValue();
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>          <a href="../../../../org/epics/vtype/VNumberArray.html">VNumberArray</a> data = arrayData.readValue();
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>          
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>          <em class="jxr_comment">// Data must be available</em>
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>          <strong class="jxr_keyword">if</strong> (data == <strong class="jxr_keyword">null</strong>) {

@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>      <strong class="jxr_keyword">private</strong> ReadFunctionArgument&lt;String&gt; tooltipColumnName;
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">private</strong> ScatterGraph2DRenderer renderer = <strong class="jxr_keyword">new</strong> ScatterGraph2DRenderer(300,
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>              200);
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">private</strong> VImage previousImage;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../org/epics/vtype/VImage.html">VImage</a> previousImage;
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> QueueCollector&lt;ScatterGraph2DRendererUpdate&gt; rendererUpdateQueue = <strong class="jxr_keyword">new</strong> QueueCollector&lt;&gt;(
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>              100);
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>  
@@ -58,7 +58,7 @@
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>      @Override
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/pvmanager/graphene/Graph2DResult.html">Graph2DResult</a> readValue() {
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>          VTable vTable = tableData.readValue();
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>          <a href="../../../../org/epics/vtype/VTable.html">VTable</a> vTable = tableData.readValue();
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>          xColumnName.readNext();
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>          yColumnName.readNext();
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>          tooltipColumnName.readNext();

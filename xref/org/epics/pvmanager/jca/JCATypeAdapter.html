@@ -87,13 +87,13 @@
 <a class="jxr_linenumber" name="L79" href="#L79">79</a>      }
 <a class="jxr_linenumber" name="L80" href="#L80">80</a>  
 <a class="jxr_linenumber" name="L81" href="#L81">81</a>      @Override
-<a class="jxr_linenumber" name="L82" href="#L82">82</a>      <strong class="jxr_keyword">public</strong> Object getSubscriptionParameter(ValueCache cache, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>      <strong class="jxr_keyword">public</strong> Object getSubscriptionParameter(<a href="../../../../org/epics/pvmanager/ValueCache.html">ValueCache</a> cache, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload) {
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>          <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> UnsupportedOperationException(<span class="jxr_string">"Not implemented: JCAChannelHandler is multiplexed, will not use this method"</span>);
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>      }
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>  
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>      @Override
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>      @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> updateCache(ValueCache cache, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload, <a href="../../../../org/epics/pvmanager/jca/JCAMessagePayload.html">JCAMessagePayload</a> message) {
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> updateCache(<a href="../../../../org/epics/pvmanager/ValueCache.html">ValueCache</a> cache, <a href="../../../../org/epics/pvmanager/jca/JCAConnectionPayload.html">JCAConnectionPayload</a> connPayload, <a href="../../../../org/epics/pvmanager/jca/JCAMessagePayload.html">JCAMessagePayload</a> message) {
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>          Channel channel = connPayload.getChannel();
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>          
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>          <em class="jxr_comment">// If metadata is required and not present, no update</em>

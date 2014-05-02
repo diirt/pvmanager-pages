@@ -61,9 +61,9 @@
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>      }
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>      @Override
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>      <strong class="jxr_keyword">protected</strong> VStatistics calculate(List&lt;VDouble&gt; data) {
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../org/epics/vtype/VStatistics.html">VStatistics</a> calculate(List&lt;VDouble&gt; data) {
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>          <a href="../../../../org/epics/pvmanager/vtype/StatisticsDoubleAggregator.html">Stats</a> stats = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/vtype/StatisticsDoubleAggregator.html">Stats</a>();
-<a class="jxr_linenumber" name="L58" href="#L58">58</a>          AlarmSeverity statSeverity = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>          <a href="../../../../org/epics/vtype/AlarmSeverity.html">AlarmSeverity</a> statSeverity = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>          <strong class="jxr_keyword">for</strong> (VDouble vDouble : data) {
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>              <strong class="jxr_keyword">switch</strong>(vDouble.getAlarmSeverity()) {
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>                  <strong class="jxr_keyword">case</strong> NONE:

@@ -70,7 +70,7 @@
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> b2_readAllValues() {
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>          <em class="jxr_comment">// Read channel "channelName" up to every 100 ms, and get all</em>
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>          <em class="jxr_comment">// the new values from the last notification.</em>
-<a class="jxr_linenumber" name="L65" href="#L65">65</a>          PVReader&lt;List&lt;Object&gt;&gt; pvReader = PVManager
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>          PVReader&lt;List&lt;Object&gt;&gt; pvReader = <a href="../../../../org/epics/pvmanager/PVManager.html">PVManager</a>
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>              .read(newValuesOf(channel(<span class="jxr_string">"channelName"</span>)))
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>              .readListener(<strong class="jxr_keyword">new</strong> PVReaderListener&lt;List&lt;Object&gt;&gt;() {
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  
@@ -172,7 +172,7 @@
 <a class="jxr_linenumber" name="L164" href="#L164">164</a>         <em class="jxr_comment">// on the thread that it generates them. The handler, therefore,</em>
 <a class="jxr_linenumber" name="L165" href="#L165">165</a>         <em class="jxr_comment">// must be thread safe.</em>
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>         <strong class="jxr_keyword">final</strong> PVReader&lt;Object&gt; pvReader = PVManager.read(channel(<span class="jxr_string">"channelName"</span>))
-<a class="jxr_linenumber" name="L167" href="#L167">167</a>                 .routeExceptionsTo(<strong class="jxr_keyword">new</strong> ExceptionHandler() {
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>                 .routeExceptionsTo(<strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/ExceptionHandler.html">ExceptionHandler</a>() {
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>                     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> handleException(Exception ex) {
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>                         System.out.println(<span class="jxr_string">"Error: "</span> + ex.getMessage());
 <a class="jxr_linenumber" name="L170" href="#L170">170</a>                     }
