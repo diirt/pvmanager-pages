@@ -1,3 +1,2 @@
 org.epics.pvmanager
-org.epics.pvmanager.service
-org.epics.pvmanager.util
+org.epics.pvmanager.test

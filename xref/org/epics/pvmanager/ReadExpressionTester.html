@@ -21,7 +21,7 @@
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../org/epics/pvmanager/ReadExpressionTester.html">ReadExpressionTester</a> {
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>      <strong class="jxr_keyword">private</strong> DesiredRateExpression&lt;?&gt; expression;
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>      <strong class="jxr_keyword">private</strong> <a href="../../../org/epics/pvmanager/ReadRecipe.html">ReadRecipe</a> readRecipe;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>      <strong class="jxr_keyword">private</strong> ReadRecipe readRecipe;
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>      <strong class="jxr_keyword">private</strong> PVReaderDirector&lt;?&gt; pvReaderDirector = <strong class="jxr_keyword">new</strong> PVReaderDirector&lt;Object&gt;(<strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/ReadExpressionTester.html">ReadExpressionTester</a>(DesiredRateExpression&lt;?&gt; expression) {
@@ -29,7 +29,7 @@
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>          pvReaderDirector.connectExpression(expression);
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>      }
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>      
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/ReadRecipe.html">ReadRecipe</a> getCurrentReadRecipe() {
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>      <strong class="jxr_keyword">public</strong> ReadRecipe getCurrentReadRecipe() {
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>          <strong class="jxr_keyword">return</strong> pvReaderDirector.getCurrentReadRecipe();
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>      }
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>  
@@ -48,7 +48,7 @@
 <a class="jxr_linenumber" name="L40" href="#L40">40</a>          }
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>      }
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>      
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/ChannelReadRecipe.html">ChannelReadRecipe</a> recipeFor(String channelName) {
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>      <strong class="jxr_keyword">public</strong> ChannelReadRecipe recipeFor(String channelName) {
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>          <strong class="jxr_keyword">for</strong> (ChannelReadRecipe channelRecipe : getCurrentReadRecipe().getChannelReadRecipes()) {
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>              <strong class="jxr_keyword">if</strong> (channelRecipe.getChannelName().equals(channelName)) {
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>                  <strong class="jxr_keyword">return</strong> channelRecipe;
@@ -57,7 +57,7 @@
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>      }
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>      
-<a class="jxr_linenumber" name="L52" href="#L52">52</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/ReadRecipe.html">ReadRecipe</a> getReadRecipe() {
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>      <strong class="jxr_keyword">public</strong> ReadRecipe getReadRecipe() {
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>          <strong class="jxr_keyword">return</strong> getCurrentReadRecipe();
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>      }
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>      

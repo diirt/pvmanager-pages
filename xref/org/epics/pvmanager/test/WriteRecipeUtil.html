@@ -21,8 +21,8 @@
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/test/WriteRecipeUtil.html">WriteRecipeUtil</a> {
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../org/epics/pvmanager/ChannelWriteRecipe.html">ChannelWriteRecipe</a> recipeFor(<a href="../../../../org/epics/pvmanager/WriteRecipe.html">WriteRecipe</a> writeRecipe, String channelName) {
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>          <a href="../../../../org/epics/pvmanager/ChannelWriteRecipe.html">ChannelWriteRecipe</a> foundRecipe = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> ChannelWriteRecipe recipeFor(WriteRecipe writeRecipe, String channelName) {
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>          ChannelWriteRecipe foundRecipe = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>          <strong class="jxr_keyword">for</strong> (ChannelWriteRecipe channelWriteRceipe : writeRecipe.getChannelWriteRecipes()) {
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>              <strong class="jxr_keyword">if</strong> (channelWriteRceipe.getChannelName().equals(channelName)) {
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>                  <strong class="jxr_keyword">if</strong> (foundRecipe != <strong class="jxr_keyword">null</strong>) {
@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>          <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Can't find reciep for channel '"</span> + channelName + <span class="jxr_string">"'"</span>);
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      }
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>  
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Object valueFor(<a href="../../../../org/epics/pvmanager/WriteRecipe.html">WriteRecipe</a> writeRecipe, String channelName) {
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Object valueFor(WriteRecipe writeRecipe, String channelName) {
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>          <strong class="jxr_keyword">return</strong> recipeFor(writeRecipe, channelName).getWriteSubscription().getWriteCache().getValue();
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>      }
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>  }
