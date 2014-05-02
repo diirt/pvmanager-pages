@@ -1,1 +1,2 @@
-org.epics.pvmanager.sim
+org.epics.pvmanager
+org.epics.pvmanager.loc
