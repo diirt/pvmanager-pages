@@ -21,12 +21,12 @@
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_javadoccomment"> * @author carcassi</em>
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/sim/XmlVMetaData.html">XmlVMetaData</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../org/epics/pvmanager/sim/ReplayValue.html">ReplayValue</a> <strong class="jxr_keyword">implements</strong> Time, <a href="../../../../org/epics/vtype/Alarm.html">Alarm</a> {
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/sim/XmlVMetaData.html">XmlVMetaData</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../org/epics/pvmanager/sim/ReplayValue.html">ReplayValue</a> <strong class="jxr_keyword">implements</strong> Time, Alarm {
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      @XmlAttribute
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>      Integer timeUserTag;
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>      @XmlAttribute
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>      <a href="../../../../org/epics/vtype/AlarmSeverity.html">AlarmSeverity</a> alarmSeverity;
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>      AlarmSeverity alarmSeverity;
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>      @XmlAttribute
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>      String alarmName;
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>  
@@ -36,7 +36,7 @@
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>      }
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>      @Override
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/vtype/AlarmSeverity.html">AlarmSeverity</a> getAlarmSeverity() {
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">public</strong> AlarmSeverity getAlarmSeverity() {
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>          <strong class="jxr_keyword">return</strong> alarmSeverity;
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>      }
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>  
