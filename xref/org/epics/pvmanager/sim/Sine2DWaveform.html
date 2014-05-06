@@ -110,8 +110,8 @@
 <a class="jxr_linenumber" name="L102" href="#L102">102</a>         <strong class="jxr_keyword">double</strong> t = lastTime.durationFrom(initialReference).toSeconds();
 <a class="jxr_linenumber" name="L103" href="#L103">103</a>         <strong class="jxr_keyword">double</strong> omega = 2 * Math.PI / periodInSeconds;
 <a class="jxr_linenumber" name="L104" href="#L104">104</a>         <strong class="jxr_keyword">double</strong> k = 2 * Math.PI / wavelengthInSamples;
-<a class="jxr_linenumber" name="L105" href="#L105">105</a>         <strong class="jxr_keyword">double</strong> min = 1.0;
-<a class="jxr_linenumber" name="L106" href="#L106">106</a>         <strong class="jxr_keyword">double</strong> max = -1.0;
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>         <strong class="jxr_keyword">double</strong> min = -1.0;
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>         <strong class="jxr_keyword">double</strong> max = 1.0;
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>         <strong class="jxr_keyword">double</strong> range = 0.0;
 <a class="jxr_linenumber" name="L108" href="#L108">108</a>         <strong class="jxr_keyword">return</strong> (VDoubleArray) ValueFactory.newVNumberArray(generateNewValue(omega, t, k), <strong class="jxr_keyword">new</strong> ArrayInt(ySamples, xSamples),
 <a class="jxr_linenumber" name="L109" href="#L109">109</a>                 ValueUtil.defaultArrayDisplay(<strong class="jxr_keyword">new</strong> ArrayInt(ySamples, xSamples)), alarmNone(),
