@@ -24,7 +24,7 @@
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../org/epics/pvmanager/sample/MultiAxisLineGraphApp.html">MultiAxisLineGraphApp</a> <strong class="jxr_keyword">extends</strong> BaseGraphApp&lt;MultiAxisLineGraph2DRendererUpdate&gt; {
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">private</strong> InterpolationScheme interpolationScheme = InterpolationScheme.NEAREST_NEIGHBOR;
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> split = false;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> separateAreas = false;
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../org/epics/pvmanager/sample/MultiAxisLineGraphApp.html">MultiAxisLineGraphApp</a>() {
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>          dataFormulaField.setModel(<strong class="jxr_keyword">new</strong> javax.swing.DefaultComboBoxModel&lt;String&gt;(
@@ -51,7 +51,7 @@
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>          <a href="../../../../org/epics/pvmanager/graphene/MultiAxisLineGraph2DExpression.html">MultiAxisLineGraph2DExpression</a> plot = multiAxisLineGraphOf(formula(dataFormula),
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>                      <strong class="jxr_keyword">null</strong>,
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>                      <strong class="jxr_keyword">null</strong>);
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>          plot.update(plot.newUpdate().interpolation(interpolationScheme).split(split));
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>          plot.update(plot.newUpdate().interpolation(interpolationScheme).separateAreas(separateAreas));
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>          <strong class="jxr_keyword">return</strong> plot;
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>      }
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>  
@@ -67,10 +67,10 @@
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>          main(MultiAxisLineGraphApp.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>      }
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>      <strong class="jxr_keyword">void</strong> setSplit(<strong class="jxr_keyword">boolean</strong> split) {
-<a class="jxr_linenumber" name="L63" href="#L63">63</a>          <strong class="jxr_keyword">this</strong>.split = split;
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>      <strong class="jxr_keyword">void</strong> setSeparateAreas(<strong class="jxr_keyword">boolean</strong> separateAreas) {
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>          <strong class="jxr_keyword">this</strong>.separateAreas = separateAreas;
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>          <strong class="jxr_keyword">if</strong> (graph != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L65" href="#L65">65</a>              graph.update(graph.newUpdate().split(split));
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>              graph.update(graph.newUpdate().separateAreas(separateAreas));
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>          }
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>      }
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>      
