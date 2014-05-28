@@ -1,6 +1,7 @@
 org.epics.pvmanager
 org.epics.pvmanager.exec
 org.epics.pvmanager.extra
+org.epics.pvmanager.file
 org.epics.pvmanager.formula
 org.epics.pvmanager.graphene
 org.epics.pvmanager.integration
