@@ -91,34 +91,41 @@
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>      }
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>  
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>      <strong class="jxr_keyword">private</strong> ListDouble generateNewValue(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> omega, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> t, <strong class="jxr_keyword">double</strong> k) {
-<a class="jxr_linenumber" name="L86" href="#L86">86</a>          <strong class="jxr_keyword">double</strong>[] newArray = <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">double</strong>[xSamples*ySamples];
-<a class="jxr_linenumber" name="L87" href="#L87">87</a>          <strong class="jxr_keyword">double</strong> kx = Math.cos(angle * Math.PI / 180.0) * k;
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>          <strong class="jxr_keyword">double</strong> ky = Math.sin(angle * Math.PI / 180.0) * k;
-<a class="jxr_linenumber" name="L89" href="#L89">89</a>          <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> y = 0; y &lt; ySamples; y++) {
-<a class="jxr_linenumber" name="L90" href="#L90">90</a>              <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> x = 0; x &lt; xSamples; x++) {
-<a class="jxr_linenumber" name="L91" href="#L91">91</a>                  newArray[y*xSamples + x] = Math.sin(omega * t + kx* x + ky * y);
-<a class="jxr_linenumber" name="L92" href="#L92">92</a>              }
-<a class="jxr_linenumber" name="L93" href="#L93">93</a>          }
-<a class="jxr_linenumber" name="L94" href="#L94">94</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ArrayDouble(newArray);
-<a class="jxr_linenumber" name="L95" href="#L95">95</a>      }
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>          <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> kx = Math.cos(angle * Math.PI / 180.0) * k;
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>          <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> ky = Math.sin(angle * Math.PI / 180.0) * k;
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ListDouble() {
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>  
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>              @Override
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">double</strong> getDouble(<strong class="jxr_keyword">int</strong> index) {
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>                  <strong class="jxr_keyword">int</strong> x = index % xSamples;
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>                  <strong class="jxr_keyword">int</strong> y = index / xSamples;
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>                  <strong class="jxr_keyword">return</strong> Math.sin(omega * t + kx* x + ky * y);
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>              }
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>  
-<a class="jxr_linenumber" name="L97" href="#L97">97</a>      @Override
-<a class="jxr_linenumber" name="L98" href="#L98">98</a>      <a href="../../../../org/epics/vtype/VDoubleArray.html">VDoubleArray</a> nextValue() {
-<a class="jxr_linenumber" name="L99" href="#L99">99</a>          <strong class="jxr_keyword">if</strong> (initialReference == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L100" href="#L100">100</a>             initialReference = lastTime;
-<a class="jxr_linenumber" name="L101" href="#L101">101</a>         }
-<a class="jxr_linenumber" name="L102" href="#L102">102</a>         <strong class="jxr_keyword">double</strong> t = lastTime.durationFrom(initialReference).toSeconds();
-<a class="jxr_linenumber" name="L103" href="#L103">103</a>         <strong class="jxr_keyword">double</strong> omega = 2 * Math.PI / periodInSeconds;
-<a class="jxr_linenumber" name="L104" href="#L104">104</a>         <strong class="jxr_keyword">double</strong> k = 2 * Math.PI / wavelengthInSamples;
-<a class="jxr_linenumber" name="L105" href="#L105">105</a>         <strong class="jxr_keyword">double</strong> min = -1.0;
-<a class="jxr_linenumber" name="L106" href="#L106">106</a>         <strong class="jxr_keyword">double</strong> max = 1.0;
-<a class="jxr_linenumber" name="L107" href="#L107">107</a>         <strong class="jxr_keyword">double</strong> range = 0.0;
-<a class="jxr_linenumber" name="L108" href="#L108">108</a>         <strong class="jxr_keyword">return</strong> (VDoubleArray) ValueFactory.newVNumberArray(generateNewValue(omega, t, k), <strong class="jxr_keyword">new</strong> ArrayInt(ySamples, xSamples),
-<a class="jxr_linenumber" name="L109" href="#L109">109</a>                 ValueUtil.defaultArrayDisplay(<strong class="jxr_keyword">new</strong> ArrayInt(ySamples, xSamples)), alarmNone(),
-<a class="jxr_linenumber" name="L110" href="#L110">110</a>                 newTime(lastTime), newDisplay(min, min + range * 0.1, min + range * 0.2, <span class="jxr_string">""</span>, Constants.DOUBLE_FORMAT,
-<a class="jxr_linenumber" name="L111" href="#L111">111</a>                 min + range * 0.8, min + range * 0.9, max, min, max));
-<a class="jxr_linenumber" name="L112" href="#L112">112</a>     }
-<a class="jxr_linenumber" name="L113" href="#L113">113</a> }
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>              @Override
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> size() {
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>                  <strong class="jxr_keyword">return</strong> xSamples*ySamples;
+<a class="jxr_linenumber" name="L100" href="#L100">100</a>             }
+<a class="jxr_linenumber" name="L101" href="#L101">101</a>         };
+<a class="jxr_linenumber" name="L102" href="#L102">102</a>     }
+<a class="jxr_linenumber" name="L103" href="#L103">103</a> 
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>     @Override
+<a class="jxr_linenumber" name="L105" href="#L105">105</a>     <a href="../../../../org/epics/vtype/VDoubleArray.html">VDoubleArray</a> nextValue() {
+<a class="jxr_linenumber" name="L106" href="#L106">106</a>         <strong class="jxr_keyword">if</strong> (initialReference == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>             initialReference = lastTime;
+<a class="jxr_linenumber" name="L108" href="#L108">108</a>         }
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>         <strong class="jxr_keyword">double</strong> t = lastTime.durationFrom(initialReference).toSeconds();
+<a class="jxr_linenumber" name="L110" href="#L110">110</a>         <strong class="jxr_keyword">double</strong> omega = 2 * Math.PI / periodInSeconds;
+<a class="jxr_linenumber" name="L111" href="#L111">111</a>         <strong class="jxr_keyword">double</strong> k = 2 * Math.PI / wavelengthInSamples;
+<a class="jxr_linenumber" name="L112" href="#L112">112</a>         <strong class="jxr_keyword">double</strong> min = -1.0;
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>         <strong class="jxr_keyword">double</strong> max = 1.0;
+<a class="jxr_linenumber" name="L114" href="#L114">114</a>         <strong class="jxr_keyword">double</strong> range = 0.0;
+<a class="jxr_linenumber" name="L115" href="#L115">115</a>         <strong class="jxr_keyword">return</strong> (VDoubleArray) ValueFactory.newVNumberArray(generateNewValue(omega, t, k), <strong class="jxr_keyword">new</strong> ArrayInt(ySamples, xSamples),
+<a class="jxr_linenumber" name="L116" href="#L116">116</a>                 ValueUtil.defaultArrayDisplay(<strong class="jxr_keyword">new</strong> ArrayInt(ySamples, xSamples)), alarmNone(),
+<a class="jxr_linenumber" name="L117" href="#L117">117</a>                 newTime(lastTime), newDisplay(min, min + range * 0.1, min + range * 0.2, <span class="jxr_string">""</span>, Constants.DOUBLE_FORMAT,
+<a class="jxr_linenumber" name="L118" href="#L118">118</a>                 min + range * 0.8, min + range * 0.9, max, min, max));
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>     }
+<a class="jxr_linenumber" name="L120" href="#L120">120</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>
