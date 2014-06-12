@@ -21,4 +21,5 @@ org.epics.pvmanager.util
 org.epics.pvmanager.vtype
 org.epics.vtype
 org.epics.vtype.io
+org.epics.vtype.ndarray
 org.epics.vtype.table

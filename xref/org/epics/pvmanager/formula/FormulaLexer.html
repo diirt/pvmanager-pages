@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="overview"><a href="../../../../../apidocs/org/epics/pvmanager/formula/FormulaLexer.html">View Javadoc</a></div><pre>
-<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">// $ANTLR 3.4 org/epics/pvmanager/formula/Formula.g 2014-05-30 09:09:17</em>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_comment">// $ANTLR 3.4 org/epics/pvmanager/formula/Formula.g 2014-06-12 14:53:03</em>
 <a class="jxr_linenumber" name="L2" href="#L2">2</a>   
 <a class="jxr_linenumber" name="L3" href="#L3">3</a>     <strong class="jxr_keyword">package</strong> org.epics.pvmanager.formula;
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   
@@ -545,10 +545,10 @@
 <a class="jxr_linenumber" name="L537" href="#L537">537</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L538" href="#L538">538</a>             <strong class="jxr_keyword">int</strong> _type = INT;
 <a class="jxr_linenumber" name="L539" href="#L539">539</a>             <strong class="jxr_keyword">int</strong> _channel = DEFAULT_TOKEN_CHANNEL;
-<a class="jxr_linenumber" name="L540" href="#L540">540</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:149:5: ( ( '0' .. '9' )+ )</em>
-<a class="jxr_linenumber" name="L541" href="#L541">541</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:149:7: ( '0' .. '9' )+</em>
+<a class="jxr_linenumber" name="L540" href="#L540">540</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:154:5: ( ( '0' .. '9' )+ )</em>
+<a class="jxr_linenumber" name="L541" href="#L541">541</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:154:7: ( '0' .. '9' )+</em>
 <a class="jxr_linenumber" name="L542" href="#L542">542</a>             {
-<a class="jxr_linenumber" name="L543" href="#L543">543</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:149:7: ( '0' .. '9' )+</em>
+<a class="jxr_linenumber" name="L543" href="#L543">543</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:154:7: ( '0' .. '9' )+</em>
 <a class="jxr_linenumber" name="L544" href="#L544">544</a>             <strong class="jxr_keyword">int</strong> cnt1=0;
 <a class="jxr_linenumber" name="L545" href="#L545">545</a>             loop1:
 <a class="jxr_linenumber" name="L546" href="#L546">546</a>             <strong class="jxr_keyword">do</strong> {
@@ -614,14 +614,14 @@
 <a class="jxr_linenumber" name="L606" href="#L606">606</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L607" href="#L607">607</a>             <strong class="jxr_keyword">int</strong> _type = FLOAT;
 <a class="jxr_linenumber" name="L608" href="#L608">608</a>             <strong class="jxr_keyword">int</strong> _channel = DEFAULT_TOKEN_CHANNEL;
-<a class="jxr_linenumber" name="L609" href="#L609">609</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:153:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT )</em>
+<a class="jxr_linenumber" name="L609" href="#L609">609</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT )</em>
 <a class="jxr_linenumber" name="L610" href="#L610">610</a>             <strong class="jxr_keyword">int</strong> alt8=3;
 <a class="jxr_linenumber" name="L611" href="#L611">611</a>             alt8 = dfa8.predict(input);
 <a class="jxr_linenumber" name="L612" href="#L612">612</a>             <strong class="jxr_keyword">switch</strong> (alt8) {
 <a class="jxr_linenumber" name="L613" href="#L613">613</a>                 <strong class="jxr_keyword">case</strong> 1 :
-<a class="jxr_linenumber" name="L614" href="#L614">614</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:153:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )?</em>
+<a class="jxr_linenumber" name="L614" href="#L614">614</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )?</em>
 <a class="jxr_linenumber" name="L615" href="#L615">615</a>                     {
-<a class="jxr_linenumber" name="L616" href="#L616">616</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:153:9: ( '0' .. '9' )+</em>
+<a class="jxr_linenumber" name="L616" href="#L616">616</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:9: ( '0' .. '9' )+</em>
 <a class="jxr_linenumber" name="L617" href="#L617">617</a>                     <strong class="jxr_keyword">int</strong> cnt2=0;
 <a class="jxr_linenumber" name="L618" href="#L618">618</a>                     loop2:
 <a class="jxr_linenumber" name="L619" href="#L619">619</a>                     <strong class="jxr_keyword">do</strong> {
@@ -673,7 +673,7 @@
 <a class="jxr_linenumber" name="L665" href="#L665">665</a> 
 <a class="jxr_linenumber" name="L666" href="#L666">666</a>                     match('.'); 
 <a class="jxr_linenumber" name="L667" href="#L667">667</a> 
-<a class="jxr_linenumber" name="L668" href="#L668">668</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:153:25: ( '0' .. '9' )*</em>
+<a class="jxr_linenumber" name="L668" href="#L668">668</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:25: ( '0' .. '9' )*</em>
 <a class="jxr_linenumber" name="L669" href="#L669">669</a>                     loop3:
 <a class="jxr_linenumber" name="L670" href="#L670">670</a>                     <strong class="jxr_keyword">do</strong> {
 <a class="jxr_linenumber" name="L671" href="#L671">671</a>                         <strong class="jxr_keyword">int</strong> alt3=2;
@@ -718,7 +718,7 @@
 <a class="jxr_linenumber" name="L710" href="#L710">710</a>                     } <strong class="jxr_keyword">while</strong> (<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="L711" href="#L711">711</a> 
 <a class="jxr_linenumber" name="L712" href="#L712">712</a> 
-<a class="jxr_linenumber" name="L713" href="#L713">713</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:153:37: ( EXPONENT )?</em>
+<a class="jxr_linenumber" name="L713" href="#L713">713</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:37: ( EXPONENT )?</em>
 <a class="jxr_linenumber" name="L714" href="#L714">714</a>                     <strong class="jxr_keyword">int</strong> alt4=2;
 <a class="jxr_linenumber" name="L715" href="#L715">715</a>                     <strong class="jxr_keyword">switch</strong> ( input.LA(1) ) {
 <a class="jxr_linenumber" name="L716" href="#L716">716</a>                         <strong class="jxr_keyword">case</strong> 'E':
@@ -731,7 +731,7 @@
 <a class="jxr_linenumber" name="L723" href="#L723">723</a> 
 <a class="jxr_linenumber" name="L724" href="#L724">724</a>                     <strong class="jxr_keyword">switch</strong> (alt4) {
 <a class="jxr_linenumber" name="L725" href="#L725">725</a>                         <strong class="jxr_keyword">case</strong> 1 :
-<a class="jxr_linenumber" name="L726" href="#L726">726</a>                             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:153:37: EXPONENT</em>
+<a class="jxr_linenumber" name="L726" href="#L726">726</a>                             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:37: EXPONENT</em>
 <a class="jxr_linenumber" name="L727" href="#L727">727</a>                             {
 <a class="jxr_linenumber" name="L728" href="#L728">728</a>                             mEXPONENT(); 
 <a class="jxr_linenumber" name="L729" href="#L729">729</a> 
@@ -745,11 +745,11 @@
 <a class="jxr_linenumber" name="L737" href="#L737">737</a>                     }
 <a class="jxr_linenumber" name="L738" href="#L738">738</a>                     <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L739" href="#L739">739</a>                 <strong class="jxr_keyword">case</strong> 2 :
-<a class="jxr_linenumber" name="L740" href="#L740">740</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:154:9: '.' ( '0' .. '9' )+ ( EXPONENT )?</em>
+<a class="jxr_linenumber" name="L740" href="#L740">740</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:159:9: '.' ( '0' .. '9' )+ ( EXPONENT )?</em>
 <a class="jxr_linenumber" name="L741" href="#L741">741</a>                     {
 <a class="jxr_linenumber" name="L742" href="#L742">742</a>                     match('.'); 
 <a class="jxr_linenumber" name="L743" href="#L743">743</a> 
-<a class="jxr_linenumber" name="L744" href="#L744">744</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:154:13: ( '0' .. '9' )+</em>
+<a class="jxr_linenumber" name="L744" href="#L744">744</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:159:13: ( '0' .. '9' )+</em>
 <a class="jxr_linenumber" name="L745" href="#L745">745</a>                     <strong class="jxr_keyword">int</strong> cnt5=0;
 <a class="jxr_linenumber" name="L746" href="#L746">746</a>                     loop5:
 <a class="jxr_linenumber" name="L747" href="#L747">747</a>                     <strong class="jxr_keyword">do</strong> {
@@ -799,7 +799,7 @@
 <a class="jxr_linenumber" name="L791" href="#L791">791</a>                     } <strong class="jxr_keyword">while</strong> (<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="L792" href="#L792">792</a> 
 <a class="jxr_linenumber" name="L793" href="#L793">793</a> 
-<a class="jxr_linenumber" name="L794" href="#L794">794</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:154:25: ( EXPONENT )?</em>
+<a class="jxr_linenumber" name="L794" href="#L794">794</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:159:25: ( EXPONENT )?</em>
 <a class="jxr_linenumber" name="L795" href="#L795">795</a>                     <strong class="jxr_keyword">int</strong> alt6=2;
 <a class="jxr_linenumber" name="L796" href="#L796">796</a>                     <strong class="jxr_keyword">switch</strong> ( input.LA(1) ) {
 <a class="jxr_linenumber" name="L797" href="#L797">797</a>                         <strong class="jxr_keyword">case</strong> 'E':
@@ -812,7 +812,7 @@
 <a class="jxr_linenumber" name="L804" href="#L804">804</a> 
 <a class="jxr_linenumber" name="L805" href="#L805">805</a>                     <strong class="jxr_keyword">switch</strong> (alt6) {
 <a class="jxr_linenumber" name="L806" href="#L806">806</a>                         <strong class="jxr_keyword">case</strong> 1 :
-<a class="jxr_linenumber" name="L807" href="#L807">807</a>                             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:154:25: EXPONENT</em>
+<a class="jxr_linenumber" name="L807" href="#L807">807</a>                             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:159:25: EXPONENT</em>
 <a class="jxr_linenumber" name="L808" href="#L808">808</a>                             {
 <a class="jxr_linenumber" name="L809" href="#L809">809</a>                             mEXPONENT(); 
 <a class="jxr_linenumber" name="L810" href="#L810">810</a> 
@@ -826,9 +826,9 @@
 <a class="jxr_linenumber" name="L818" href="#L818">818</a>                     }
 <a class="jxr_linenumber" name="L819" href="#L819">819</a>                     <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L820" href="#L820">820</a>                 <strong class="jxr_keyword">case</strong> 3 :
-<a class="jxr_linenumber" name="L821" href="#L821">821</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:155:9: ( '0' .. '9' )+ EXPONENT</em>
+<a class="jxr_linenumber" name="L821" href="#L821">821</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:160:9: ( '0' .. '9' )+ EXPONENT</em>
 <a class="jxr_linenumber" name="L822" href="#L822">822</a>                     {
-<a class="jxr_linenumber" name="L823" href="#L823">823</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:155:9: ( '0' .. '9' )+</em>
+<a class="jxr_linenumber" name="L823" href="#L823">823</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:160:9: ( '0' .. '9' )+</em>
 <a class="jxr_linenumber" name="L824" href="#L824">824</a>                     <strong class="jxr_keyword">int</strong> cnt7=0;
 <a class="jxr_linenumber" name="L825" href="#L825">825</a>                     loop7:
 <a class="jxr_linenumber" name="L826" href="#L826">826</a>                     <strong class="jxr_keyword">do</strong> {
@@ -899,8 +899,8 @@
 <a class="jxr_linenumber" name="L891" href="#L891">891</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L892" href="#L892">892</a>             <strong class="jxr_keyword">int</strong> _type = FUNCTION;
 <a class="jxr_linenumber" name="L893" href="#L893">893</a>             <strong class="jxr_keyword">int</strong> _channel = DEFAULT_TOKEN_CHANNEL;
-<a class="jxr_linenumber" name="L894" href="#L894">894</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )</em>
-<a class="jxr_linenumber" name="L895" href="#L895">895</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*</em>
+<a class="jxr_linenumber" name="L894" href="#L894">894</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:163:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )* )</em>
+<a class="jxr_linenumber" name="L895" href="#L895">895</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:163:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*</em>
 <a class="jxr_linenumber" name="L896" href="#L896">896</a>             {
 <a class="jxr_linenumber" name="L897" href="#L897">897</a>             <strong class="jxr_keyword">if</strong> ( (input.LA(1) &gt;= 'A' &amp;&amp; input.LA(1) &lt;= 'Z')||input.LA(1)=='_'||(input.LA(1) &gt;= 'a' &amp;&amp; input.LA(1) &lt;= 'z') ) {
 <a class="jxr_linenumber" name="L898" href="#L898">898</a>                 input.consume();
@@ -912,7 +912,7 @@
 <a class="jxr_linenumber" name="L904" href="#L904">904</a>             }
 <a class="jxr_linenumber" name="L905" href="#L905">905</a> 
 <a class="jxr_linenumber" name="L906" href="#L906">906</a> 
-<a class="jxr_linenumber" name="L907" href="#L907">907</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:158:37: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*</em>
+<a class="jxr_linenumber" name="L907" href="#L907">907</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:163:37: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )*</em>
 <a class="jxr_linenumber" name="L908" href="#L908">908</a>             loop9:
 <a class="jxr_linenumber" name="L909" href="#L909">909</a>             <strong class="jxr_keyword">do</strong> {
 <a class="jxr_linenumber" name="L910" href="#L910">910</a>                 <strong class="jxr_keyword">int</strong> alt9=2;
@@ -1025,8 +1025,8 @@
 <a class="jxr_linenumber" name="L1017" href="#L1017">1017</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L1018" href="#L1018">1018</a>             <strong class="jxr_keyword">int</strong> _type = WS;
 <a class="jxr_linenumber" name="L1019" href="#L1019">1019</a>             <strong class="jxr_keyword">int</strong> _channel = DEFAULT_TOKEN_CHANNEL;
-<a class="jxr_linenumber" name="L1020" href="#L1020">1020</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:161:5: ( ( ' ' | '&#92;&#92;t' | '&#92;&#92;r' | '&#92;&#92;n' ) )</em>
-<a class="jxr_linenumber" name="L1021" href="#L1021">1021</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:161:9: ( ' ' | '&#92;&#92;t' | '&#92;&#92;r' | '&#92;&#92;n' )</em>
+<a class="jxr_linenumber" name="L1020" href="#L1020">1020</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:166:5: ( ( ' ' | '&#92;&#92;t' | '&#92;&#92;r' | '&#92;&#92;n' ) )</em>
+<a class="jxr_linenumber" name="L1021" href="#L1021">1021</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:166:9: ( ' ' | '&#92;&#92;t' | '&#92;&#92;r' | '&#92;&#92;n' )</em>
 <a class="jxr_linenumber" name="L1022" href="#L1022">1022</a>             {
 <a class="jxr_linenumber" name="L1023" href="#L1023">1023</a>             <strong class="jxr_keyword">if</strong> ( (input.LA(1) &gt;= '\t' &amp;&amp; input.LA(1) &lt;= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 <a class="jxr_linenumber" name="L1024" href="#L1024">1024</a>                 input.consume();
@@ -1056,12 +1056,12 @@
 <a class="jxr_linenumber" name="L1048" href="#L1048">1048</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L1049" href="#L1049">1049</a>             <strong class="jxr_keyword">int</strong> _type = STRING;
 <a class="jxr_linenumber" name="L1050" href="#L1050">1050</a>             <strong class="jxr_keyword">int</strong> _channel = DEFAULT_TOKEN_CHANNEL;
-<a class="jxr_linenumber" name="L1051" href="#L1051">1051</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:169:5: ( '\&quot;' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' ) )* '\&quot;' )</em>
-<a class="jxr_linenumber" name="L1052" href="#L1052">1052</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:169:8: '\&quot;' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' ) )* '\&quot;'</em>
+<a class="jxr_linenumber" name="L1051" href="#L1051">1051</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:174:5: ( '\&quot;' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' ) )* '\&quot;' )</em>
+<a class="jxr_linenumber" name="L1052" href="#L1052">1052</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:174:8: '\&quot;' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' ) )* '\&quot;'</em>
 <a class="jxr_linenumber" name="L1053" href="#L1053">1053</a>             {
 <a class="jxr_linenumber" name="L1054" href="#L1054">1054</a>             match('\&quot;'); 
 <a class="jxr_linenumber" name="L1055" href="#L1055">1055</a> 
-<a class="jxr_linenumber" name="L1056" href="#L1056">1056</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:169:12: ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' ) )*</em>
+<a class="jxr_linenumber" name="L1056" href="#L1056">1056</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:174:12: ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' ) )*</em>
 <a class="jxr_linenumber" name="L1057" href="#L1057">1057</a>             loop10:
 <a class="jxr_linenumber" name="L1058" href="#L1058">1058</a>             <strong class="jxr_keyword">do</strong> {
 <a class="jxr_linenumber" name="L1059" href="#L1059">1059</a>                 <strong class="jxr_keyword">int</strong> alt10=3;
@@ -1077,7 +1077,7 @@
 <a class="jxr_linenumber" name="L1069" href="#L1069">1069</a> 
 <a class="jxr_linenumber" name="L1070" href="#L1070">1070</a>                 <strong class="jxr_keyword">switch</strong> (alt10) {
 <a class="jxr_linenumber" name="L1071" href="#L1071">1071</a>             	<strong class="jxr_keyword">case</strong> 1 :
-<a class="jxr_linenumber" name="L1072" href="#L1072">1072</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:169:14: ESC_SEQ</em>
+<a class="jxr_linenumber" name="L1072" href="#L1072">1072</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:174:14: ESC_SEQ</em>
 <a class="jxr_linenumber" name="L1073" href="#L1073">1073</a>             	    {
 <a class="jxr_linenumber" name="L1074" href="#L1074">1074</a>             	    mESC_SEQ(); 
 <a class="jxr_linenumber" name="L1075" href="#L1075">1075</a> 
@@ -1085,7 +1085,7 @@
 <a class="jxr_linenumber" name="L1077" href="#L1077">1077</a>             	    }
 <a class="jxr_linenumber" name="L1078" href="#L1078">1078</a>             	    <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L1079" href="#L1079">1079</a>             	<strong class="jxr_keyword">case</strong> 2 :
-<a class="jxr_linenumber" name="L1080" href="#L1080">1080</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:169:24: ~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' )</em>
+<a class="jxr_linenumber" name="L1080" href="#L1080">1080</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:174:24: ~ ( '&#92;&#92;&#92;&#92;' | '\&quot;' )</em>
 <a class="jxr_linenumber" name="L1081" href="#L1081">1081</a>             	    {
 <a class="jxr_linenumber" name="L1082" href="#L1082">1082</a>             	    <strong class="jxr_keyword">if</strong> ( (input.LA(1) &gt;= '\u0000' &amp;&amp; input.LA(1) &lt;= '!')||(input.LA(1) &gt;= '#' &amp;&amp; input.LA(1) &lt;= '[')||(input.LA(1) &gt;= ']' &amp;&amp; input.LA(1) &lt;= '\uFFFF') ) {
 <a class="jxr_linenumber" name="L1083" href="#L1083">1083</a>             	        input.consume();
@@ -1124,12 +1124,12 @@
 <a class="jxr_linenumber" name="L1116" href="#L1116">1116</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L1117" href="#L1117">1117</a>             <strong class="jxr_keyword">int</strong> _type = PV;
 <a class="jxr_linenumber" name="L1118" href="#L1118">1118</a>             <strong class="jxr_keyword">int</strong> _channel = DEFAULT_TOKEN_CHANNEL;
-<a class="jxr_linenumber" name="L1119" href="#L1119">1119</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:173:5: ( '&#92;&#92;'' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' ) )* '&#92;&#92;'' )</em>
-<a class="jxr_linenumber" name="L1120" href="#L1120">1120</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:173:8: '&#92;&#92;'' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' ) )* '&#92;&#92;''</em>
+<a class="jxr_linenumber" name="L1119" href="#L1119">1119</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:5: ( '&#92;&#92;'' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' ) )* '&#92;&#92;'' )</em>
+<a class="jxr_linenumber" name="L1120" href="#L1120">1120</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:8: '&#92;&#92;'' ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' ) )* '&#92;&#92;''</em>
 <a class="jxr_linenumber" name="L1121" href="#L1121">1121</a>             {
 <a class="jxr_linenumber" name="L1122" href="#L1122">1122</a>             match('\''); 
 <a class="jxr_linenumber" name="L1123" href="#L1123">1123</a> 
-<a class="jxr_linenumber" name="L1124" href="#L1124">1124</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:173:13: ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' ) )*</em>
+<a class="jxr_linenumber" name="L1124" href="#L1124">1124</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:13: ( ESC_SEQ |~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' ) )*</em>
 <a class="jxr_linenumber" name="L1125" href="#L1125">1125</a>             loop11:
 <a class="jxr_linenumber" name="L1126" href="#L1126">1126</a>             <strong class="jxr_keyword">do</strong> {
 <a class="jxr_linenumber" name="L1127" href="#L1127">1127</a>                 <strong class="jxr_keyword">int</strong> alt11=3;
@@ -1145,7 +1145,7 @@
 <a class="jxr_linenumber" name="L1137" href="#L1137">1137</a> 
 <a class="jxr_linenumber" name="L1138" href="#L1138">1138</a>                 <strong class="jxr_keyword">switch</strong> (alt11) {
 <a class="jxr_linenumber" name="L1139" href="#L1139">1139</a>             	<strong class="jxr_keyword">case</strong> 1 :
-<a class="jxr_linenumber" name="L1140" href="#L1140">1140</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:173:15: ESC_SEQ</em>
+<a class="jxr_linenumber" name="L1140" href="#L1140">1140</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:15: ESC_SEQ</em>
 <a class="jxr_linenumber" name="L1141" href="#L1141">1141</a>             	    {
 <a class="jxr_linenumber" name="L1142" href="#L1142">1142</a>             	    mESC_SEQ(); 
 <a class="jxr_linenumber" name="L1143" href="#L1143">1143</a> 
@@ -1153,7 +1153,7 @@
 <a class="jxr_linenumber" name="L1145" href="#L1145">1145</a>             	    }
 <a class="jxr_linenumber" name="L1146" href="#L1146">1146</a>             	    <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L1147" href="#L1147">1147</a>             	<strong class="jxr_keyword">case</strong> 2 :
-<a class="jxr_linenumber" name="L1148" href="#L1148">1148</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:173:25: ~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' )</em>
+<a class="jxr_linenumber" name="L1148" href="#L1148">1148</a>             	    <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:25: ~ ( '&#92;&#92;&#92;&#92;' | '&#92;&#92;'' )</em>
 <a class="jxr_linenumber" name="L1149" href="#L1149">1149</a>             	    {
 <a class="jxr_linenumber" name="L1150" href="#L1150">1150</a>             	    <strong class="jxr_keyword">if</strong> ( (input.LA(1) &gt;= '\u0000' &amp;&amp; input.LA(1) &lt;= '&amp;')||(input.LA(1) &gt;= '(' &amp;&amp; input.LA(1) &lt;= '[')||(input.LA(1) &gt;= ']' &amp;&amp; input.LA(1) &lt;= '\uFFFF') ) {
 <a class="jxr_linenumber" name="L1151" href="#L1151">1151</a>             	        input.consume();
@@ -1190,8 +1190,8 @@
 <a class="jxr_linenumber" name="L1182" href="#L1182">1182</a>     <em class="jxr_comment">// $ANTLR start "EXPONENT"</em>
 <a class="jxr_linenumber" name="L1183" href="#L1183">1183</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> mEXPONENT() <strong class="jxr_keyword">throws</strong> RecognitionException {
 <a class="jxr_linenumber" name="L1184" href="#L1184">1184</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L1185" href="#L1185">1185</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )</em>
-<a class="jxr_linenumber" name="L1186" href="#L1186">1186</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+</em>
+<a class="jxr_linenumber" name="L1185" href="#L1185">1185</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:183:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )</em>
+<a class="jxr_linenumber" name="L1186" href="#L1186">1186</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:183:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+</em>
 <a class="jxr_linenumber" name="L1187" href="#L1187">1187</a>             {
 <a class="jxr_linenumber" name="L1188" href="#L1188">1188</a>             <strong class="jxr_keyword">if</strong> ( input.LA(1)=='E'||input.LA(1)=='e' ) {
 <a class="jxr_linenumber" name="L1189" href="#L1189">1189</a>                 input.consume();
@@ -1203,7 +1203,7 @@
 <a class="jxr_linenumber" name="L1195" href="#L1195">1195</a>             }
 <a class="jxr_linenumber" name="L1196" href="#L1196">1196</a> 
 <a class="jxr_linenumber" name="L1197" href="#L1197">1197</a> 
-<a class="jxr_linenumber" name="L1198" href="#L1198">1198</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:22: ( '+' | '-' )?</em>
+<a class="jxr_linenumber" name="L1198" href="#L1198">1198</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:183:22: ( '+' | '-' )?</em>
 <a class="jxr_linenumber" name="L1199" href="#L1199">1199</a>             <strong class="jxr_keyword">int</strong> alt12=2;
 <a class="jxr_linenumber" name="L1200" href="#L1200">1200</a>             <strong class="jxr_keyword">switch</strong> ( input.LA(1) ) {
 <a class="jxr_linenumber" name="L1201" href="#L1201">1201</a>                 <strong class="jxr_keyword">case</strong> '+':
@@ -1234,7 +1234,7 @@
 <a class="jxr_linenumber" name="L1226" href="#L1226">1226</a>             }
 <a class="jxr_linenumber" name="L1227" href="#L1227">1227</a> 
 <a class="jxr_linenumber" name="L1228" href="#L1228">1228</a> 
-<a class="jxr_linenumber" name="L1229" href="#L1229">1229</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:178:33: ( '0' .. '9' )+</em>
+<a class="jxr_linenumber" name="L1229" href="#L1229">1229</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:183:33: ( '0' .. '9' )+</em>
 <a class="jxr_linenumber" name="L1230" href="#L1230">1230</a>             <strong class="jxr_keyword">int</strong> cnt13=0;
 <a class="jxr_linenumber" name="L1231" href="#L1231">1231</a>             loop13:
 <a class="jxr_linenumber" name="L1232" href="#L1232">1232</a>             <strong class="jxr_keyword">do</strong> {
@@ -1297,7 +1297,7 @@
 <a class="jxr_linenumber" name="L1289" href="#L1289">1289</a>     <em class="jxr_comment">// $ANTLR start "HEX_DIGIT"</em>
 <a class="jxr_linenumber" name="L1290" href="#L1290">1290</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> mHEX_DIGIT() <strong class="jxr_keyword">throws</strong> RecognitionException {
 <a class="jxr_linenumber" name="L1291" href="#L1291">1291</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L1292" href="#L1292">1292</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:181:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )</em>
+<a class="jxr_linenumber" name="L1292" href="#L1292">1292</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:186:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )</em>
 <a class="jxr_linenumber" name="L1293" href="#L1293">1293</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:</em>
 <a class="jxr_linenumber" name="L1294" href="#L1294">1294</a>             {
 <a class="jxr_linenumber" name="L1295" href="#L1295">1295</a>             <strong class="jxr_keyword">if</strong> ( (input.LA(1) &gt;= '0' &amp;&amp; input.LA(1) &lt;= '9')||(input.LA(1) &gt;= 'A' &amp;&amp; input.LA(1) &lt;= 'F')||(input.LA(1) &gt;= 'a' &amp;&amp; input.LA(1) &lt;= 'f') ) {
@@ -1323,7 +1323,7 @@
 <a class="jxr_linenumber" name="L1315" href="#L1315">1315</a>     <em class="jxr_comment">// $ANTLR start "ESC_SEQ"</em>
 <a class="jxr_linenumber" name="L1316" href="#L1316">1316</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> mESC_SEQ() <strong class="jxr_keyword">throws</strong> RecognitionException {
 <a class="jxr_linenumber" name="L1317" href="#L1317">1317</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L1318" href="#L1318">1318</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:185:5: ( '&#92;&#92;&#92;&#92;' ( 'b' | 't' | 'n' | 'f' | 'r' | '&#92;&#92;\&quot;' | '&#92;&#92;'' | '&#92;&#92;&#92;&#92;' ) | UNICODE_ESC | OCTAL_ESC )</em>
+<a class="jxr_linenumber" name="L1318" href="#L1318">1318</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:190:5: ( '&#92;&#92;&#92;&#92;' ( 'b' | 't' | 'n' | 'f' | 'r' | '&#92;&#92;\&quot;' | '&#92;&#92;'' | '&#92;&#92;&#92;&#92;' ) | UNICODE_ESC | OCTAL_ESC )</em>
 <a class="jxr_linenumber" name="L1319" href="#L1319">1319</a>             <strong class="jxr_keyword">int</strong> alt14=3;
 <a class="jxr_linenumber" name="L1320" href="#L1320">1320</a>             <strong class="jxr_keyword">switch</strong> ( input.LA(1) ) {
 <a class="jxr_linenumber" name="L1321" href="#L1321">1321</a>             <strong class="jxr_keyword">case</strong> '&#92;&#92;':
@@ -1378,7 +1378,7 @@
 <a class="jxr_linenumber" name="L1370" href="#L1370">1370</a> 
 <a class="jxr_linenumber" name="L1371" href="#L1371">1371</a>             <strong class="jxr_keyword">switch</strong> (alt14) {
 <a class="jxr_linenumber" name="L1372" href="#L1372">1372</a>                 <strong class="jxr_keyword">case</strong> 1 :
-<a class="jxr_linenumber" name="L1373" href="#L1373">1373</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:185:9: '&#92;&#92;&#92;&#92;' ( 'b' | 't' | 'n' | 'f' | 'r' | '&#92;&#92;\&quot;' | '&#92;&#92;'' | '&#92;&#92;&#92;&#92;' )</em>
+<a class="jxr_linenumber" name="L1373" href="#L1373">1373</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:190:9: '&#92;&#92;&#92;&#92;' ( 'b' | 't' | 'n' | 'f' | 'r' | '&#92;&#92;\&quot;' | '&#92;&#92;'' | '&#92;&#92;&#92;&#92;' )</em>
 <a class="jxr_linenumber" name="L1374" href="#L1374">1374</a>                     {
 <a class="jxr_linenumber" name="L1375" href="#L1375">1375</a>                     match('&#92;&#92;'); 
 <a class="jxr_linenumber" name="L1376" href="#L1376">1376</a> 
@@ -1395,7 +1395,7 @@
 <a class="jxr_linenumber" name="L1387" href="#L1387">1387</a>                     }
 <a class="jxr_linenumber" name="L1388" href="#L1388">1388</a>                     <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L1389" href="#L1389">1389</a>                 <strong class="jxr_keyword">case</strong> 2 :
-<a class="jxr_linenumber" name="L1390" href="#L1390">1390</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:186:9: UNICODE_ESC</em>
+<a class="jxr_linenumber" name="L1390" href="#L1390">1390</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:191:9: UNICODE_ESC</em>
 <a class="jxr_linenumber" name="L1391" href="#L1391">1391</a>                     {
 <a class="jxr_linenumber" name="L1392" href="#L1392">1392</a>                     mUNICODE_ESC(); 
 <a class="jxr_linenumber" name="L1393" href="#L1393">1393</a> 
@@ -1403,7 +1403,7 @@
 <a class="jxr_linenumber" name="L1395" href="#L1395">1395</a>                     }
 <a class="jxr_linenumber" name="L1396" href="#L1396">1396</a>                     <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L1397" href="#L1397">1397</a>                 <strong class="jxr_keyword">case</strong> 3 :
-<a class="jxr_linenumber" name="L1398" href="#L1398">1398</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:187:9: OCTAL_ESC</em>
+<a class="jxr_linenumber" name="L1398" href="#L1398">1398</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:192:9: OCTAL_ESC</em>
 <a class="jxr_linenumber" name="L1399" href="#L1399">1399</a>                     {
 <a class="jxr_linenumber" name="L1400" href="#L1400">1400</a>                     mOCTAL_ESC(); 
 <a class="jxr_linenumber" name="L1401" href="#L1401">1401</a> 
@@ -1423,7 +1423,7 @@
 <a class="jxr_linenumber" name="L1415" href="#L1415">1415</a>     <em class="jxr_comment">// $ANTLR start "OCTAL_ESC"</em>
 <a class="jxr_linenumber" name="L1416" href="#L1416">1416</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> mOCTAL_ESC() <strong class="jxr_keyword">throws</strong> RecognitionException {
 <a class="jxr_linenumber" name="L1417" href="#L1417">1417</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L1418" href="#L1418">1418</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:192:5: ( '&#92;&#92;&#92;&#92;' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '&#92;&#92;&#92;&#92;' ( '0' .. '7' ) ( '0' .. '7' ) | '&#92;&#92;&#92;&#92;' ( '0' .. '7' ) )</em>
+<a class="jxr_linenumber" name="L1418" href="#L1418">1418</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:197:5: ( '&#92;&#92;&#92;&#92;' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '&#92;&#92;&#92;&#92;' ( '0' .. '7' ) ( '0' .. '7' ) | '&#92;&#92;&#92;&#92;' ( '0' .. '7' ) )</em>
 <a class="jxr_linenumber" name="L1419" href="#L1419">1419</a>             <strong class="jxr_keyword">int</strong> alt15=3;
 <a class="jxr_linenumber" name="L1420" href="#L1420">1420</a>             <strong class="jxr_keyword">switch</strong> ( input.LA(1) ) {
 <a class="jxr_linenumber" name="L1421" href="#L1421">1421</a>             <strong class="jxr_keyword">case</strong> '&#92;&#92;':
@@ -1513,7 +1513,7 @@
 <a class="jxr_linenumber" name="L1505" href="#L1505">1505</a> 
 <a class="jxr_linenumber" name="L1506" href="#L1506">1506</a>             <strong class="jxr_keyword">switch</strong> (alt15) {
 <a class="jxr_linenumber" name="L1507" href="#L1507">1507</a>                 <strong class="jxr_keyword">case</strong> 1 :
-<a class="jxr_linenumber" name="L1508" href="#L1508">1508</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:192:9: '&#92;&#92;&#92;&#92;' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )</em>
+<a class="jxr_linenumber" name="L1508" href="#L1508">1508</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:197:9: '&#92;&#92;&#92;&#92;' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )</em>
 <a class="jxr_linenumber" name="L1509" href="#L1509">1509</a>                     {
 <a class="jxr_linenumber" name="L1510" href="#L1510">1510</a>                     match('&#92;&#92;'); 
 <a class="jxr_linenumber" name="L1511" href="#L1511">1511</a> 
@@ -1550,7 +1550,7 @@
 <a class="jxr_linenumber" name="L1542" href="#L1542">1542</a>                     }
 <a class="jxr_linenumber" name="L1543" href="#L1543">1543</a>                     <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L1544" href="#L1544">1544</a>                 <strong class="jxr_keyword">case</strong> 2 :
-<a class="jxr_linenumber" name="L1545" href="#L1545">1545</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:193:9: '&#92;&#92;&#92;&#92;' ( '0' .. '7' ) ( '0' .. '7' )</em>
+<a class="jxr_linenumber" name="L1545" href="#L1545">1545</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:198:9: '&#92;&#92;&#92;&#92;' ( '0' .. '7' ) ( '0' .. '7' )</em>
 <a class="jxr_linenumber" name="L1546" href="#L1546">1546</a>                     {
 <a class="jxr_linenumber" name="L1547" href="#L1547">1547</a>                     match('&#92;&#92;'); 
 <a class="jxr_linenumber" name="L1548" href="#L1548">1548</a> 
@@ -1577,7 +1577,7 @@
 <a class="jxr_linenumber" name="L1569" href="#L1569">1569</a>                     }
 <a class="jxr_linenumber" name="L1570" href="#L1570">1570</a>                     <strong class="jxr_keyword">break</strong>;
 <a class="jxr_linenumber" name="L1571" href="#L1571">1571</a>                 <strong class="jxr_keyword">case</strong> 3 :
-<a class="jxr_linenumber" name="L1572" href="#L1572">1572</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:194:9: '&#92;&#92;&#92;&#92;' ( '0' .. '7' )</em>
+<a class="jxr_linenumber" name="L1572" href="#L1572">1572</a>                     <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:199:9: '&#92;&#92;&#92;&#92;' ( '0' .. '7' )</em>
 <a class="jxr_linenumber" name="L1573" href="#L1573">1573</a>                     {
 <a class="jxr_linenumber" name="L1574" href="#L1574">1574</a>                     match('&#92;&#92;'); 
 <a class="jxr_linenumber" name="L1575" href="#L1575">1575</a> 
@@ -1606,8 +1606,8 @@
 <a class="jxr_linenumber" name="L1598" href="#L1598">1598</a>     <em class="jxr_comment">// $ANTLR start "UNICODE_ESC"</em>
 <a class="jxr_linenumber" name="L1599" href="#L1599">1599</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> mUNICODE_ESC() <strong class="jxr_keyword">throws</strong> RecognitionException {
 <a class="jxr_linenumber" name="L1600" href="#L1600">1600</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L1601" href="#L1601">1601</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:199:5: ( '&#92;&#92;&#92;&#92;' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )</em>
-<a class="jxr_linenumber" name="L1602" href="#L1602">1602</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:199:9: '&#92;&#92;&#92;&#92;' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT</em>
+<a class="jxr_linenumber" name="L1601" href="#L1601">1601</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:204:5: ( '&#92;&#92;&#92;&#92;' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )</em>
+<a class="jxr_linenumber" name="L1602" href="#L1602">1602</a>             <em class="jxr_comment">// org/epics/pvmanager/formula/Formula.g:204:9: '&#92;&#92;&#92;&#92;' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT</em>
 <a class="jxr_linenumber" name="L1603" href="#L1603">1603</a>             {
 <a class="jxr_linenumber" name="L1604" href="#L1604">1604</a>             match('&#92;&#92;'); 
 <a class="jxr_linenumber" name="L1605" href="#L1605">1605</a> 
@@ -1922,7 +1922,7 @@
 <a class="jxr_linenumber" name="L1914" href="#L1914">1914</a>             <strong class="jxr_keyword">this</strong>.transition = DFA8_transition;
 <a class="jxr_linenumber" name="L1915" href="#L1915">1915</a>         }
 <a class="jxr_linenumber" name="L1916" href="#L1916">1916</a>         <strong class="jxr_keyword">public</strong> String getDescription() {
-<a class="jxr_linenumber" name="L1917" href="#L1917">1917</a>             <strong class="jxr_keyword">return</strong> <span class="jxr_string">"152:1: FLOAT : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT );"</span>;
+<a class="jxr_linenumber" name="L1917" href="#L1917">1917</a>             <strong class="jxr_keyword">return</strong> <span class="jxr_string">"157:1: FLOAT : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( EXPONENT )? | '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '0' .. '9' )+ EXPONENT );"</span>;
 <a class="jxr_linenumber" name="L1918" href="#L1918">1918</a>         }
 <a class="jxr_linenumber" name="L1919" href="#L1919">1919</a>     }
 <a class="jxr_linenumber" name="L1920" href="#L1920">1920</a>     <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String DFA16_eotS =

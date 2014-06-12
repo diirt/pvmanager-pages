@@ -35,23 +35,24 @@
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> defaultCASetup() {
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>          <a href="../../../../org/epics/pvmanager/CompositeDataSource.html">CompositeDataSource</a> dataSource = <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/CompositeDataSource.html">CompositeDataSource</a>();
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>          dataSource.putDataSource(<span class="jxr_string">"sim"</span>, SimulationDataSource.simulatedData());
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>          dataSource.putDataSource(<span class="jxr_string">"ca"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCADataSourceBuilder.html">JCADataSourceBuilder</a>().build());
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>          dataSource.putDataSource(<span class="jxr_string">"loc"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/loc/LocalDataSource.html">LocalDataSource</a>());
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>          dataSource.putDataSource(<span class="jxr_string">"sys"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/sys/SystemDataSource.html">SystemDataSource</a>());
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>          dataSource.putDataSource(<span class="jxr_string">"file"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/file/FileDataSource.html">FileDataSource</a>());
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>          dataSource.setDefaultDataSource(<span class="jxr_string">"ca"</span>);
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>          PVManager.setDefaultDataSource(dataSource);
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> ArrayFunctionSet());
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> MathFunctionSet());
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> NumberOperatorFunctionSet());
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> TableFunctionSet());
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> StringFunctionSet());
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>      }
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> defaultCASetupForSwing() {
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>          PVManager.setDefaultNotificationExecutor(Executors.swingEDT());
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>          defaultCASetup();
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>      }
-<a class="jxr_linenumber" name="L46" href="#L46">46</a>  }
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          System.setProperty(<span class="jxr_string">"com.cosylab.epics.caj.CAJContext.max_array_bytes"</span>, <span class="jxr_string">"10000000"</span>);
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>          dataSource.putDataSource(<span class="jxr_string">"ca"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/jca/JCADataSourceBuilder.html">JCADataSourceBuilder</a>().build());
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>          dataSource.putDataSource(<span class="jxr_string">"loc"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/loc/LocalDataSource.html">LocalDataSource</a>());
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          dataSource.putDataSource(<span class="jxr_string">"sys"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/sys/SystemDataSource.html">SystemDataSource</a>());
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>          dataSource.putDataSource(<span class="jxr_string">"file"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../org/epics/pvmanager/file/FileDataSource.html">FileDataSource</a>());
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>          dataSource.setDefaultDataSource(<span class="jxr_string">"ca"</span>);
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>          PVManager.setDefaultDataSource(dataSource);
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> ArrayFunctionSet());
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> MathFunctionSet());
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> NumberOperatorFunctionSet());
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> TableFunctionSet());
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>          FormulaRegistry.getDefault().registerFormulaFunctionSet(<strong class="jxr_keyword">new</strong> StringFunctionSet());
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      }
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> defaultCASetupForSwing() {
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>          PVManager.setDefaultNotificationExecutor(Executors.swingEDT());
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>          defaultCASetup();
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>      }
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>
