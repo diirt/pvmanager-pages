@@ -348,43 +348,62 @@
 <a class="jxr_linenumber" name="L340" href="#L340">340</a>     }
 <a class="jxr_linenumber" name="L341" href="#L341">341</a>     
 <a class="jxr_linenumber" name="L342" href="#L342">342</a>     @Test
-<a class="jxr_linenumber" name="L343" href="#L343">343</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tableRangeFilter1() {
+<a class="jxr_linenumber" name="L343" href="#L343">343</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tableStringMatchFilter1() {
 <a class="jxr_linenumber" name="L344" href="#L344">344</a>         VTable table1 = newVTable(column(<span class="jxr_string">"Rack"</span>, newVStringArray(Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"A"</span>, <span class="jxr_string">"B"</span>), alarmNone(), timeNow())),
 <a class="jxr_linenumber" name="L345" href="#L345">345</a>                                  column(<span class="jxr_string">"Slot"</span>, newVDoubleArray(<strong class="jxr_keyword">new</strong> ArrayDouble(1,2,3), alarmNone(), timeNow(), displayNone())),
 <a class="jxr_linenumber" name="L346" href="#L346">346</a>                                  column(<span class="jxr_string">"CPU"</span>, newVStringArray(Arrays.asList(<span class="jxr_string">"286"</span>, <span class="jxr_string">"286"</span>, <span class="jxr_string">"386"</span>), alarmNone(), timeNow())));
-<a class="jxr_linenumber" name="L347" href="#L347">347</a>         VTable table = tableRangeFilter(table1, <span class="jxr_string">"Slot"</span>, ValueFactory.toVType(1), ValueFactory.toVType(2));
+<a class="jxr_linenumber" name="L347" href="#L347">347</a>         VTable table = tableStringMatchFilter(table1, <span class="jxr_string">"CPU"</span>, <span class="jxr_string">"28"</span>);
 <a class="jxr_linenumber" name="L348" href="#L348">348</a>         assertThat(table.getColumnCount(), equalTo(3));
-<a class="jxr_linenumber" name="L349" href="#L349">349</a>         assertThat(table.getRowCount(), equalTo(1));
+<a class="jxr_linenumber" name="L349" href="#L349">349</a>         assertThat(table.getRowCount(), equalTo(2));
 <a class="jxr_linenumber" name="L350" href="#L350">350</a>         assertThat(table.getColumnName(0), equalTo(<span class="jxr_string">"Rack"</span>));
 <a class="jxr_linenumber" name="L351" href="#L351">351</a>         assertThat(table.getColumnName(1), equalTo(<span class="jxr_string">"Slot"</span>));
 <a class="jxr_linenumber" name="L352" href="#L352">352</a>         assertThat(table.getColumnName(2), equalTo(<span class="jxr_string">"CPU"</span>));
 <a class="jxr_linenumber" name="L353" href="#L353">353</a>         assertThat(table.getColumnType(0), equalTo((Object) String.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="L354" href="#L354">354</a>         assertThat(table.getColumnType(1), equalTo((Object) <strong class="jxr_keyword">double</strong>.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="L355" href="#L355">355</a>         assertThat(table.getColumnType(2), equalTo((Object) String.<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="L356" href="#L356">356</a>         assertThat(table.getColumnData(0), equalTo((Object) Arrays.asList(<span class="jxr_string">"A"</span>)));
-<a class="jxr_linenumber" name="L357" href="#L357">357</a>         assertThat(table.getColumnData(1), equalTo((Object) <strong class="jxr_keyword">new</strong> ArrayDouble(1)));
-<a class="jxr_linenumber" name="L358" href="#L358">358</a>         assertThat(table.getColumnData(2), equalTo((Object) Arrays.asList(<span class="jxr_string">"286"</span>)));
+<a class="jxr_linenumber" name="L356" href="#L356">356</a>         assertThat(table.getColumnData(0), equalTo((Object) Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"A"</span>)));
+<a class="jxr_linenumber" name="L357" href="#L357">357</a>         assertThat(table.getColumnData(1), equalTo((Object) <strong class="jxr_keyword">new</strong> ArrayDouble(1, 2)));
+<a class="jxr_linenumber" name="L358" href="#L358">358</a>         assertThat(table.getColumnData(2), equalTo((Object) Arrays.asList(<span class="jxr_string">"286"</span>, <span class="jxr_string">"286"</span>)));
 <a class="jxr_linenumber" name="L359" href="#L359">359</a>     }
 <a class="jxr_linenumber" name="L360" href="#L360">360</a>     
 <a class="jxr_linenumber" name="L361" href="#L361">361</a>     @Test
-<a class="jxr_linenumber" name="L362" href="#L362">362</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tableRangeFilter2() {
-<a class="jxr_linenumber" name="L363" href="#L363">363</a>         VTable table1 = newVTable(column(<span class="jxr_string">"Rack"</span>, newVStringArray(Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"B"</span>, <span class="jxr_string">"C"</span>), alarmNone(), timeNow())),
+<a class="jxr_linenumber" name="L362" href="#L362">362</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tableRangeFilter1() {
+<a class="jxr_linenumber" name="L363" href="#L363">363</a>         VTable table1 = newVTable(column(<span class="jxr_string">"Rack"</span>, newVStringArray(Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"A"</span>, <span class="jxr_string">"B"</span>), alarmNone(), timeNow())),
 <a class="jxr_linenumber" name="L364" href="#L364">364</a>                                  column(<span class="jxr_string">"Slot"</span>, newVDoubleArray(<strong class="jxr_keyword">new</strong> ArrayDouble(1,2,3), alarmNone(), timeNow(), displayNone())),
 <a class="jxr_linenumber" name="L365" href="#L365">365</a>                                  column(<span class="jxr_string">"CPU"</span>, newVStringArray(Arrays.asList(<span class="jxr_string">"286"</span>, <span class="jxr_string">"286"</span>, <span class="jxr_string">"386"</span>), alarmNone(), timeNow())));
-<a class="jxr_linenumber" name="L366" href="#L366">366</a>         VTable table = tableRangeFilter(table1, <span class="jxr_string">"Rack"</span>, ValueFactory.toVType(<span class="jxr_string">"A"</span>), ValueFactory.toVType(<span class="jxr_string">"BB"</span>));
+<a class="jxr_linenumber" name="L366" href="#L366">366</a>         VTable table = tableRangeFilter(table1, <span class="jxr_string">"Slot"</span>, ValueFactory.toVType(1), ValueFactory.toVType(2));
 <a class="jxr_linenumber" name="L367" href="#L367">367</a>         assertThat(table.getColumnCount(), equalTo(3));
-<a class="jxr_linenumber" name="L368" href="#L368">368</a>         assertThat(table.getRowCount(), equalTo(2));
+<a class="jxr_linenumber" name="L368" href="#L368">368</a>         assertThat(table.getRowCount(), equalTo(1));
 <a class="jxr_linenumber" name="L369" href="#L369">369</a>         assertThat(table.getColumnName(0), equalTo(<span class="jxr_string">"Rack"</span>));
 <a class="jxr_linenumber" name="L370" href="#L370">370</a>         assertThat(table.getColumnName(1), equalTo(<span class="jxr_string">"Slot"</span>));
 <a class="jxr_linenumber" name="L371" href="#L371">371</a>         assertThat(table.getColumnName(2), equalTo(<span class="jxr_string">"CPU"</span>));
 <a class="jxr_linenumber" name="L372" href="#L372">372</a>         assertThat(table.getColumnType(0), equalTo((Object) String.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="L373" href="#L373">373</a>         assertThat(table.getColumnType(1), equalTo((Object) <strong class="jxr_keyword">double</strong>.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="L374" href="#L374">374</a>         assertThat(table.getColumnType(2), equalTo((Object) String.<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="L375" href="#L375">375</a>         assertThat(table.getColumnData(0), equalTo((Object) Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"B"</span>)));
-<a class="jxr_linenumber" name="L376" href="#L376">376</a>         assertThat(table.getColumnData(1), equalTo((Object) <strong class="jxr_keyword">new</strong> ArrayDouble(1, 2)));
-<a class="jxr_linenumber" name="L377" href="#L377">377</a>         assertThat(table.getColumnData(2), equalTo((Object) Arrays.asList(<span class="jxr_string">"286"</span>, <span class="jxr_string">"286"</span>)));
+<a class="jxr_linenumber" name="L375" href="#L375">375</a>         assertThat(table.getColumnData(0), equalTo((Object) Arrays.asList(<span class="jxr_string">"A"</span>)));
+<a class="jxr_linenumber" name="L376" href="#L376">376</a>         assertThat(table.getColumnData(1), equalTo((Object) <strong class="jxr_keyword">new</strong> ArrayDouble(1)));
+<a class="jxr_linenumber" name="L377" href="#L377">377</a>         assertThat(table.getColumnData(2), equalTo((Object) Arrays.asList(<span class="jxr_string">"286"</span>)));
 <a class="jxr_linenumber" name="L378" href="#L378">378</a>     }
-<a class="jxr_linenumber" name="L379" href="#L379">379</a> }
+<a class="jxr_linenumber" name="L379" href="#L379">379</a>     
+<a class="jxr_linenumber" name="L380" href="#L380">380</a>     @Test
+<a class="jxr_linenumber" name="L381" href="#L381">381</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> tableRangeFilter2() {
+<a class="jxr_linenumber" name="L382" href="#L382">382</a>         VTable table1 = newVTable(column(<span class="jxr_string">"Rack"</span>, newVStringArray(Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"B"</span>, <span class="jxr_string">"C"</span>), alarmNone(), timeNow())),
+<a class="jxr_linenumber" name="L383" href="#L383">383</a>                                  column(<span class="jxr_string">"Slot"</span>, newVDoubleArray(<strong class="jxr_keyword">new</strong> ArrayDouble(1,2,3), alarmNone(), timeNow(), displayNone())),
+<a class="jxr_linenumber" name="L384" href="#L384">384</a>                                  column(<span class="jxr_string">"CPU"</span>, newVStringArray(Arrays.asList(<span class="jxr_string">"286"</span>, <span class="jxr_string">"286"</span>, <span class="jxr_string">"386"</span>), alarmNone(), timeNow())));
+<a class="jxr_linenumber" name="L385" href="#L385">385</a>         VTable table = tableRangeFilter(table1, <span class="jxr_string">"Rack"</span>, ValueFactory.toVType(<span class="jxr_string">"A"</span>), ValueFactory.toVType(<span class="jxr_string">"BB"</span>));
+<a class="jxr_linenumber" name="L386" href="#L386">386</a>         assertThat(table.getColumnCount(), equalTo(3));
+<a class="jxr_linenumber" name="L387" href="#L387">387</a>         assertThat(table.getRowCount(), equalTo(2));
+<a class="jxr_linenumber" name="L388" href="#L388">388</a>         assertThat(table.getColumnName(0), equalTo(<span class="jxr_string">"Rack"</span>));
+<a class="jxr_linenumber" name="L389" href="#L389">389</a>         assertThat(table.getColumnName(1), equalTo(<span class="jxr_string">"Slot"</span>));
+<a class="jxr_linenumber" name="L390" href="#L390">390</a>         assertThat(table.getColumnName(2), equalTo(<span class="jxr_string">"CPU"</span>));
+<a class="jxr_linenumber" name="L391" href="#L391">391</a>         assertThat(table.getColumnType(0), equalTo((Object) String.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="L392" href="#L392">392</a>         assertThat(table.getColumnType(1), equalTo((Object) <strong class="jxr_keyword">double</strong>.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="L393" href="#L393">393</a>         assertThat(table.getColumnType(2), equalTo((Object) String.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="L394" href="#L394">394</a>         assertThat(table.getColumnData(0), equalTo((Object) Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"B"</span>)));
+<a class="jxr_linenumber" name="L395" href="#L395">395</a>         assertThat(table.getColumnData(1), equalTo((Object) <strong class="jxr_keyword">new</strong> ArrayDouble(1, 2)));
+<a class="jxr_linenumber" name="L396" href="#L396">396</a>         assertThat(table.getColumnData(2), equalTo((Object) Arrays.asList(<span class="jxr_string">"286"</span>, <span class="jxr_string">"286"</span>)));
+<a class="jxr_linenumber" name="L397" href="#L397">397</a>     }
+<a class="jxr_linenumber" name="L398" href="#L398">398</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>
