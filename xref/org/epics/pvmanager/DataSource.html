@@ -131,8 +131,8 @@
 <a class="jxr_linenumber" name="L123" href="#L123">123</a>     
 <a class="jxr_linenumber" name="L124" href="#L124">124</a>     <em class="jxr_comment">// Keeps track of the recipes that were opened with</em>
 <a class="jxr_linenumber" name="L125" href="#L125">125</a>     <em class="jxr_comment">// this data source.</em>
-<a class="jxr_linenumber" name="L126" href="#L126">126</a>     <strong class="jxr_keyword">private</strong> Set&lt;ChannelReadRecipe&gt; readRecipes = <strong class="jxr_keyword">new</strong> CopyOnWriteArraySet&lt;ChannelReadRecipe&gt;();
-<a class="jxr_linenumber" name="L127" href="#L127">127</a>     <strong class="jxr_keyword">private</strong> Set&lt;ChannelWriteRecipe&gt; writeRecipes = <strong class="jxr_keyword">new</strong> CopyOnWriteArraySet&lt;ChannelWriteRecipe&gt;();
+<a class="jxr_linenumber" name="L126" href="#L126">126</a>     <strong class="jxr_keyword">private</strong> Set&lt;ChannelReadRecipe&gt; readRecipes = Collections.synchronizedSet(<strong class="jxr_keyword">new</strong> HashSet&lt;ChannelReadRecipe&gt;());
+<a class="jxr_linenumber" name="L127" href="#L127">127</a>     <strong class="jxr_keyword">private</strong> Set&lt;ChannelWriteRecipe&gt; writeRecipes = Collections.synchronizedSet(<strong class="jxr_keyword">new</strong> HashSet&lt;ChannelWriteRecipe&gt;());
 <a class="jxr_linenumber" name="L128" href="#L128">128</a> 
 <a class="jxr_linenumber" name="L129" href="#L129">129</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L130" href="#L130">130</a> <em class="jxr_javadoccomment">     * Connects to a set of channels based on the given recipe.</em>
