@@ -14,6 +14,8 @@ org.epics.pvmanager.pva.adapters
 org.epics.pvmanager.pva.rpcservice
 org.epics.pvmanager.pva.rpcservice.rpcclient
 org.epics.pvmanager.sample
+org.epics.pvmanager.sample.graphene
+org.epics.pvmanager.sample.jca
 org.epics.pvmanager.service
 org.epics.pvmanager.sim
 org.epics.pvmanager.sys

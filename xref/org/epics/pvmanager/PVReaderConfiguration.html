@@ -152,11 +152,11 @@
 <a class="jxr_linenumber" name="L144" href="#L144">144</a>                 timeoutMessage = <span class="jxr_string">"Read timeout"</span>;
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>             director.timeout(timeout, timeoutMessage);
 <a class="jxr_linenumber" name="L146" href="#L146">146</a>         }
-<a class="jxr_linenumber" name="L147" href="#L147">147</a> <em class="jxr_comment">//        if (aggregatedFunction instanceof Collector || aggregatedFunction instanceof ValueCache) {</em>
-<a class="jxr_linenumber" name="L148" href="#L148">148</a> <em class="jxr_comment">//            scannerParameters.type(ScannerParameters.Type.PASSIVE);</em>
-<a class="jxr_linenumber" name="L149" href="#L149">149</a> <em class="jxr_comment">//        } else {</em>
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>         <strong class="jxr_keyword">if</strong> (aggregatedFunction instanceof Collector || aggregatedFunction instanceof ValueCache) {
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>             scannerParameters.type(ScannerParameters.Type.PASSIVE);
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>         } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="L150" href="#L150">150</a>             scannerParameters.type(ScannerParameters.Type.ACTIVE);
-<a class="jxr_linenumber" name="L151" href="#L151">151</a> <em class="jxr_comment">//        }</em>
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>         }
 <a class="jxr_linenumber" name="L152" href="#L152">152</a>         <a href="../../../org/epics/pvmanager/SourceDesiredRateDecoupler.html">SourceDesiredRateDecoupler</a> rateDecoupler = scannerParameters.build();
 <a class="jxr_linenumber" name="L153" href="#L153">153</a>         pv.setDirector(director);
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>         director.setScanner(rateDecoupler);
