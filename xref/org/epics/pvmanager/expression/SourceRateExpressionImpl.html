@@ -16,7 +16,7 @@
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> java.util.Map;
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.Collector;
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ForwardCache;
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVReaderDirector;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVDirector;
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadFunction;
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadRecipeBuilder;
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ValueCache;
@@ -112,7 +112,7 @@
 <a class="jxr_linenumber" name="L104" href="#L104">104</a> <em class="jxr_javadoccomment">     * @param collector the collector to be notified by changes in this expression</em>
 <a class="jxr_linenumber" name="L105" href="#L105">105</a> <em class="jxr_javadoccomment">     * @return a data recipe</em>
 <a class="jxr_linenumber" name="L106" href="#L106">106</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L107" href="#L107">107</a>     <strong class="jxr_keyword">void</strong> fillDataRecipe(<a href="../../../../org/epics/pvmanager/PVReaderDirector.html">PVReaderDirector</a> director, Collector&lt;R, ?&gt; collector, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>     <strong class="jxr_keyword">void</strong> fillDataRecipe(<a href="../../../../org/epics/pvmanager/PVDirector.html">PVDirector</a> director, Collector&lt;R, ?&gt; collector, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
 <a class="jxr_linenumber" name="L108" href="#L108">108</a>         <strong class="jxr_keyword">for</strong> (Map.Entry&lt;String, ValueCache&lt;?&gt;&gt; entry : caches.entrySet()) {
 <a class="jxr_linenumber" name="L109" href="#L109">109</a>             String channelName = entry.getKey();
 <a class="jxr_linenumber" name="L110" href="#L110">110</a>             @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)

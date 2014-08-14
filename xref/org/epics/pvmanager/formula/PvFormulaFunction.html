@@ -72,14 +72,14 @@
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>          <strong class="jxr_keyword">if</strong> (!Objects.equals(newName, previousName)) {
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>              <em class="jxr_comment">// Disconnect previous</em>
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>              <strong class="jxr_keyword">if</strong> (currentExpression != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L67" href="#L67">67</a>                  getDirector().disconnectExpression(currentExpression);
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>                  getDirector().disconnectReadExpression(currentExpression);
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>                  currentExpression = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>              }
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>              
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>              <em class="jxr_comment">// Connect new</em>
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>              <strong class="jxr_keyword">if</strong> (newName != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>                  currentExpression = <strong class="jxr_keyword">new</strong> LastOfChannelExpression&lt;Object&gt;(newName, Object.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>                  getDirector().connectExpression(currentExpression);
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>                  getDirector().connectReadExpression(currentExpression);
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>              }
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>              previousName = newName;
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>          }
@@ -94,7 +94,7 @@
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>      @Override
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> dispose() {
 <a class="jxr_linenumber" name="L88" href="#L88">88</a>          <em class="jxr_comment">// Disconnect everything on dispose</em>
-<a class="jxr_linenumber" name="L89" href="#L89">89</a>          getDirector().disconnectExpression(currentExpression);
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>          getDirector().disconnectReadExpression(currentExpression);
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>          currentExpression = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>      }
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>      

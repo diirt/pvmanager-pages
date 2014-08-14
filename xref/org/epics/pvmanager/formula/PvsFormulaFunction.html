@@ -90,7 +90,7 @@
 <a class="jxr_linenumber" name="L82" href="#L82">82</a>                  <em class="jxr_comment">// Disconnect previous expressions no longer used</em>
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>                  <strong class="jxr_keyword">for</strong> (DesiredRateExpression&lt;?&gt; desiredRateExpression : currentExpressions) {
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>                      <strong class="jxr_keyword">if</strong> (desiredRateExpression != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L85" href="#L85">85</a>                          getDirector().disconnectExpression(desiredRateExpression);
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>                          getDirector().disconnectReadExpression(desiredRateExpression);
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>                      }
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>                  }
 <a class="jxr_linenumber" name="L88" href="#L88">88</a>              }
@@ -100,7 +100,7 @@
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>                  <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; newNames.size(); i++) {
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>                      <strong class="jxr_keyword">if</strong> (newNames.get(i) != <strong class="jxr_keyword">null</strong> &amp;&amp; newExpressions.get(i) == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L94" href="#L94">94</a>                          DesiredRateExpression&lt;?&gt; newExpression = <strong class="jxr_keyword">new</strong> LastOfChannelExpression&lt;Object&gt;(newNames.get(i), Object.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="L95" href="#L95">95</a>                          getDirector().connectExpression(newExpression);
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>                          getDirector().connectReadExpression(newExpression);
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>                          newExpressions.set(i, newExpression);
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>                      }
 <a class="jxr_linenumber" name="L98" href="#L98">98</a>                  }
@@ -147,7 +147,7 @@
 <a class="jxr_linenumber" name="L139" href="#L139">139</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> dispose() {
 <a class="jxr_linenumber" name="L140" href="#L140">140</a>         <em class="jxr_comment">// Disconnect everything on dispose</em>
 <a class="jxr_linenumber" name="L141" href="#L141">141</a>         <strong class="jxr_keyword">for</strong> (DesiredRateExpression&lt;?&gt; desiredRateExpression : <strong class="jxr_keyword">new</strong> HashSet&lt;&gt;(currentExpressions)) {
-<a class="jxr_linenumber" name="L142" href="#L142">142</a>             getDirector().disconnectExpression(desiredRateExpression);
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>             getDirector().disconnectReadExpression(desiredRateExpression);
 <a class="jxr_linenumber" name="L143" href="#L143">143</a>         }
 <a class="jxr_linenumber" name="L144" href="#L144">144</a>         currentExpressions = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>         previousNames = <strong class="jxr_keyword">null</strong>;

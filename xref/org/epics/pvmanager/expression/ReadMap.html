@@ -15,7 +15,7 @@
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> java.util.Collection;
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> java.util.HashMap;
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> java.util.Map;
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVReaderDirector;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVDirector;
 <a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.QueueCollector;
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadRecipeBuilder;
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  
@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Object lock = <strong class="jxr_keyword">new</strong> Object();
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Map&lt;String, DesiredRateExpression&lt;T&gt;&gt; expressions = <strong class="jxr_keyword">new</strong> HashMap&lt;&gt;();
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">private</strong> PVReaderDirector&lt;?&gt; director;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">private</strong> PVDirector&lt;?&gt; director;
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>  
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>  <em class="jxr_javadoccomment">     * Creates a new group.</em>
@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>              getMapOfFunction().getMapUpdateCollector().writeValue(MapUpdate.&lt;T&gt;clear());
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>              <strong class="jxr_keyword">if</strong> (director != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>                  <strong class="jxr_keyword">for</strong> (DesiredRateExpression&lt;T&gt; desiredRateExpression : expressions.values()) {
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>                      director.disconnectExpression(desiredRateExpression);
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>                      director.disconnectReadExpression(desiredRateExpression);
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>                  }
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>              }
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>              expressions.clear();
@@ -98,7 +98,7 @@
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>              getMapOfFunction().getMapUpdateCollector().writeValue(MapUpdate.addReadFunction(expression.getName(), expression.getFunction()));
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>              expressions.put(expression.getName(), expression);
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>              <strong class="jxr_keyword">if</strong> (director != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L93" href="#L93">93</a>                  director.connectExpression(expression);
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>                  director.connectReadExpression(expression);
 <a class="jxr_linenumber" name="L94" href="#L94">94</a>              }
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>          }
@@ -134,7 +134,7 @@
 <a class="jxr_linenumber" name="L126" href="#L126">126</a>             getMapOfFunction().getMapUpdateCollector().writeValue(MapUpdate.&lt;T&gt;removeFunction(name));
 <a class="jxr_linenumber" name="L127" href="#L127">127</a>             DesiredRateExpression&lt;T&gt; expression = expressions.remove(name);
 <a class="jxr_linenumber" name="L128" href="#L128">128</a>             <strong class="jxr_keyword">if</strong> (director != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L129" href="#L129">129</a>                 director.disconnectExpression(expression);
+<a class="jxr_linenumber" name="L129" href="#L129">129</a>                 director.disconnectReadExpression(expression);
 <a class="jxr_linenumber" name="L130" href="#L130">130</a>             }
 <a class="jxr_linenumber" name="L131" href="#L131">131</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L132" href="#L132">132</a>         }
@@ -157,12 +157,12 @@
 <a class="jxr_linenumber" name="L149" href="#L149">149</a> 
 <a class="jxr_linenumber" name="L150" href="#L150">150</a>     @Override
 <a class="jxr_linenumber" name="L151" href="#L151">151</a>     @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
-<a class="jxr_linenumber" name="L152" href="#L152">152</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVReaderDirector.html">PVReaderDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVDirector.html">PVDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
 <a class="jxr_linenumber" name="L153" href="#L153">153</a>         <strong class="jxr_keyword">synchronized</strong>(lock) {
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>             <strong class="jxr_keyword">this</strong>.director = director;
 <a class="jxr_linenumber" name="L155" href="#L155">155</a>             <strong class="jxr_keyword">for</strong> (Map.Entry&lt;String, DesiredRateExpression&lt;T&gt;&gt; entry : expressions.entrySet()) {
 <a class="jxr_linenumber" name="L156" href="#L156">156</a>                 DesiredRateExpression&lt;T&gt; readExpression = entry.getValue();
-<a class="jxr_linenumber" name="L157" href="#L157">157</a>                 director.connectExpression(readExpression);
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>                 director.connectReadExpression(readExpression);
 <a class="jxr_linenumber" name="L158" href="#L158">158</a>             }
 <a class="jxr_linenumber" name="L159" href="#L159">159</a>         }
 <a class="jxr_linenumber" name="L160" href="#L160">160</a>     }

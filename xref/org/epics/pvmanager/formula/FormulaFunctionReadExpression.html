@@ -12,7 +12,7 @@
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">package</strong> org.epics.pvmanager.formula;
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   
-<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVReaderDirector;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVDirector;
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadRecipeBuilder;
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.expression.DesiredRateExpressionImpl;
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.expression.DesiredRateExpressionList;
@@ -28,9 +28,9 @@
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>      }
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>      @Override
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVReaderDirector.html">PVReaderDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVDirector.html">PVDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>          <strong class="jxr_keyword">super</strong>.fillReadRecipe(director, builder);
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>          ((<a href="../../../../org/epics/pvmanager/formula/FormulaReadFunction.html">FormulaReadFunction</a>) getFunction()).setDirectory(director);
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>          ((<a href="../../../../org/epics/pvmanager/formula/FormulaReadFunction.html">FormulaReadFunction</a>) getFunction()).setDirector(director);
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>      }
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>      
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>  }

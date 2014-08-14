@@ -12,7 +12,7 @@
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">package</strong> org.epics.pvmanager.formula;
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   
-<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVReaderDirector;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVDirector;
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadFunction;
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadRecipeBuilder;
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.expression.DesiredRateExpressionImpl;
@@ -36,9 +36,9 @@
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>      }
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>      @Override
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVReaderDirector.html">PVReaderDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVDirector.html">PVDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>          <strong class="jxr_keyword">super</strong>.fillReadRecipe(director, builder); <em class="jxr_comment">//To change body of generated methods, choose Tools | Templates.</em>
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>          director.connectStatic(error, false, getName());
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          director.connectStaticRead(error, false, getName());
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>      }
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>      
 <a class="jxr_linenumber" name="L36" href="#L36">36</a>  }

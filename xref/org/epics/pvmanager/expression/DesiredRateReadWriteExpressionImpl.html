@@ -12,7 +12,7 @@
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">package</strong> org.epics.pvmanager.expression;
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   
-<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVReaderDirector;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVDirector;
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.PVWriterDirector;
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadFunction;
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.epics.pvmanager.ReadRecipeBuilder;
@@ -75,7 +75,7 @@
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>      }
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>      @Override
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVReaderDirector.html">PVReaderDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fillReadRecipe(<a href="../../../../org/epics/pvmanager/PVDirector.html">PVDirector</a> director, <a href="../../../../org/epics/pvmanager/ReadRecipeBuilder.html">ReadRecipeBuilder</a> builder) {
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>          desiredRateExpression.fillReadRecipe(director, builder);
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>      }
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  
