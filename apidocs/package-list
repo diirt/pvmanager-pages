@@ -3,6 +3,7 @@ org.epics.pvmanager.exec
 org.epics.pvmanager.expression
 org.epics.pvmanager.extra
 org.epics.pvmanager.file
+org.epics.pvmanager.file.json
 org.epics.pvmanager.formula
 org.epics.pvmanager.graphene
 org.epics.pvmanager.integration
@@ -30,6 +31,6 @@ org.epics.pvmanager.util
 org.epics.pvmanager.vtype
 org.epics.vtype
 org.epics.vtype.io
+org.epics.vtype.json
 org.epics.vtype.ndarray
-org.epics.vtype.seds
 org.epics.vtype.table

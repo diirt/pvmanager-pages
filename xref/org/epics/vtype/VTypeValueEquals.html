@@ -153,60 +153,76 @@
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VBoolean.html">VBoolean</a> bool1, <a href="../../../org/epics/vtype/VBoolean.html">VBoolean</a> bool2) {
 <a class="jxr_linenumber" name="L146" href="#L146">146</a>         <strong class="jxr_keyword">return</strong> bool1.getValue().equals(bool2.getValue());
 <a class="jxr_linenumber" name="L147" href="#L147">147</a>     }
-<a class="jxr_linenumber" name="L148" href="#L148">148</a> 
-<a class="jxr_linenumber" name="L149" href="#L149">149</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VString.html">VString</a> str1, <a href="../../../org/epics/vtype/VString.html">VString</a> str2) {
-<a class="jxr_linenumber" name="L150" href="#L150">150</a>         <strong class="jxr_keyword">return</strong> str1.getValue().equals(str2.getValue());
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>     
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VBooleanArray.html">VBooleanArray</a> bool1, <a href="../../../org/epics/vtype/VBooleanArray.html">VBooleanArray</a> bool2) {
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>         <strong class="jxr_keyword">return</strong> bool1.getData().equals(bool2.getData());
 <a class="jxr_linenumber" name="L151" href="#L151">151</a>     }
 <a class="jxr_linenumber" name="L152" href="#L152">152</a> 
-<a class="jxr_linenumber" name="L153" href="#L153">153</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VEnum.html">VEnum</a> enum1, <a href="../../../org/epics/vtype/VEnum.html">VEnum</a> enum2) {
-<a class="jxr_linenumber" name="L154" href="#L154">154</a>         <strong class="jxr_keyword">return</strong> enum1.getValue().equals(enum2.getValue()) &amp;&amp; enum1.getLabels().equals(enum2.getLabels());
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VString.html">VString</a> str1, <a href="../../../org/epics/vtype/VString.html">VString</a> str2) {
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>         <strong class="jxr_keyword">return</strong> str1.getValue().equals(str2.getValue());
 <a class="jxr_linenumber" name="L155" href="#L155">155</a>     }
 <a class="jxr_linenumber" name="L156" href="#L156">156</a> 
-<a class="jxr_linenumber" name="L157" href="#L157">157</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VStringArray.html">VStringArray</a> array1, <a href="../../../org/epics/vtype/VStringArray.html">VStringArray</a> array2) {
-<a class="jxr_linenumber" name="L158" href="#L158">158</a>         <strong class="jxr_keyword">return</strong> array1.getData().equals(array2.getData());
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VEnum.html">VEnum</a> enum1, <a href="../../../org/epics/vtype/VEnum.html">VEnum</a> enum2) {
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>         <strong class="jxr_keyword">return</strong> enum1.getValue().equals(enum2.getValue()) &amp;&amp; enum1.getLabels().equals(enum2.getLabels());
 <a class="jxr_linenumber" name="L159" href="#L159">159</a>     }
 <a class="jxr_linenumber" name="L160" href="#L160">160</a> 
-<a class="jxr_linenumber" name="L161" href="#L161">161</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(Object obj1, Object obj2) {
-<a class="jxr_linenumber" name="L162" href="#L162">162</a> 	<strong class="jxr_keyword">if</strong> (obj1 == <strong class="jxr_keyword">null</strong> &amp;&amp; obj2 == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L163" href="#L163">163</a> 	    <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="L164" href="#L164">164</a> 	}
-<a class="jxr_linenumber" name="L165" href="#L165">165</a> 
-<a class="jxr_linenumber" name="L166" href="#L166">166</a> 	<strong class="jxr_keyword">if</strong> (obj1 == <strong class="jxr_keyword">null</strong> || obj2 == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L167" href="#L167">167</a> 	    <strong class="jxr_keyword">return</strong> false;
-<a class="jxr_linenumber" name="L168" href="#L168">168</a> 	}
-<a class="jxr_linenumber" name="L169" href="#L169">169</a> 
-<a class="jxr_linenumber" name="L170" href="#L170">170</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VNumberArray) &amp;&amp; (obj2 instanceof VNumberArray)) {
-<a class="jxr_linenumber" name="L171" href="#L171">171</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VNumberArray) obj1, (VNumberArray) obj2);
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VEnumArray.html">VEnumArray</a> enum1, <a href="../../../org/epics/vtype/VEnumArray.html">VEnumArray</a> enum2) {
+<a class="jxr_linenumber" name="L162" href="#L162">162</a>         <strong class="jxr_keyword">return</strong> enum1.getIndexes().equals(enum2.getIndexes()) &amp;&amp; enum1.getLabels().equals(enum2.getLabels());
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>     }
+<a class="jxr_linenumber" name="L164" href="#L164">164</a> 
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(<a href="../../../org/epics/vtype/VStringArray.html">VStringArray</a> array1, <a href="../../../org/epics/vtype/VStringArray.html">VStringArray</a> array2) {
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>         <strong class="jxr_keyword">return</strong> array1.getData().equals(array2.getData());
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>     }
+<a class="jxr_linenumber" name="L168" href="#L168">168</a> 
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> valueEquals(Object obj1, Object obj2) {
+<a class="jxr_linenumber" name="L170" href="#L170">170</a> 	<strong class="jxr_keyword">if</strong> (obj1 == <strong class="jxr_keyword">null</strong> &amp;&amp; obj2 == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L171" href="#L171">171</a> 	    <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
 <a class="jxr_linenumber" name="L172" href="#L172">172</a> 	}
 <a class="jxr_linenumber" name="L173" href="#L173">173</a> 
-<a class="jxr_linenumber" name="L174" href="#L174">174</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VStringArray) &amp;&amp; (obj2 instanceof VStringArray)) {
-<a class="jxr_linenumber" name="L175" href="#L175">175</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VStringArray) obj1, (VStringArray) obj2);
+<a class="jxr_linenumber" name="L174" href="#L174">174</a> 	<strong class="jxr_keyword">if</strong> (obj1 == <strong class="jxr_keyword">null</strong> || obj2 == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L175" href="#L175">175</a> 	    <strong class="jxr_keyword">return</strong> false;
 <a class="jxr_linenumber" name="L176" href="#L176">176</a> 	}
 <a class="jxr_linenumber" name="L177" href="#L177">177</a> 
-<a class="jxr_linenumber" name="L178" href="#L178">178</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VString) &amp;&amp; (obj2 instanceof VString)) {
-<a class="jxr_linenumber" name="L179" href="#L179">179</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VString) obj1, (VString) obj2);
+<a class="jxr_linenumber" name="L178" href="#L178">178</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VNumberArray) &amp;&amp; (obj2 instanceof VNumberArray)) {
+<a class="jxr_linenumber" name="L179" href="#L179">179</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VNumberArray) obj1, (VNumberArray) obj2);
 <a class="jxr_linenumber" name="L180" href="#L180">180</a> 	}
 <a class="jxr_linenumber" name="L181" href="#L181">181</a> 
-<a class="jxr_linenumber" name="L182" href="#L182">182</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VEnum) &amp;&amp; (obj2 instanceof VEnum)) {
-<a class="jxr_linenumber" name="L183" href="#L183">183</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VEnum) obj1, (VEnum) obj2);
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VStringArray) &amp;&amp; (obj2 instanceof VStringArray)) {
+<a class="jxr_linenumber" name="L183" href="#L183">183</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VStringArray) obj1, (VStringArray) obj2);
 <a class="jxr_linenumber" name="L184" href="#L184">184</a> 	}
-<a class="jxr_linenumber" name="L185" href="#L185">185</a> 	
-<a class="jxr_linenumber" name="L186" href="#L186">186</a> 	<strong class="jxr_keyword">if</strong>((obj1 instanceof VNumber) &amp;&amp; (obj2 instanceof VNumber)) {
-<a class="jxr_linenumber" name="L187" href="#L187">187</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VNumber) obj1, (VNumber) obj2);
+<a class="jxr_linenumber" name="L185" href="#L185">185</a> 
+<a class="jxr_linenumber" name="L186" href="#L186">186</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VString) &amp;&amp; (obj2 instanceof VString)) {
+<a class="jxr_linenumber" name="L187" href="#L187">187</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VString) obj1, (VString) obj2);
 <a class="jxr_linenumber" name="L188" href="#L188">188</a> 	}
-<a class="jxr_linenumber" name="L189" href="#L189">189</a> 	
-<a class="jxr_linenumber" name="L190" href="#L190">190</a> 	<strong class="jxr_keyword">if</strong>((obj1 instanceof VBoolean) &amp;&amp; (obj2 instanceof VBoolean)) {
-<a class="jxr_linenumber" name="L191" href="#L191">191</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VBoolean) obj1, (VBoolean) obj2);
+<a class="jxr_linenumber" name="L189" href="#L189">189</a> 
+<a class="jxr_linenumber" name="L190" href="#L190">190</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VEnum) &amp;&amp; (obj2 instanceof VEnum)) {
+<a class="jxr_linenumber" name="L191" href="#L191">191</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VEnum) obj1, (VEnum) obj2);
 <a class="jxr_linenumber" name="L192" href="#L192">192</a> 	}
-<a class="jxr_linenumber" name="L193" href="#L193">193</a> 	
-<a class="jxr_linenumber" name="L194" href="#L194">194</a> 	<strong class="jxr_keyword">if</strong>((obj1 instanceof VTable) &amp;&amp; (obj2 instanceof VTable)) {
-<a class="jxr_linenumber" name="L195" href="#L195">195</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VTable) obj1, (VTable) obj2);
+<a class="jxr_linenumber" name="L193" href="#L193">193</a> 
+<a class="jxr_linenumber" name="L194" href="#L194">194</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VEnumArray) &amp;&amp; (obj2 instanceof VEnumArray)) {
+<a class="jxr_linenumber" name="L195" href="#L195">195</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VEnumArray) obj1, (VEnumArray) obj2);
 <a class="jxr_linenumber" name="L196" href="#L196">196</a> 	}
-<a class="jxr_linenumber" name="L197" href="#L197">197</a> 
-<a class="jxr_linenumber" name="L198" href="#L198">198</a> 	<strong class="jxr_keyword">return</strong> false;
-<a class="jxr_linenumber" name="L199" href="#L199">199</a>     }
-<a class="jxr_linenumber" name="L200" href="#L200">200</a> 
-<a class="jxr_linenumber" name="L201" href="#L201">201</a> }
+<a class="jxr_linenumber" name="L197" href="#L197">197</a> 	
+<a class="jxr_linenumber" name="L198" href="#L198">198</a> 	<strong class="jxr_keyword">if</strong>((obj1 instanceof VNumber) &amp;&amp; (obj2 instanceof VNumber)) {
+<a class="jxr_linenumber" name="L199" href="#L199">199</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VNumber) obj1, (VNumber) obj2);
+<a class="jxr_linenumber" name="L200" href="#L200">200</a> 	}
+<a class="jxr_linenumber" name="L201" href="#L201">201</a> 	
+<a class="jxr_linenumber" name="L202" href="#L202">202</a> 	<strong class="jxr_keyword">if</strong>((obj1 instanceof VBoolean) &amp;&amp; (obj2 instanceof VBoolean)) {
+<a class="jxr_linenumber" name="L203" href="#L203">203</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VBoolean) obj1, (VBoolean) obj2);
+<a class="jxr_linenumber" name="L204" href="#L204">204</a> 	}
+<a class="jxr_linenumber" name="L205" href="#L205">205</a> 
+<a class="jxr_linenumber" name="L206" href="#L206">206</a> 	<strong class="jxr_keyword">if</strong> ((obj1 instanceof VBooleanArray) &amp;&amp; (obj2 instanceof VBooleanArray)) {
+<a class="jxr_linenumber" name="L207" href="#L207">207</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VBooleanArray) obj1, (VBooleanArray) obj2);
+<a class="jxr_linenumber" name="L208" href="#L208">208</a> 	}
+<a class="jxr_linenumber" name="L209" href="#L209">209</a> 	
+<a class="jxr_linenumber" name="L210" href="#L210">210</a> 	<strong class="jxr_keyword">if</strong>((obj1 instanceof VTable) &amp;&amp; (obj2 instanceof VTable)) {
+<a class="jxr_linenumber" name="L211" href="#L211">211</a> 	    <strong class="jxr_keyword">return</strong> valueEquals((VTable) obj1, (VTable) obj2);
+<a class="jxr_linenumber" name="L212" href="#L212">212</a> 	}
+<a class="jxr_linenumber" name="L213" href="#L213">213</a> 
+<a class="jxr_linenumber" name="L214" href="#L214">214</a> 	<strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="L215" href="#L215">215</a>     }
+<a class="jxr_linenumber" name="L216" href="#L216">216</a> 
+<a class="jxr_linenumber" name="L217" href="#L217">217</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>

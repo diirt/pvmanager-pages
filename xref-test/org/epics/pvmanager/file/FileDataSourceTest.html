@@ -177,7 +177,7 @@
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>         writer.close();
 <a class="jxr_linenumber" name="L170" href="#L170">170</a>         
 <a class="jxr_linenumber" name="L171" href="#L171">171</a>         <em class="jxr_comment">// Wait for value</em>
-<a class="jxr_linenumber" name="L172" href="#L172">172</a>         listener.await(ofMillis(2000));
+<a class="jxr_linenumber" name="L172" href="#L172">172</a>         listener.await(ofMillis(3000));
 <a class="jxr_linenumber" name="L173" href="#L173">173</a>         assertThat(listener.getCount(), equalTo(0));
 <a class="jxr_linenumber" name="L174" href="#L174">174</a>         
 <a class="jxr_linenumber" name="L175" href="#L175">175</a>         assertThat(pv.getValue(), instanceOf(VTable.<strong class="jxr_keyword">class</strong>));
