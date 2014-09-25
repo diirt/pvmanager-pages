@@ -164,7 +164,7 @@
 <a class="jxr_linenumber" name="L156" href="#L156">156</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">synchronized</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> processConnection(ConnectionPayload connectionPayload) {
 <a class="jxr_linenumber" name="L158" href="#L158">158</a>         <strong class="jxr_keyword">if</strong> (log.isLoggable(Level.FINEST)) {
-<a class="jxr_linenumber" name="L159" href="#L159">159</a>             log.log(Level.FINEST, <span class="jxr_string">"processConnection for channel {0} connecionPayload {1}"</span>, <strong class="jxr_keyword">new</strong> Object[] {getChannelName(), connectionPayload});
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>             log.log(Level.FINEST, <span class="jxr_string">"processConnection for channel {0} connectionPayload {1}"</span>, <strong class="jxr_keyword">new</strong> Object[] {getChannelName(), connectionPayload});
 <a class="jxr_linenumber" name="L160" href="#L160">160</a>         }
 <a class="jxr_linenumber" name="L161" href="#L161">161</a>         
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>         <strong class="jxr_keyword">this</strong>.connectionPayload = connectionPayload;
