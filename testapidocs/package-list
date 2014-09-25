@@ -8,8 +8,6 @@ org.epics.pvmanager.integration
 org.epics.pvmanager.jca
 org.epics.pvmanager.jdbc
 org.epics.pvmanager.loc
-org.epics.pvmanager.pva
-org.epics.pvmanager.pva.rpcservice
 org.epics.pvmanager.service
 org.epics.pvmanager.sim
 org.epics.pvmanager.test
