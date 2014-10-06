@@ -72,14 +72,14 @@
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>          assertThat(writer.toString(), equalTo(text));
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>      }
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>      
-<a class="jxr_linenumber" name="L67" href="#L67">67</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> compareVType(VType actual, VType expected) {
-<a class="jxr_linenumber" name="L68" href="#L68">68</a>          assertThat(<span class="jxr_string">"Type mismatch"</span>, VTypeValueEquals.typeEquals(expected, actual), equalTo(<strong class="jxr_keyword">true</strong>));
-<a class="jxr_linenumber" name="L69" href="#L69">69</a>          assertThat(<span class="jxr_string">"Value mismatch"</span>, VTypeValueEquals.valueEquals(expected, actual), equalTo(<strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> compareVType(VType expected, VType actual) {
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>          assertThat(<span class="jxr_string">"Type mismatch"</span>, VTypeValueEquals.typeEquals(actual, expected), equalTo(<strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>          assertThat(<span class="jxr_string">"Value mismatch"</span>, VTypeValueEquals.valueEquals(actual, expected), equalTo(<strong class="jxr_keyword">true</strong>));
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>          <strong class="jxr_keyword">if</strong> (expected instanceof Alarm) {
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>              assertThat(<span class="jxr_string">"Alarm mismatch"</span>, VTypeValueEquals.alarmEquals((Alarm) expected, (Alarm) actual), equalTo(<strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>              assertThat(<span class="jxr_string">"Alarm mismatch"</span>, VTypeValueEquals.alarmEquals((Alarm) actual, (Alarm) expected), equalTo(<strong class="jxr_keyword">true</strong>));
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>          }
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>          <strong class="jxr_keyword">if</strong> (expected instanceof Time) {
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>              assertThat(<span class="jxr_string">"Time mismatch"</span>, VTypeValueEquals.timeEquals((Time) expected, (Time) actual), equalTo(<strong class="jxr_keyword">true</strong>));
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>              assertThat(<span class="jxr_string">"Time mismatch"</span>, VTypeValueEquals.timeEquals((Time) actual, (Time) expected), equalTo(<strong class="jxr_keyword">true</strong>));
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>          }
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>      }
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>      
@@ -197,198 +197,213 @@
 <a class="jxr_linenumber" name="L189" href="#L189">189</a>             + <span class="jxr_string">"\&quot;columnNames\&quot;:[\&quot;Name\&quot;,\&quot;Index\&quot;,\&quot;Value\&quot;],"</span>
 <a class="jxr_linenumber" name="L190" href="#L190">190</a>             + <span class="jxr_string">"\&quot;columnTypes\&quot;:[\&quot;String\&quot;,\&quot;int\&quot;,\&quot;double\&quot;],"</span>
 <a class="jxr_linenumber" name="L191" href="#L191">191</a>             + <span class="jxr_string">"\&quot;columnValues\&quot;:[[\&quot;A\&quot;,\&quot;B\&quot;,\&quot;C\&quot;],[1,2,3],[3.14,1.25,-0.1]]}"</span>;
-<a class="jxr_linenumber" name="L192" href="#L192">192</a>     
-<a class="jxr_linenumber" name="L193" href="#L193">193</a>     @Test
-<a class="jxr_linenumber" name="L194" href="#L194">194</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVDouble() {
-<a class="jxr_linenumber" name="L195" href="#L195">195</a>         compareJson(VTypeToJson.toJson(vDouble), vDoubleJson);
-<a class="jxr_linenumber" name="L196" href="#L196">196</a>     }
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>     <strong class="jxr_keyword">public</strong> VTable vTable2 = newVTable(Arrays.&lt;Class&lt;?&gt;&gt;asList(String.<strong class="jxr_keyword">class</strong>, <strong class="jxr_keyword">int</strong>.<strong class="jxr_keyword">class</strong>, <strong class="jxr_keyword">double</strong>.<strong class="jxr_keyword">class</strong>, Timestamp.<strong class="jxr_keyword">class</strong>), Arrays.asList(<span class="jxr_string">"Name"</span>, <span class="jxr_string">"Index"</span>, <span class="jxr_string">"Value"</span>, <span class="jxr_string">"Timestamp"</span>), Arrays.asList(Arrays.asList(<span class="jxr_string">"A"</span>, <span class="jxr_string">"B"</span>, <span class="jxr_string">"C"</span>), <strong class="jxr_keyword">new</strong> ArrayInt(1,2,3), <strong class="jxr_keyword">new</strong> ArrayDouble(3.14, 1.25, -0.1), Arrays.asList(Timestamp.of(1234, 0), Timestamp.of(2345, 0), Timestamp.of(3456, 0))));
+<a class="jxr_linenumber" name="L193" href="#L193">193</a>     <strong class="jxr_keyword">public</strong> String vTable2Json = <span class="jxr_string">"{\&quot;type\&quot;:{\&quot;name\&quot;:\&quot;VTable\&quot;,\&quot;version\&quot;:1},"</span>
+<a class="jxr_linenumber" name="L194" href="#L194">194</a>             + <span class="jxr_string">"\&quot;columnNames\&quot;:[\&quot;Name\&quot;,\&quot;Index\&quot;,\&quot;Value\&quot;,\&quot;Timestamp\&quot;],"</span>
+<a class="jxr_linenumber" name="L195" href="#L195">195</a>             + <span class="jxr_string">"\&quot;columnTypes\&quot;:[\&quot;String\&quot;,\&quot;int\&quot;,\&quot;double\&quot;,\&quot;Timestamp\&quot;],"</span>
+<a class="jxr_linenumber" name="L196" href="#L196">196</a>             + <span class="jxr_string">"\&quot;columnValues\&quot;:[[\&quot;A\&quot;,\&quot;B\&quot;,\&quot;C\&quot;],[1,2,3],[3.14,1.25,-0.1],[1234,2345,3456]]}"</span>;
 <a class="jxr_linenumber" name="L197" href="#L197">197</a>     
 <a class="jxr_linenumber" name="L198" href="#L198">198</a>     @Test
-<a class="jxr_linenumber" name="L199" href="#L199">199</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVFloat() {
-<a class="jxr_linenumber" name="L200" href="#L200">200</a>         compareJson(VTypeToJson.toJson(vFloat), vFloatJson);
+<a class="jxr_linenumber" name="L199" href="#L199">199</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVDouble() {
+<a class="jxr_linenumber" name="L200" href="#L200">200</a>         compareJson(VTypeToJson.toJson(vDouble), vDoubleJson);
 <a class="jxr_linenumber" name="L201" href="#L201">201</a>     }
-<a class="jxr_linenumber" name="L202" href="#L202">202</a> 
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>     
 <a class="jxr_linenumber" name="L203" href="#L203">203</a>     @Test
-<a class="jxr_linenumber" name="L204" href="#L204">204</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVLong() {
-<a class="jxr_linenumber" name="L205" href="#L205">205</a>         compareJson(VTypeToJson.toJson(vLong), vLongJson);
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVFloat() {
+<a class="jxr_linenumber" name="L205" href="#L205">205</a>         compareJson(VTypeToJson.toJson(vFloat), vFloatJson);
 <a class="jxr_linenumber" name="L206" href="#L206">206</a>     }
 <a class="jxr_linenumber" name="L207" href="#L207">207</a> 
 <a class="jxr_linenumber" name="L208" href="#L208">208</a>     @Test
-<a class="jxr_linenumber" name="L209" href="#L209">209</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVInt() {
-<a class="jxr_linenumber" name="L210" href="#L210">210</a>         compareJson(VTypeToJson.toJson(vInt), vIntJson);
+<a class="jxr_linenumber" name="L209" href="#L209">209</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVLong() {
+<a class="jxr_linenumber" name="L210" href="#L210">210</a>         compareJson(VTypeToJson.toJson(vLong), vLongJson);
 <a class="jxr_linenumber" name="L211" href="#L211">211</a>     }
 <a class="jxr_linenumber" name="L212" href="#L212">212</a> 
 <a class="jxr_linenumber" name="L213" href="#L213">213</a>     @Test
-<a class="jxr_linenumber" name="L214" href="#L214">214</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVShort() {
-<a class="jxr_linenumber" name="L215" href="#L215">215</a>         compareJson(VTypeToJson.toJson(vShort), vShortJson);
+<a class="jxr_linenumber" name="L214" href="#L214">214</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVInt() {
+<a class="jxr_linenumber" name="L215" href="#L215">215</a>         compareJson(VTypeToJson.toJson(vInt), vIntJson);
 <a class="jxr_linenumber" name="L216" href="#L216">216</a>     }
 <a class="jxr_linenumber" name="L217" href="#L217">217</a> 
 <a class="jxr_linenumber" name="L218" href="#L218">218</a>     @Test
-<a class="jxr_linenumber" name="L219" href="#L219">219</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVByte() {
-<a class="jxr_linenumber" name="L220" href="#L220">220</a>         compareJson(VTypeToJson.toJson(vByte), vByteJson);
+<a class="jxr_linenumber" name="L219" href="#L219">219</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVShort() {
+<a class="jxr_linenumber" name="L220" href="#L220">220</a>         compareJson(VTypeToJson.toJson(vShort), vShortJson);
 <a class="jxr_linenumber" name="L221" href="#L221">221</a>     }
 <a class="jxr_linenumber" name="L222" href="#L222">222</a> 
 <a class="jxr_linenumber" name="L223" href="#L223">223</a>     @Test
-<a class="jxr_linenumber" name="L224" href="#L224">224</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVBoolean() {
-<a class="jxr_linenumber" name="L225" href="#L225">225</a>         compareJson(VTypeToJson.toJson(vBoolean), vBooleanJson);
+<a class="jxr_linenumber" name="L224" href="#L224">224</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVByte() {
+<a class="jxr_linenumber" name="L225" href="#L225">225</a>         compareJson(VTypeToJson.toJson(vByte), vByteJson);
 <a class="jxr_linenumber" name="L226" href="#L226">226</a>     }
 <a class="jxr_linenumber" name="L227" href="#L227">227</a> 
 <a class="jxr_linenumber" name="L228" href="#L228">228</a>     @Test
-<a class="jxr_linenumber" name="L229" href="#L229">229</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVString() {
-<a class="jxr_linenumber" name="L230" href="#L230">230</a>         compareJson(VTypeToJson.toJson(vString), vStringJson);
+<a class="jxr_linenumber" name="L229" href="#L229">229</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVBoolean() {
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>         compareJson(VTypeToJson.toJson(vBoolean), vBooleanJson);
 <a class="jxr_linenumber" name="L231" href="#L231">231</a>     }
-<a class="jxr_linenumber" name="L232" href="#L232">232</a>         
+<a class="jxr_linenumber" name="L232" href="#L232">232</a> 
 <a class="jxr_linenumber" name="L233" href="#L233">233</a>     @Test
-<a class="jxr_linenumber" name="L234" href="#L234">234</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVEnum() {
-<a class="jxr_linenumber" name="L235" href="#L235">235</a>         compareJson(VTypeToJson.toJson(vEnum), vEnumJson);
+<a class="jxr_linenumber" name="L234" href="#L234">234</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVString() {
+<a class="jxr_linenumber" name="L235" href="#L235">235</a>         compareJson(VTypeToJson.toJson(vString), vStringJson);
 <a class="jxr_linenumber" name="L236" href="#L236">236</a>     }
-<a class="jxr_linenumber" name="L237" href="#L237">237</a> 
+<a class="jxr_linenumber" name="L237" href="#L237">237</a>         
 <a class="jxr_linenumber" name="L238" href="#L238">238</a>     @Test
-<a class="jxr_linenumber" name="L239" href="#L239">239</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVDoubleArray() {
-<a class="jxr_linenumber" name="L240" href="#L240">240</a>         compareJson(VTypeToJson.toJson(vDoubleArray), vDoubleArrayJson);
+<a class="jxr_linenumber" name="L239" href="#L239">239</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVEnum() {
+<a class="jxr_linenumber" name="L240" href="#L240">240</a>         compareJson(VTypeToJson.toJson(vEnum), vEnumJson);
 <a class="jxr_linenumber" name="L241" href="#L241">241</a>     }
 <a class="jxr_linenumber" name="L242" href="#L242">242</a> 
 <a class="jxr_linenumber" name="L243" href="#L243">243</a>     @Test
-<a class="jxr_linenumber" name="L244" href="#L244">244</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVFloatArray() {
-<a class="jxr_linenumber" name="L245" href="#L245">245</a>         compareJson(VTypeToJson.toJson(vFloatArray), vFloatArrayJson);
+<a class="jxr_linenumber" name="L244" href="#L244">244</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVDoubleArray() {
+<a class="jxr_linenumber" name="L245" href="#L245">245</a>         compareJson(VTypeToJson.toJson(vDoubleArray), vDoubleArrayJson);
 <a class="jxr_linenumber" name="L246" href="#L246">246</a>     }
 <a class="jxr_linenumber" name="L247" href="#L247">247</a> 
 <a class="jxr_linenumber" name="L248" href="#L248">248</a>     @Test
-<a class="jxr_linenumber" name="L249" href="#L249">249</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVLongArray() {
-<a class="jxr_linenumber" name="L250" href="#L250">250</a>         compareJson(VTypeToJson.toJson(vLongArray), vLongArrayJson);
+<a class="jxr_linenumber" name="L249" href="#L249">249</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVFloatArray() {
+<a class="jxr_linenumber" name="L250" href="#L250">250</a>         compareJson(VTypeToJson.toJson(vFloatArray), vFloatArrayJson);
 <a class="jxr_linenumber" name="L251" href="#L251">251</a>     }
 <a class="jxr_linenumber" name="L252" href="#L252">252</a> 
 <a class="jxr_linenumber" name="L253" href="#L253">253</a>     @Test
-<a class="jxr_linenumber" name="L254" href="#L254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVIntArray() {
-<a class="jxr_linenumber" name="L255" href="#L255">255</a>         compareJson(VTypeToJson.toJson(vIntArray), vIntArrayJson);
+<a class="jxr_linenumber" name="L254" href="#L254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVLongArray() {
+<a class="jxr_linenumber" name="L255" href="#L255">255</a>         compareJson(VTypeToJson.toJson(vLongArray), vLongArrayJson);
 <a class="jxr_linenumber" name="L256" href="#L256">256</a>     }
 <a class="jxr_linenumber" name="L257" href="#L257">257</a> 
 <a class="jxr_linenumber" name="L258" href="#L258">258</a>     @Test
-<a class="jxr_linenumber" name="L259" href="#L259">259</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVShortArray() {
-<a class="jxr_linenumber" name="L260" href="#L260">260</a>         compareJson(VTypeToJson.toJson(vShortArray), vShortArrayJson);
+<a class="jxr_linenumber" name="L259" href="#L259">259</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVIntArray() {
+<a class="jxr_linenumber" name="L260" href="#L260">260</a>         compareJson(VTypeToJson.toJson(vIntArray), vIntArrayJson);
 <a class="jxr_linenumber" name="L261" href="#L261">261</a>     }
 <a class="jxr_linenumber" name="L262" href="#L262">262</a> 
 <a class="jxr_linenumber" name="L263" href="#L263">263</a>     @Test
-<a class="jxr_linenumber" name="L264" href="#L264">264</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVByteArray() {
-<a class="jxr_linenumber" name="L265" href="#L265">265</a>         compareJson(VTypeToJson.toJson(vByteArray), vByteArrayJson);
+<a class="jxr_linenumber" name="L264" href="#L264">264</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVShortArray() {
+<a class="jxr_linenumber" name="L265" href="#L265">265</a>         compareJson(VTypeToJson.toJson(vShortArray), vShortArrayJson);
 <a class="jxr_linenumber" name="L266" href="#L266">266</a>     }
 <a class="jxr_linenumber" name="L267" href="#L267">267</a> 
 <a class="jxr_linenumber" name="L268" href="#L268">268</a>     @Test
-<a class="jxr_linenumber" name="L269" href="#L269">269</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVBooleanArray() {
-<a class="jxr_linenumber" name="L270" href="#L270">270</a>         compareJson(VTypeToJson.toJson(vBooleanArray), vBooleanArrayJson);
+<a class="jxr_linenumber" name="L269" href="#L269">269</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVByteArray() {
+<a class="jxr_linenumber" name="L270" href="#L270">270</a>         compareJson(VTypeToJson.toJson(vByteArray), vByteArrayJson);
 <a class="jxr_linenumber" name="L271" href="#L271">271</a>     }
 <a class="jxr_linenumber" name="L272" href="#L272">272</a> 
 <a class="jxr_linenumber" name="L273" href="#L273">273</a>     @Test
-<a class="jxr_linenumber" name="L274" href="#L274">274</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVStringArray() {
-<a class="jxr_linenumber" name="L275" href="#L275">275</a>         compareJson(VTypeToJson.toJson(vStringArray), vStringArrayJson);
+<a class="jxr_linenumber" name="L274" href="#L274">274</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVBooleanArray() {
+<a class="jxr_linenumber" name="L275" href="#L275">275</a>         compareJson(VTypeToJson.toJson(vBooleanArray), vBooleanArrayJson);
 <a class="jxr_linenumber" name="L276" href="#L276">276</a>     }
 <a class="jxr_linenumber" name="L277" href="#L277">277</a> 
 <a class="jxr_linenumber" name="L278" href="#L278">278</a>     @Test
-<a class="jxr_linenumber" name="L279" href="#L279">279</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVEnumArray() {
-<a class="jxr_linenumber" name="L280" href="#L280">280</a>         compareJson(VTypeToJson.toJson(vEnumArray), vEnumArrayJson);
+<a class="jxr_linenumber" name="L279" href="#L279">279</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVStringArray() {
+<a class="jxr_linenumber" name="L280" href="#L280">280</a>         compareJson(VTypeToJson.toJson(vStringArray), vStringArrayJson);
 <a class="jxr_linenumber" name="L281" href="#L281">281</a>     }
 <a class="jxr_linenumber" name="L282" href="#L282">282</a> 
 <a class="jxr_linenumber" name="L283" href="#L283">283</a>     @Test
-<a class="jxr_linenumber" name="L284" href="#L284">284</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVTableArray() {
-<a class="jxr_linenumber" name="L285" href="#L285">285</a>         compareJson(VTypeToJson.toJson(vTable), vTableJson);
+<a class="jxr_linenumber" name="L284" href="#L284">284</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVEnumArray() {
+<a class="jxr_linenumber" name="L285" href="#L285">285</a>         compareJson(VTypeToJson.toJson(vEnumArray), vEnumArrayJson);
 <a class="jxr_linenumber" name="L286" href="#L286">286</a>     }
 <a class="jxr_linenumber" name="L287" href="#L287">287</a> 
 <a class="jxr_linenumber" name="L288" href="#L288">288</a>     @Test
-<a class="jxr_linenumber" name="L289" href="#L289">289</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVDouble() {
-<a class="jxr_linenumber" name="L290" href="#L290">290</a>         compareVType(vDouble, VTypeToJson.toVType(parseJson(vDoubleJson)));
+<a class="jxr_linenumber" name="L289" href="#L289">289</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVTable1() {
+<a class="jxr_linenumber" name="L290" href="#L290">290</a>         compareJson(VTypeToJson.toJson(vTable), vTableJson);
 <a class="jxr_linenumber" name="L291" href="#L291">291</a>     }
 <a class="jxr_linenumber" name="L292" href="#L292">292</a> 
 <a class="jxr_linenumber" name="L293" href="#L293">293</a>     @Test
-<a class="jxr_linenumber" name="L294" href="#L294">294</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVFloat() {
-<a class="jxr_linenumber" name="L295" href="#L295">295</a>         compareVType(vFloat, VTypeToJson.toVType(parseJson(vFloatJson)));
+<a class="jxr_linenumber" name="L294" href="#L294">294</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> serializeVTable2() {
+<a class="jxr_linenumber" name="L295" href="#L295">295</a>         compareJson(VTypeToJson.toJson(vTable2), vTable2Json);
 <a class="jxr_linenumber" name="L296" href="#L296">296</a>     }
 <a class="jxr_linenumber" name="L297" href="#L297">297</a> 
 <a class="jxr_linenumber" name="L298" href="#L298">298</a>     @Test
-<a class="jxr_linenumber" name="L299" href="#L299">299</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVLong() {
-<a class="jxr_linenumber" name="L300" href="#L300">300</a>         compareVType(vLong, VTypeToJson.toVType(parseJson(vLongJson)));
+<a class="jxr_linenumber" name="L299" href="#L299">299</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVDouble() {
+<a class="jxr_linenumber" name="L300" href="#L300">300</a>         compareVType(vDouble, VTypeToJson.toVType(parseJson(vDoubleJson)));
 <a class="jxr_linenumber" name="L301" href="#L301">301</a>     }
 <a class="jxr_linenumber" name="L302" href="#L302">302</a> 
 <a class="jxr_linenumber" name="L303" href="#L303">303</a>     @Test
-<a class="jxr_linenumber" name="L304" href="#L304">304</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVInt() {
-<a class="jxr_linenumber" name="L305" href="#L305">305</a>         compareVType(vInt, VTypeToJson.toVType(parseJson(vIntJson)));
+<a class="jxr_linenumber" name="L304" href="#L304">304</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVFloat() {
+<a class="jxr_linenumber" name="L305" href="#L305">305</a>         compareVType(vFloat, VTypeToJson.toVType(parseJson(vFloatJson)));
 <a class="jxr_linenumber" name="L306" href="#L306">306</a>     }
 <a class="jxr_linenumber" name="L307" href="#L307">307</a> 
 <a class="jxr_linenumber" name="L308" href="#L308">308</a>     @Test
-<a class="jxr_linenumber" name="L309" href="#L309">309</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVShort() {
-<a class="jxr_linenumber" name="L310" href="#L310">310</a>         compareVType(vShort, VTypeToJson.toVType(parseJson(vShortJson)));
+<a class="jxr_linenumber" name="L309" href="#L309">309</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVLong() {
+<a class="jxr_linenumber" name="L310" href="#L310">310</a>         compareVType(vLong, VTypeToJson.toVType(parseJson(vLongJson)));
 <a class="jxr_linenumber" name="L311" href="#L311">311</a>     }
 <a class="jxr_linenumber" name="L312" href="#L312">312</a> 
 <a class="jxr_linenumber" name="L313" href="#L313">313</a>     @Test
-<a class="jxr_linenumber" name="L314" href="#L314">314</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVByte() {
-<a class="jxr_linenumber" name="L315" href="#L315">315</a>         compareVType(vByte, VTypeToJson.toVType(parseJson(vByteJson)));
+<a class="jxr_linenumber" name="L314" href="#L314">314</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVInt() {
+<a class="jxr_linenumber" name="L315" href="#L315">315</a>         compareVType(vInt, VTypeToJson.toVType(parseJson(vIntJson)));
 <a class="jxr_linenumber" name="L316" href="#L316">316</a>     }
 <a class="jxr_linenumber" name="L317" href="#L317">317</a> 
 <a class="jxr_linenumber" name="L318" href="#L318">318</a>     @Test
-<a class="jxr_linenumber" name="L319" href="#L319">319</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVBoolean() {
-<a class="jxr_linenumber" name="L320" href="#L320">320</a>         compareVType(vBoolean, VTypeToJson.toVType(parseJson(vBooleanJson)));
+<a class="jxr_linenumber" name="L319" href="#L319">319</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVShort() {
+<a class="jxr_linenumber" name="L320" href="#L320">320</a>         compareVType(vShort, VTypeToJson.toVType(parseJson(vShortJson)));
 <a class="jxr_linenumber" name="L321" href="#L321">321</a>     }
 <a class="jxr_linenumber" name="L322" href="#L322">322</a> 
 <a class="jxr_linenumber" name="L323" href="#L323">323</a>     @Test
-<a class="jxr_linenumber" name="L324" href="#L324">324</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVString() {
-<a class="jxr_linenumber" name="L325" href="#L325">325</a>         compareVType(vString, VTypeToJson.toVType(parseJson(vStringJson)));
+<a class="jxr_linenumber" name="L324" href="#L324">324</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVByte() {
+<a class="jxr_linenumber" name="L325" href="#L325">325</a>         compareVType(vByte, VTypeToJson.toVType(parseJson(vByteJson)));
 <a class="jxr_linenumber" name="L326" href="#L326">326</a>     }
 <a class="jxr_linenumber" name="L327" href="#L327">327</a> 
 <a class="jxr_linenumber" name="L328" href="#L328">328</a>     @Test
-<a class="jxr_linenumber" name="L329" href="#L329">329</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVEnum() {
-<a class="jxr_linenumber" name="L330" href="#L330">330</a>         compareVType(vEnum, VTypeToJson.toVType(parseJson(vEnumJson)));
+<a class="jxr_linenumber" name="L329" href="#L329">329</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVBoolean() {
+<a class="jxr_linenumber" name="L330" href="#L330">330</a>         compareVType(vBoolean, VTypeToJson.toVType(parseJson(vBooleanJson)));
 <a class="jxr_linenumber" name="L331" href="#L331">331</a>     }
 <a class="jxr_linenumber" name="L332" href="#L332">332</a> 
 <a class="jxr_linenumber" name="L333" href="#L333">333</a>     @Test
-<a class="jxr_linenumber" name="L334" href="#L334">334</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVDoubleArray() {
-<a class="jxr_linenumber" name="L335" href="#L335">335</a>         compareVType(vDoubleArray, VTypeToJson.toVType(parseJson(vDoubleArrayJson)));
+<a class="jxr_linenumber" name="L334" href="#L334">334</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVString() {
+<a class="jxr_linenumber" name="L335" href="#L335">335</a>         compareVType(vString, VTypeToJson.toVType(parseJson(vStringJson)));
 <a class="jxr_linenumber" name="L336" href="#L336">336</a>     }
 <a class="jxr_linenumber" name="L337" href="#L337">337</a> 
 <a class="jxr_linenumber" name="L338" href="#L338">338</a>     @Test
-<a class="jxr_linenumber" name="L339" href="#L339">339</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVFloatArray() {
-<a class="jxr_linenumber" name="L340" href="#L340">340</a>         compareVType(vFloatArray, VTypeToJson.toVType(parseJson(vFloatArrayJson)));
+<a class="jxr_linenumber" name="L339" href="#L339">339</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVEnum() {
+<a class="jxr_linenumber" name="L340" href="#L340">340</a>         compareVType(vEnum, VTypeToJson.toVType(parseJson(vEnumJson)));
 <a class="jxr_linenumber" name="L341" href="#L341">341</a>     }
 <a class="jxr_linenumber" name="L342" href="#L342">342</a> 
 <a class="jxr_linenumber" name="L343" href="#L343">343</a>     @Test
-<a class="jxr_linenumber" name="L344" href="#L344">344</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVLongArray() {
-<a class="jxr_linenumber" name="L345" href="#L345">345</a>         compareVType(vLongArray, VTypeToJson.toVType(parseJson(vLongArrayJson)));
+<a class="jxr_linenumber" name="L344" href="#L344">344</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVDoubleArray() {
+<a class="jxr_linenumber" name="L345" href="#L345">345</a>         compareVType(vDoubleArray, VTypeToJson.toVType(parseJson(vDoubleArrayJson)));
 <a class="jxr_linenumber" name="L346" href="#L346">346</a>     }
 <a class="jxr_linenumber" name="L347" href="#L347">347</a> 
 <a class="jxr_linenumber" name="L348" href="#L348">348</a>     @Test
-<a class="jxr_linenumber" name="L349" href="#L349">349</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVIntArray() {
-<a class="jxr_linenumber" name="L350" href="#L350">350</a>         compareVType(vIntArray, VTypeToJson.toVType(parseJson(vIntArrayJson)));
+<a class="jxr_linenumber" name="L349" href="#L349">349</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVFloatArray() {
+<a class="jxr_linenumber" name="L350" href="#L350">350</a>         compareVType(vFloatArray, VTypeToJson.toVType(parseJson(vFloatArrayJson)));
 <a class="jxr_linenumber" name="L351" href="#L351">351</a>     }
 <a class="jxr_linenumber" name="L352" href="#L352">352</a> 
 <a class="jxr_linenumber" name="L353" href="#L353">353</a>     @Test
-<a class="jxr_linenumber" name="L354" href="#L354">354</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVShortArray() {
-<a class="jxr_linenumber" name="L355" href="#L355">355</a>         compareVType(vShortArray, VTypeToJson.toVType(parseJson(vShortArrayJson)));
+<a class="jxr_linenumber" name="L354" href="#L354">354</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVLongArray() {
+<a class="jxr_linenumber" name="L355" href="#L355">355</a>         compareVType(vLongArray, VTypeToJson.toVType(parseJson(vLongArrayJson)));
 <a class="jxr_linenumber" name="L356" href="#L356">356</a>     }
 <a class="jxr_linenumber" name="L357" href="#L357">357</a> 
 <a class="jxr_linenumber" name="L358" href="#L358">358</a>     @Test
-<a class="jxr_linenumber" name="L359" href="#L359">359</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVByteArray() {
-<a class="jxr_linenumber" name="L360" href="#L360">360</a>         compareVType(vByteArray, VTypeToJson.toVType(parseJson(vByteArrayJson)));
+<a class="jxr_linenumber" name="L359" href="#L359">359</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVIntArray() {
+<a class="jxr_linenumber" name="L360" href="#L360">360</a>         compareVType(vIntArray, VTypeToJson.toVType(parseJson(vIntArrayJson)));
 <a class="jxr_linenumber" name="L361" href="#L361">361</a>     }
 <a class="jxr_linenumber" name="L362" href="#L362">362</a> 
 <a class="jxr_linenumber" name="L363" href="#L363">363</a>     @Test
-<a class="jxr_linenumber" name="L364" href="#L364">364</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVBooleanArray() {
-<a class="jxr_linenumber" name="L365" href="#L365">365</a>         compareVType(vBooleanArray, VTypeToJson.toVType(parseJson(vBooleanArrayJson)));
+<a class="jxr_linenumber" name="L364" href="#L364">364</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVShortArray() {
+<a class="jxr_linenumber" name="L365" href="#L365">365</a>         compareVType(vShortArray, VTypeToJson.toVType(parseJson(vShortArrayJson)));
 <a class="jxr_linenumber" name="L366" href="#L366">366</a>     }
 <a class="jxr_linenumber" name="L367" href="#L367">367</a> 
 <a class="jxr_linenumber" name="L368" href="#L368">368</a>     @Test
-<a class="jxr_linenumber" name="L369" href="#L369">369</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVStringArray() {
-<a class="jxr_linenumber" name="L370" href="#L370">370</a>         compareVType(vStringArray, VTypeToJson.toVType(parseJson(vStringArrayJson)));
+<a class="jxr_linenumber" name="L369" href="#L369">369</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVByteArray() {
+<a class="jxr_linenumber" name="L370" href="#L370">370</a>         compareVType(vByteArray, VTypeToJson.toVType(parseJson(vByteArrayJson)));
 <a class="jxr_linenumber" name="L371" href="#L371">371</a>     }
 <a class="jxr_linenumber" name="L372" href="#L372">372</a> 
 <a class="jxr_linenumber" name="L373" href="#L373">373</a>     @Test
-<a class="jxr_linenumber" name="L374" href="#L374">374</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVEnumArray() {
-<a class="jxr_linenumber" name="L375" href="#L375">375</a>         compareVType(vEnumArray, VTypeToJson.toVType(parseJson(vEnumArrayJson)));
+<a class="jxr_linenumber" name="L374" href="#L374">374</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVBooleanArray() {
+<a class="jxr_linenumber" name="L375" href="#L375">375</a>         compareVType(vBooleanArray, VTypeToJson.toVType(parseJson(vBooleanArrayJson)));
 <a class="jxr_linenumber" name="L376" href="#L376">376</a>     }
 <a class="jxr_linenumber" name="L377" href="#L377">377</a> 
 <a class="jxr_linenumber" name="L378" href="#L378">378</a>     @Test
-<a class="jxr_linenumber" name="L379" href="#L379">379</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVTable() {
-<a class="jxr_linenumber" name="L380" href="#L380">380</a>         compareVType(vTable, VTypeToJson.toVType(parseJson(vTableJson)));
+<a class="jxr_linenumber" name="L379" href="#L379">379</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVStringArray() {
+<a class="jxr_linenumber" name="L380" href="#L380">380</a>         compareVType(vStringArray, VTypeToJson.toVType(parseJson(vStringArrayJson)));
 <a class="jxr_linenumber" name="L381" href="#L381">381</a>     }
-<a class="jxr_linenumber" name="L382" href="#L382">382</a>     
-<a class="jxr_linenumber" name="L383" href="#L383">383</a> }
+<a class="jxr_linenumber" name="L382" href="#L382">382</a> 
+<a class="jxr_linenumber" name="L383" href="#L383">383</a>     @Test
+<a class="jxr_linenumber" name="L384" href="#L384">384</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVEnumArray() {
+<a class="jxr_linenumber" name="L385" href="#L385">385</a>         compareVType(vEnumArray, VTypeToJson.toVType(parseJson(vEnumArrayJson)));
+<a class="jxr_linenumber" name="L386" href="#L386">386</a>     }
+<a class="jxr_linenumber" name="L387" href="#L387">387</a> 
+<a class="jxr_linenumber" name="L388" href="#L388">388</a>     @Test
+<a class="jxr_linenumber" name="L389" href="#L389">389</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVTable() {
+<a class="jxr_linenumber" name="L390" href="#L390">390</a>         compareVType(vTable, VTypeToJson.toVType(parseJson(vTableJson)));
+<a class="jxr_linenumber" name="L391" href="#L391">391</a>     }
+<a class="jxr_linenumber" name="L392" href="#L392">392</a> 
+<a class="jxr_linenumber" name="L393" href="#L393">393</a>     @Test
+<a class="jxr_linenumber" name="L394" href="#L394">394</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> parseVTable2() {
+<a class="jxr_linenumber" name="L395" href="#L395">395</a>         compareVType(vTable2, VTypeToJson.toVType(parseJson(vTable2Json)));
+<a class="jxr_linenumber" name="L396" href="#L396">396</a>     }
+<a class="jxr_linenumber" name="L397" href="#L397">397</a>     
+<a class="jxr_linenumber" name="L398" href="#L398">398</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>
