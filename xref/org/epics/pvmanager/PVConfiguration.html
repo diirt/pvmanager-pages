@@ -153,11 +153,13 @@
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>         PVReader&lt;R&gt; pvReader = pvReaderConfiguration.maxRate(period);
 <a class="jxr_linenumber" name="L146" href="#L146">146</a>         PVWriter&lt;W&gt; pvWriter = pvWriterConfiguration.async();
 <a class="jxr_linenumber" name="L147" href="#L147">147</a>         PV&lt;R, W&gt; pv = <strong class="jxr_keyword">new</strong> PV&lt;R, W&gt;(pvReader, pvWriter);
-<a class="jxr_linenumber" name="L148" href="#L148">148</a>         PVReaderImpl.implOf(pvReader).setReaderForNotification(pv);
-<a class="jxr_linenumber" name="L149" href="#L149">149</a>         <strong class="jxr_keyword">return</strong> pv;
-<a class="jxr_linenumber" name="L150" href="#L150">150</a>     }
-<a class="jxr_linenumber" name="L151" href="#L151">151</a>     
-<a class="jxr_linenumber" name="L152" href="#L152">152</a> }
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>         <em class="jxr_comment">// This should really be set before the scanning starts</em>
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>         PVReaderImpl.implOf(pvReader).setReaderForNotification(pv);
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>         PVWriterImpl.implOf(pvWriter).setWriterForNotification(pv);
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>         <strong class="jxr_keyword">return</strong> pv;
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>     }
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>     
+<a class="jxr_linenumber" name="L154" href="#L154">154</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>
