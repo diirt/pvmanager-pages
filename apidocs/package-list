@@ -10,6 +10,11 @@ org.epics.pvmanager.integration
 org.epics.pvmanager.jca
 org.epics.pvmanager.jdbc
 org.epics.pvmanager.loc
+org.epics.pvmanager.pva
+org.epics.pvmanager.pva.adapters
+org.epics.pvmanager.pva.formula
+org.epics.pvmanager.pva.rpcservice
+org.epics.pvmanager.pva.rpcservice.rpcclient
 org.epics.pvmanager.sample
 org.epics.pvmanager.sample.graphene
 org.epics.pvmanager.sample.jca
