@@ -22,21 +22,21 @@
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">class</strong> <a href="../../../org/epics/pvmanager/ScannerParameters.html">ScannerParameters</a> {
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>      
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>      enum <a href="../../../org/epics/pvmanager/DesiredRateEvent.html">Type</a> {ACTIVE, PASSIVE}
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      enum <a href="../../../org/epics/pvmanager/ScannerParameters.html">Type</a> {ACTIVE, PASSIVE}
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">private</strong> <a href="../../../org/epics/pvmanager/DesiredRateEvent.html">Type</a> type = Type.ACTIVE;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">private</strong> <a href="../../../org/epics/pvmanager/ScannerParameters.html">Type</a> type = Type.ACTIVE;
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">private</strong> ScheduledExecutorService scannerExecutor;
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>      <strong class="jxr_keyword">private</strong> TimeDuration maxDuration;
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>      <strong class="jxr_keyword">private</strong> TimeDuration timeout;
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>      <strong class="jxr_keyword">private</strong> String timeoutMessage;
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>      <strong class="jxr_keyword">private</strong> <a href="../../../org/epics/pvmanager/DesiredRateEventListener.html">DesiredRateEventListener</a> listener;
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>      
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/ScannerParameters.html">ScannerParameters</a> type(<a href="../../../org/epics/pvmanager/DesiredRateEvent.html">Type</a> type) {
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/ScannerParameters.html">ScannerParameters</a> type(<a href="../../../org/epics/pvmanager/ScannerParameters.html">Type</a> type) {
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>          <strong class="jxr_keyword">this</strong>.type = type;
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>      }
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/DesiredRateEvent.html">Type</a> getType() {
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">public</strong> <a href="../../../org/epics/pvmanager/ScannerParameters.html">Type</a> getType() {
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>          <strong class="jxr_keyword">return</strong> type;
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>      }
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>  
@@ -105,6 +105,6 @@
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2010&#x2013;2014. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2010&#x2013;2015. All rights reserved.</div>
 </body>
 </html>
