@@ -91,7 +91,7 @@
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>  			<strong class="jxr_keyword">if</strong> (value == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>  				<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>  			
-<a class="jxr_linenumber" name="L86" href="#L86">86</a>  			PVStructure pvStructure = value.getNTNdArray();
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>  			PVStructure pvStructure = value.getPVStructure();
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>  
 <a class="jxr_linenumber" name="L88" href="#L88">88</a>  			<strong class="jxr_keyword">final</strong> PVStructureArray attributeArray = pvStructure.getStructureArrayField(<span class="jxr_string">"attribute"</span>);
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>  
@@ -194,7 +194,7 @@
 <a class="jxr_linenumber" name="L186" href="#L186">186</a> 			<strong class="jxr_keyword">if</strong> (value == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L187" href="#L187">187</a> 				<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L188" href="#L188">188</a> 
-<a class="jxr_linenumber" name="L189" href="#L189">189</a> 			PVStructure pvStructure = value.getNTNdArray();
+<a class="jxr_linenumber" name="L189" href="#L189">189</a> 			PVStructure pvStructure = value.getPVStructure();
 <a class="jxr_linenumber" name="L190" href="#L190">190</a> 			
 <a class="jxr_linenumber" name="L191" href="#L191">191</a> 			AlarmTimeDisplayExtractor atd = <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/adapters/AlarmTimeDisplayExtractor.html">AlarmTimeDisplayExtractor</a>(pvStructure, false);
 <a class="jxr_linenumber" name="L192" href="#L192">192</a> 
@@ -278,7 +278,7 @@
 <a class="jxr_linenumber" name="L270" href="#L270">270</a> 			<strong class="jxr_keyword">if</strong> (value == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L271" href="#L271">271</a> 				<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L272" href="#L272">272</a> 	        
-<a class="jxr_linenumber" name="L273" href="#L273">273</a> 			PVStructure pvStructure = value.getNTNdArray();
+<a class="jxr_linenumber" name="L273" href="#L273">273</a> 			PVStructure pvStructure = value.getPVStructure();
 <a class="jxr_linenumber" name="L274" href="#L274">274</a> 
 <a class="jxr_linenumber" name="L275" href="#L275">275</a> 			PVUnion valueUnion = pvStructure.getUnionField(<span class="jxr_string">"value"</span>);
 <a class="jxr_linenumber" name="L276" href="#L276">276</a> 			PVScalarArray pvArray = valueUnion.get(PVScalarArray.<strong class="jxr_keyword">class</strong>);

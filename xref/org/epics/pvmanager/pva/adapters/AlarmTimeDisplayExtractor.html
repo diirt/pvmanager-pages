@@ -116,7 +116,7 @@
 <a class="jxr_linenumber" name="L108" href="#L108">108</a> 		<strong class="jxr_keyword">super</strong>(pvField, disconnected);
 <a class="jxr_linenumber" name="L109" href="#L109">109</a> 		
 <a class="jxr_linenumber" name="L110" href="#L110">110</a> 		<em class="jxr_comment">// display_t</em>
-<a class="jxr_linenumber" name="L111" href="#L111">111</a> 		PVStructure displayStructure = pvField.getStructureField(<span class="jxr_string">"display"</span>);
+<a class="jxr_linenumber" name="L111" href="#L111">111</a> 		PVStructure displayStructure = (pvField != <strong class="jxr_keyword">null</strong>) ? pvField.getStructureField(<span class="jxr_string">"display"</span>) : <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L112" href="#L112">112</a> 		<strong class="jxr_keyword">if</strong> (displayStructure != <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L113" href="#L113">113</a> 		{
 <a class="jxr_linenumber" name="L114" href="#L114">114</a> 			lowerDisplayLimit = getDoubleValue(displayStructure, <span class="jxr_string">"limitLow"</span>, noDisplay.getLowerDisplayLimit());
@@ -143,7 +143,7 @@
 <a class="jxr_linenumber" name="L135" href="#L135">135</a> 		}
 <a class="jxr_linenumber" name="L136" href="#L136">136</a> 	
 <a class="jxr_linenumber" name="L137" href="#L137">137</a> 		<em class="jxr_comment">// control_t</em>
-<a class="jxr_linenumber" name="L138" href="#L138">138</a> 		PVStructure controlStructure = pvField.getStructureField(<span class="jxr_string">"control"</span>);
+<a class="jxr_linenumber" name="L138" href="#L138">138</a> 		PVStructure controlStructure = (pvField != <strong class="jxr_keyword">null</strong>) ? pvField.getStructureField(<span class="jxr_string">"control"</span>) : <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L139" href="#L139">139</a> 		<strong class="jxr_keyword">if</strong> (controlStructure != <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L140" href="#L140">140</a> 		{
 <a class="jxr_linenumber" name="L141" href="#L141">141</a> 			lowerCtrlLimit = getDoubleValue(controlStructure, <span class="jxr_string">"limitLow"</span>, noDisplay.getLowerCtrlLimit());
@@ -157,7 +157,7 @@
 <a class="jxr_linenumber" name="L149" href="#L149">149</a> 		
 <a class="jxr_linenumber" name="L150" href="#L150">150</a> 		
 <a class="jxr_linenumber" name="L151" href="#L151">151</a> 		<em class="jxr_comment">// valueAlarm_t</em>
-<a class="jxr_linenumber" name="L152" href="#L152">152</a> 		PVStructure valueAlarmStructure = pvField.getStructureField(<span class="jxr_string">"valueAlarm"</span>);
+<a class="jxr_linenumber" name="L152" href="#L152">152</a> 		PVStructure valueAlarmStructure = (pvField != <strong class="jxr_keyword">null</strong>) ? pvField.getStructureField(<span class="jxr_string">"valueAlarm"</span>) : <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="L153" href="#L153">153</a> 		<strong class="jxr_keyword">if</strong> (valueAlarmStructure != <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="L154" href="#L154">154</a> 		{
 <a class="jxr_linenumber" name="L155" href="#L155">155</a> 			lowerAlarmLimit = getDoubleValue(valueAlarmStructure, <span class="jxr_string">"lowAlarmLimit"</span>, noDisplay.getLowerAlarmLimit());
