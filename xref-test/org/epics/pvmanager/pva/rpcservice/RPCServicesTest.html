@@ -783,7 +783,7 @@
 <a class="jxr_linenumber" name="L775" href="#L775">775</a>   }
 <a class="jxr_linenumber" name="L776" href="#L776">776</a> 
 <a class="jxr_linenumber" name="L777" href="#L777">777</a> 
-<a class="jxr_linenumber" name="L778" href="#L778">778</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">TestRPCServiceImpl</a> <strong class="jxr_keyword">implements</strong> org.epics.pvaccess.server.rpc.RPCService {
+<a class="jxr_linenumber" name="L778" href="#L778">778</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/PooledRPCClientTest.html">TestRPCServiceImpl</a> <strong class="jxr_keyword">implements</strong> org.epics.pvaccess.server.rpc.RPCService {
 <a class="jxr_linenumber" name="L779" href="#L779">779</a> 
 <a class="jxr_linenumber" name="L780" href="#L780">780</a>     @Override
 <a class="jxr_linenumber" name="L781" href="#L781">781</a>     <strong class="jxr_keyword">public</strong> PVStructure request(PVStructure args) <strong class="jxr_keyword">throws</strong> RPCRequestException {
@@ -791,7 +791,7 @@
 <a class="jxr_linenumber" name="L783" href="#L783">783</a>       String methodName = args.getStringField(<span class="jxr_string">"op"</span>).get();
 <a class="jxr_linenumber" name="L784" href="#L784">784</a> 
 <a class="jxr_linenumber" name="L785" href="#L785">785</a>       <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"sum"</span>.equals(methodName)) {
-<a class="jxr_linenumber" name="L786" href="#L786">786</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">SumServiceImpl</a>().request(args);
+<a class="jxr_linenumber" name="L786" href="#L786">786</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/PooledRPCClientTest.html">SumServiceImpl</a>().request(args);
 <a class="jxr_linenumber" name="L787" href="#L787">787</a>       } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"sumFloat"</span>.equals(methodName)) {
 <a class="jxr_linenumber" name="L788" href="#L788">788</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">SumFloatServiceImpl</a>().request(args);
 <a class="jxr_linenumber" name="L789" href="#L789">789</a>       } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"isGreaterThen"</span>.equals(methodName)) {
@@ -809,7 +809,7 @@
 <a class="jxr_linenumber" name="L801" href="#L801">801</a>       } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"multipyString"</span>.equals(methodName)) {
 <a class="jxr_linenumber" name="L802" href="#L802">802</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">MultiplyStringServiceImpl</a>().request(args);
 <a class="jxr_linenumber" name="L803" href="#L803">803</a>       } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"nop"</span>.equals(methodName)) {
-<a class="jxr_linenumber" name="L804" href="#L804">804</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">NopServiceImpl</a>().request(args);
+<a class="jxr_linenumber" name="L804" href="#L804">804</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/PooledRPCClientTest.html">NopServiceImpl</a>().request(args);
 <a class="jxr_linenumber" name="L805" href="#L805">805</a>       } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (<span class="jxr_string">"getTable"</span>.equals(methodName)) {
 <a class="jxr_linenumber" name="L806" href="#L806">806</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">TableServiceImpl</a>().request(args);
 <a class="jxr_linenumber" name="L807" href="#L807">807</a>       }
@@ -1032,7 +1032,7 @@
 <a class="jxr_linenumber" name="L1024" href="#L1024">1024</a>     }
 <a class="jxr_linenumber" name="L1025" href="#L1025">1025</a>   }
 <a class="jxr_linenumber" name="L1026" href="#L1026">1026</a> 
-<a class="jxr_linenumber" name="L1027" href="#L1027">1027</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">SumServiceImpl</a> <strong class="jxr_keyword">implements</strong> org.epics.pvaccess.server.rpc.RPCService {
+<a class="jxr_linenumber" name="L1027" href="#L1027">1027</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/PooledRPCClientTest.html">SumServiceImpl</a> <strong class="jxr_keyword">implements</strong> org.epics.pvaccess.server.rpc.RPCService {
 <a class="jxr_linenumber" name="L1028" href="#L1028">1028</a> 
 <a class="jxr_linenumber" name="L1029" href="#L1029">1029</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> Structure resultStructure =
 <a class="jxr_linenumber" name="L1030" href="#L1030">1030</a>       fieldCreate.createStructure(
@@ -1166,7 +1166,7 @@
 <a class="jxr_linenumber" name="L1158" href="#L1158">1158</a>   }
 <a class="jxr_linenumber" name="L1159" href="#L1159">1159</a> 
 <a class="jxr_linenumber" name="L1160" href="#L1160">1160</a> 
-<a class="jxr_linenumber" name="L1161" href="#L1161">1161</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">NopServiceImpl</a> <strong class="jxr_keyword">implements</strong> org.epics.pvaccess.server.rpc.RPCService {
+<a class="jxr_linenumber" name="L1161" href="#L1161">1161</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/PooledRPCClientTest.html">NopServiceImpl</a> <strong class="jxr_keyword">implements</strong> org.epics.pvaccess.server.rpc.RPCService {
 <a class="jxr_linenumber" name="L1162" href="#L1162">1162</a> 
 <a class="jxr_linenumber" name="L1163" href="#L1163">1163</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> Structure resultStructure =
 <a class="jxr_linenumber" name="L1164" href="#L1164">1164</a>       fieldCreate.createStructure(
@@ -1184,7 +1184,7 @@
 <a class="jxr_linenumber" name="L1176" href="#L1176">1176</a>   @Before
 <a class="jxr_linenumber" name="L1177" href="#L1177">1177</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> onSetUp() <strong class="jxr_keyword">throws</strong> PVAException {
 <a class="jxr_linenumber" name="L1178" href="#L1178">1178</a>     <strong class="jxr_keyword">this</strong>.rpcServer = <strong class="jxr_keyword">new</strong> RPCServer();
-<a class="jxr_linenumber" name="L1179" href="#L1179">1179</a>     <strong class="jxr_keyword">this</strong>.rpcServer.registerService(<span class="jxr_string">"testChannel"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/RPCServicesTest.html">TestRPCServiceImpl</a>());
+<a class="jxr_linenumber" name="L1179" href="#L1179">1179</a>     <strong class="jxr_keyword">this</strong>.rpcServer.registerService(<span class="jxr_string">"testChannel"</span>, <strong class="jxr_keyword">new</strong> <a href="../../../../../org/epics/pvmanager/pva/rpcservice/PooledRPCClientTest.html">TestRPCServiceImpl</a>());
 <a class="jxr_linenumber" name="L1180" href="#L1180">1180</a>     <strong class="jxr_keyword">this</strong>.rpcServer.printInfo();
 <a class="jxr_linenumber" name="L1181" href="#L1181">1181</a>     Thread thread = <strong class="jxr_keyword">new</strong> Thread(<strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="L1182" href="#L1182">1182</a>     thread.start();

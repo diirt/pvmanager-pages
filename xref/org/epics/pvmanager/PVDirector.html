@@ -175,16 +175,16 @@
 <a class="jxr_linenumber" name="L167" href="#L167">167</a>         <a href="../../../org/epics/pvmanager/ReadRecipe.html">ReadRecipe</a> recipe;
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>         <strong class="jxr_keyword">synchronized</strong>(lock) {
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>             recipe = readRecipies.remove(expression);
-<a class="jxr_linenumber" name="L170" href="#L170">170</a>             <strong class="jxr_keyword">for</strong> (ChannelReadRecipe channelRecipe : recipe.getChannelReadRecipes()) {
-<a class="jxr_linenumber" name="L171" href="#L171">171</a>                 readConnCollector.removeChannel(channelRecipe.getChannelName());
-<a class="jxr_linenumber" name="L172" href="#L172">172</a>             }
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>         }
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>         <strong class="jxr_keyword">if</strong> (recipe == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L172" href="#L172">172</a>             log.log(Level.SEVERE, <span class="jxr_string">"Director was asked to disconnect expression '"</span> + expression + <span class="jxr_string">"' which was not found."</span>);
 <a class="jxr_linenumber" name="L173" href="#L173">173</a>         }
-<a class="jxr_linenumber" name="L174" href="#L174">174</a>         <strong class="jxr_keyword">if</strong> (recipe == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L175" href="#L175">175</a>             log.log(Level.SEVERE, <span class="jxr_string">"Director was asked to disconnect expression '"</span> + expression + <span class="jxr_string">"' which was not found."</span>);
-<a class="jxr_linenumber" name="L176" href="#L176">176</a>         }
-<a class="jxr_linenumber" name="L177" href="#L177">177</a>         
-<a class="jxr_linenumber" name="L178" href="#L178">178</a>         <strong class="jxr_keyword">if</strong> (!recipe.getChannelReadRecipes().isEmpty()) {
-<a class="jxr_linenumber" name="L179" href="#L179">179</a>             <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>         
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>         <strong class="jxr_keyword">if</strong> (!recipe.getChannelReadRecipes().isEmpty()) {
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>             <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L177" href="#L177">177</a>                 <strong class="jxr_keyword">for</strong> (ChannelReadRecipe channelRecipe : recipe.getChannelReadRecipes()) {
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>                     readConnCollector.removeChannel(channelRecipe.getChannelName());
+<a class="jxr_linenumber" name="L179" href="#L179">179</a>                 }
 <a class="jxr_linenumber" name="L180" href="#L180">180</a>                 dataSource.disconnectRead(recipe);
 <a class="jxr_linenumber" name="L181" href="#L181">181</a>             } <strong class="jxr_keyword">catch</strong>(Exception ex) {
 <a class="jxr_linenumber" name="L182" href="#L182">182</a>                 recipe.getChannelReadRecipes().iterator().next().getReadSubscription().getExceptionWriteFunction().writeValue(ex);
